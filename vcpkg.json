@@ -1,0 +1,16 @@
+{
+  "$schema": "https://raw.githubusercontent.com/microsoft/vcpkg-tool/main/docs/vcpkg.schema.json",
+  "name": "suitespot",
+  "version": "1.0.0",
+  "description": "BakkesMod plugin for Rocket League — post-match training automation",
+  "builtin-baseline": "1940ee77e81573713c0d364c42f5990172198be1",
+  "dependencies": [
+    "sqlite3",
+    "spdlog",
+    "fmt",
+    "nlohmann-json",
+    "openssl",
+    "ixwebsocket"
+  ],
+  "overrides": []
+}

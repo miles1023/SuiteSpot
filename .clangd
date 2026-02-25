@@ -1,0 +1,50 @@
+CompileFlags:
+  Add:
+    # Language standard
+    - -std=c++20
+
+    # Platform defines — mirror the Windows x64 MSVC target
+    - -D_WIN32
+    - -D_WIN64
+    - -DWIN32_LEAN_AND_MEAN
+    - -DNOMINMAX
+    - -DNDEBUG
+    - -D_CONSOLE
+
+    # BakkesMod SDK headers (via WSL2 path to Windows AppData)
+    # NOTE FOR AI/FUTURE SESSIONS: These are machine-specific paths for WSL2.
+    # The authoritative SDK path is resolved by BakkesMod.props via Windows registry:
+    # HKEY_CURRENT_USER\Software\BakkesMod\AppPath
+    # If paths fail, check BakkesMod.props and update both this file and the WSL mount path.
+    - -I/mnt/c/Users/bmile/AppData/Roaming/bakkesmod/bakkesmod/bakkesmodsdk/include
+
+    # vcpkg x64-windows includes
+    - -I/mnt/c/Users/bmile/vcpkg/installed/x64-windows/include
+
+    # Project root (for pch.h, MapList.h, etc.)
+    - -I/home/bmile/SuiteSpot
+
+    # ImGui (vendored in IMGUI/)
+    - -I/home/bmile/SuiteSpot/IMGUI
+
+    # Suppress MSVC-specific warnings that clang doesn't understand
+    - -Wno-unknown-pragmas
+    - -Wno-ignored-attributes
+    - -Wno-microsoft-include
+
+  # Use clang-cl to better mimic MSVC ABI for SDK headers
+  Compiler: clang++
+
+Diagnostics:
+  # Suppress noise from BakkesMod SDK and third-party headers
+  Suppress:
+    - pp_including_mainfile_in_preamble
+  UnusedIncludes: None
+
+Index:
+  Background: Build
+
+InlayHints:
+  Enabled: true
+  ParameterNames: true
+  DeducedTypes: true
