@@ -1,0 +1,292 @@
+- generic [ref=e3]:
+  - navigation [ref=e4]:
+    - generic [ref=e6]:
+      - generic [ref=e7]:
+        - link "BakkesPlugins Logo BakkesPlugins" [ref=e8] [cursor=pointer]:
+          - /url: /
+          - img "BakkesPlugins Logo" [ref=e9]
+          - generic [ref=e10]: BakkesPlugins
+        - generic [ref=e11]:
+          - link "Plugins" [ref=e12] [cursor=pointer]:
+            - /url: /plugins
+          - link "Cars" [ref=e13] [cursor=pointer]:
+            - /url: /cars
+          - link "Maps" [ref=e14] [cursor=pointer]:
+            - /url: /maps
+      - generic [ref=e15]:
+        - generic [ref=e17]:
+          - generic [ref=e18]:
+            - combobox [ref=e19]:
+              - option "All" [selected]
+              - option "Plugins"
+              - option "Cars"
+              - option "Maps"
+            - generic:
+              - img
+          - textbox "Search all..." [ref=e21]
+          - button [ref=e22] [cursor=pointer]:
+            - img [ref=e23]
+        - generic [ref=e27]:
+          - button "Sign Up" [ref=e28] [cursor=pointer]
+          - button "Sign In" [ref=e29] [cursor=pointer]
+  - link "./ SafeComms_ [developer-first content moderation API] [SYS] SCANNING USER_CONTENT [ALRT] DETECTED HATE_SPEECH [SAFE] PURGED AUTOMATICALLY [SYS] SCANNING USER_CONTENT START FREE > FREE TIER. NO CREDIT CARD REQ." [ref=e32] [cursor=pointer]:
+    - /url: https://safecomms.dev?utm_source=bakkesplugins&utm_medium=banner&utm_campaign=safecomms_launch
+    - generic [ref=e37]:
+      - generic [ref=e38]: ./
+      - text: SafeComms_
+    - generic [ref=e39]:
+      - generic [ref=e40]: "[developer-first content moderation API]"
+      - generic [ref=e42]:
+        - generic [ref=e43]:
+          - generic [ref=e44]: "[SYS]"
+          - text: SCANNING
+          - generic [ref=e45]: USER_CONTENT
+        - generic [ref=e46]:
+          - generic [ref=e47]: "[ALRT]"
+          - text: DETECTED
+          - generic [ref=e48]: HATE_SPEECH
+        - generic [ref=e49]:
+          - generic [ref=e50]: "[SAFE]"
+          - text: PURGED
+          - generic [ref=e51]: AUTOMATICALLY
+        - generic [ref=e52]:
+          - generic [ref=e53]: "[SYS]"
+          - text: SCANNING
+          - generic [ref=e54]: USER_CONTENT
+    - generic [ref=e55]:
+      - generic [ref=e56]: START FREE >
+      - generic [ref=e57]: FREE TIER. NO CREDIT CARD REQ.
+  - main [ref=e58]:
+    - generic [ref=e60]:
+      - navigation [ref=e61]:
+        - list [ref=e62]:
+          - listitem [ref=e63]:
+            - link "Wikis" [ref=e64] [cursor=pointer]:
+              - /url: /wiki
+          - listitem [ref=e65]:
+            - img [ref=e66]
+          - listitem [ref=e68]:
+            - link "BakkesMod SDK" [ref=e69] [cursor=pointer]:
+              - /url: /wiki/bakkesmod-sdk
+          - listitem [ref=e70]:
+            - img [ref=e71]
+          - listitem [ref=e73]:
+            - link "Plugin Tutorial" [ref=e74] [cursor=pointer]:
+              - /url: /wiki/bakkesmod-sdk/plugin-tutorial
+          - listitem [ref=e75]:
+            - img [ref=e76]
+          - listitem [ref=e78]: 4. Plugin Interface
+      - generic [ref=e79]:
+        - generic [ref=e81]:
+          - generic [ref=e82]:
+            - generic [ref=e83]:
+              - heading "BakkesMod SDK" [level=3] [ref=e84]
+              - link "Search this wiki" [ref=e85] [cursor=pointer]:
+                - /url: /wiki/bakkesmod-sdk/search
+                - img [ref=e86]
+            - generic [ref=e89]:
+              - generic:
+                - img
+              - textbox "Filter pages..." [ref=e90]
+          - navigation [ref=e91]:
+            - generic [ref=e92]:
+              - link "Plugin Tutorial" [ref=e93] [cursor=pointer]:
+                - /url: /wiki/bakkesmod-sdk/plugin-tutorial
+                - button [ref=e94]:
+                  - img [ref=e95]
+                - img [ref=e97]
+                - generic [ref=e99]: Plugin Tutorial
+              - generic [ref=e100]:
+                - link "1. Setup your installs" [ref=e102] [cursor=pointer]:
+                  - /url: /wiki/bakkesmod-sdk/plugin-tutorial/getting-started
+                  - img [ref=e103]
+                  - generic [ref=e106]: 1. Setup your installs
+                - link "2. Starting a plugin" [ref=e108] [cursor=pointer]:
+                  - /url: /wiki/bakkesmod-sdk/plugin-tutorial/starting-a-plugin
+                  - img [ref=e109]
+                  - generic [ref=e112]: 2. Starting a plugin
+                - link "3. Plugin Variables" [ref=e114] [cursor=pointer]:
+                  - /url: /wiki/bakkesmod-sdk/plugin-tutorial/plugin-variables
+                  - img [ref=e115]
+                  - generic [ref=e118]: 3. Plugin Variables
+                - link "4. Plugin Interface" [ref=e120] [cursor=pointer]:
+                  - /url: /wiki/bakkesmod-sdk/plugin-tutorial/plugin-interface
+                  - img [ref=e121]
+                  - generic [ref=e124]: 4. Plugin Interface
+                - link "5. Third party dependencies" [ref=e126] [cursor=pointer]:
+                  - /url: /wiki/bakkesmod-sdk/plugin-tutorial/3rdparty-dependencies
+                  - img [ref=e127]
+                  - generic [ref=e130]: 5. Third party dependencies
+                - link "Best Practices" [ref=e132] [cursor=pointer]:
+                  - /url: /wiki/bakkesmod-sdk/plugin-tutorial/best-practices
+                  - img [ref=e133]
+                  - generic [ref=e136]: Best Practices
+            - link "Code Snippets" [ref=e138] [cursor=pointer]:
+              - /url: /wiki/bakkesmod-sdk/code-snippets
+              - button [ref=e139]:
+                - img [ref=e140]
+              - img [ref=e142]
+              - generic [ref=e144]: Code Snippets
+            - link "ImGui" [ref=e146] [cursor=pointer]:
+              - /url: /wiki/bakkesmod-sdk/imgui
+              - button [ref=e147]:
+                - img [ref=e148]
+              - img [ref=e150]
+              - generic [ref=e152]: ImGui
+            - link "Useful Info" [ref=e154] [cursor=pointer]:
+              - /url: /wiki/bakkesmod-sdk/useful-info
+              - button [ref=e155]:
+                - img [ref=e156]
+              - img [ref=e158]
+              - generic [ref=e160]: Useful Info
+            - link "Functions" [ref=e162] [cursor=pointer]:
+              - /url: /wiki/bakkesmod-sdk/functions
+              - button [ref=e163]:
+                - img [ref=e164]
+              - img [ref=e166]
+              - generic [ref=e168]: Functions
+            - link "BakkesMod API" [ref=e170] [cursor=pointer]:
+              - /url: /wiki/bakkesmod-sdk/bakkesmod-api
+              - button [ref=e171]:
+                - img [ref=e172]
+              - img [ref=e174]
+              - generic [ref=e176]: BakkesMod API
+        - generic [ref=e178]:
+          - heading "4. Plugin Interface" [level=1] [ref=e180]
+          - generic [ref=e183]:
+            - generic [ref=e184]:
+              - img [ref=e185]
+              - text: Last edited by
+              - link "JerryTheBee" [ref=e188] [cursor=pointer]:
+                - /url: /members/JerryTheBee
+            - generic [ref=e189]:
+              - img [ref=e190]
+              - text: 12/3/2025
+          - generic [ref=e194]:
+            - paragraph [ref=e195]: This will go over creating a user-friendly interface. There's buttons, sliders, checkboxes, dropdowns, and all sorts of options. It also assumes you're using the template, as the template automatically includes the ImGui GUI library we'll be using. It also adds a file we'll be editing
+            - paragraph [ref=e196]:
+              - text: Yet again we have the
+              - code [ref=e197]: CoolPlugin
+              - text: from
+              - link "Plugin Variables" [ref=e198] [cursor=pointer]:
+                - /url: /wiki/bakkesmod-sdk/plugin-tutorial/plugin-variables
+              - text: and we want to add a button to activate our cooler ball on top, a checkbox to enable cool, and a slider to choose the distance that the ball is placed from your car
+            - paragraph [ref=e199]:
+              - text: First we need to uncomment some code in
+              - code [ref=e200]: CoolPlugin.h
+            - paragraph [ref=e201]:
+              - text: At the class declaration, uncomment
+              - code [ref=e202]: SettingsWindowBase
+              - text: and
+              - code [ref=e203]: RenderSettings
+            - code [ref=e205]: "class CoolPlugin: public BakkesMod::Plugin::BakkesModPlugin, public SettingsWindowBase // ... void RenderSettings() override;"
+            - paragraph [ref=e206]:
+              - text: Now we can define those 3 functions to create the interface. We will put these in a new file
+              - code [ref=e207]: CoolPluginSettings.cpp
+              - text: but they can be in any
+              - code [ref=e208]: .cpp
+              - text: file that includes
+              - code [ref=e209]: CoolPlugin.h
+              - text: ", such as"
+              - code [ref=e210]: CoolPlugin.cpp
+            - paragraph [ref=e211]:
+              - text: To add a file, right click the src (or any other) folder in the solution explorer, then add a new item
+              - img "Adding a new item to the solution"
+            - paragraph [ref=e212]:
+              - text: Add a .cpp file with the name of your choice.
+              - img "Naming the cpp file"
+            - paragraph [ref=e213]:
+              - text: In the file, make sure to include
+              - code [ref=e214]: pch.h
+              - text: and
+              - code [ref=e215]: CoolPlugin.h
+              - text: at the top
+            - code [ref=e217]: "# include \"pch.h\" # include \"CoolPlugin.h\""
+            - paragraph [ref=e218]:
+              - text: Now you can create the interface. We'll start with simple text but this is what we'll be modifying in the rest of this page
+              - text: There's a hugely important thing to consider with this function. Never call on or change any Rocket League / Bakkesmod values here. If you do, you will crash. It's happening outside of the game, and cannot safely alter it. That means that if you have a
+              - code [ref=e219]: CVarWrapper.addOnValueChanged()
+              - text: that alters the state of the game, it will be unsafe to use here
+            - code [ref=e221]: "void CoolPlugin::RenderSettings() { ImGui::TextUnformatted(\"A really cool plugin\"); }"
+            - paragraph [ref=e222]:
+              - text: Lets start building the plugin interface. First we'll have a button that'll call
+              - code [ref=e223]: CoolerBallOnTop
+              - text: . The button as well as most other interactable ImGui components has a boolean property. If it's true, that means it's been interacted with. So when the button has been clicked, we'll use the cvarManager to call
+              - code [ref=e224]: CoolerBallOnTop
+              - text: . But
+              - code [ref=e225]: CoolerBallOnTop
+              - text: uses the ServerWrapper and alters the game. It'll crash! We can wrap it inside
+              - code [ref=e226]: gameWrapper->Execute()
+              - text: . We'll also add hover text because why not
+            - code [ref=e228]: "if (ImGui::Button(\"Ball On Top\")) { gameWrapper->Execute([this](GameWrapper* gw) { cvarManager->executeCommand(\"CoolerBallOnTop\"); }); } if (ImGui::IsItemHovered()) { ImGui::SetTooltip(\"Activate Ball On Top\"); }"
+            - paragraph:
+              - img "The button"
+            - paragraph [ref=e229]:
+              - text: Now let's do a checkbox for
+              - code [ref=e230]: cool_enabled
+              - text: . First we need to get the CVar, then use it. The
+              - code [ref=e231]: bool enabled
+              - text: is necessary, as the checkbox uses that to store whether or not the checkbox should be checked. You can't just use the CVar
+            - code [ref=e233]: "CVarWrapper enableCvar = cvarManager->getCvar(\"cool_enabled\"); if (!enableCvar) { return; } bool enabled = enableCvar.getBoolValue(); if (ImGui::Checkbox(\"Enable plugin\", &enabled)) { enableCvar.setValue(enabled); } if (ImGui::IsItemHovered()) { ImGui::SetTooltip(\"Toggle Cool Plugin\"); }"
+            - paragraph [ref=e234]:
+              - text: And finally a slider for the distance CVar.
+              - text: ImGui elements use
+              - code [ref=e235]: char *
+              - text: instead of
+              - code [ref=e236]: std::string
+              - text: You can easily convert between with
+              - code [ref=e237]: std::string.c_str()
+              - text: and
+              - code [ref=e238]: std::string newStringVariableName(char *)
+            - code [ref=e240]: "CVarWrapper distanceCvar = cvarManager->getCvar(\"cool_distance\"); if (!distanceCvar) { return; } float distance = distanceCvar.getFloatValue(); if (ImGui::SliderFloat(\"Distance\", &distance, 0.0, 500.0)) { distanceCvar.setValue(distance); } if (ImGui::IsItemHovered()) { std::string hoverText = \"distance is \" + std::to_string(distance); ImGui::SetTooltip(hoverText.c_str()); }"
+            - paragraph:
+              - img "The slider"
+            - paragraph [ref=e241]: We finally have a settings file using all of our CVars. There's a load more things you can do with ImGui, but hopefully this is enough to get the right idea and get started. I hope that by covering these three elements I covered most of what plugins need to use. ImGui is complicated and most plugins don't use it yet. Feel free to ask questions
+            - paragraph [ref=e242]:
+              - text: Here's the final code
+              - link "https://github.com/ubelhj/BakkesModStarterPlugin/blob/plugin-interface/CoolPlugin/CoolPluginSettings.cpp" [ref=e243] [cursor=pointer]:
+                - /url: https://github.com/ubelhj/BakkesModStarterPlugin/blob/plugin-interface/CoolPlugin/CoolPluginSettings.cpp
+              - link "https://github.com/ubelhj/BakkesModStarterPlugin/tree/plugin-interface/" [ref=e244] [cursor=pointer]:
+                - /url: https://github.com/ubelhj/BakkesModStarterPlugin/tree/plugin-interface/
+            - paragraph [ref=e245]:
+              - text: And here's a useful interactable imgui demo
+              - link "https://pthom.github.io/imgui_manual_online/manual/imgui_manual.html" [ref=e246] [cursor=pointer]:
+                - /url: https://pthom.github.io/imgui_manual_online/manual/imgui_manual.html
+          - generic [ref=e248]:
+            - heading "Was this article helpful?" [level=3] [ref=e250]
+            - generic [ref=e251]:
+              - button "Yes, this was helpful" [ref=e252] [cursor=pointer]:
+                - img [ref=e253]
+              - button "No, this needs improvement" [ref=e255] [cursor=pointer]:
+                - img [ref=e256]
+            - paragraph [ref=e258]: Your feedback helps us improve our documentation
+  - region
+  - contentinfo [ref=e261]:
+    - generic [ref=e263]:
+      - generic [ref=e264]:
+        - heading "BakkesPlugins" [level=3] [ref=e265]
+        - paragraph [ref=e266]: Community-driven platform for BakkesMod plugins and Rocket League customization.
+        - generic [ref=e267]:
+          - generic [ref=e268]: © 2026
+          - generic [ref=e269]: "|"
+          - generic "Frontend version" [ref=e270]: v0.16.479-gcce7e22
+      - generic [ref=e271]:
+        - heading "Community" [level=3] [ref=e272]
+        - navigation [ref=e273]:
+          - link "News & Updates" [ref=e274] [cursor=pointer]:
+            - /url: /news
+          - link "Job Opportunities" [ref=e275] [cursor=pointer]:
+            - /url: /jobs
+          - link "Feature Requests" [ref=e276] [cursor=pointer]:
+            - /url: /feature-requests
+          - link "Discord Community" [ref=e277] [cursor=pointer]:
+            - /url: https://discord.gg/bakkesmod
+      - generic [ref=e278]:
+        - heading "Legal" [level=3] [ref=e279]
+        - navigation [ref=e280]:
+          - link "Terms of Service" [ref=e281] [cursor=pointer]:
+            - /url: /terms
+          - link "Privacy Policy" [ref=e282] [cursor=pointer]:
+            - /url: /privacy-policy
+          - link "Acceptable Use Policy" [ref=e283] [cursor=pointer]:
+            - /url: /acceptable-use-policy

@@ -147,19 +147,22 @@ class SuiteSpot final : public BakkesMod::Plugin::BakkesModPlugin,
     std::unique_ptr<LoadoutUI> loadoutUI;
 
     bool isBrowserOpen = false;
+    bool isOverlayAutoOpen = false; // true when window is opened automatically (suppress training browser)
+    bool isUnloading = false;       // true during onUnload() — prevents OnClose() from re-opening the window
     float officialTrainingGameSpeed = 1.0f;
     uintptr_t imgui_ctx = 0;
     ImFont* clockFont = nullptr;
     std::atomic<bool> isRenderingSettings{false};
     std::thread textureDownloadThread; // Managed texture download thread
 
-    // Canvas HUD overlay for hotkey action feedback (RegisterDrawable-driven, no ImGui dependency)
-    // NOTE: This is NOT gameWrapper->Toast() — it is a CanvasWrapper drawn overlay.
+    // ImGui overlay for hotkey action feedback — rendered via Render() every frame.
+    // NOTE: This is NOT gameWrapper->Toast() — it is an ImGui window drawn as an overlay.
     struct {
         std::string text;
         std::chrono::steady_clock::time_point startTime{};
         float duration = 0.0f;
         bool visible = false;
+        bool isError = false;
     } hotkeyOverlay;
 
     // Hotkey capture state
@@ -170,8 +173,9 @@ class SuiteSpot final : public BakkesMod::Plugin::BakkesModPlugin,
     // Updated on every press/release event — never polled. Used for combo key checks in notifiers.
     std::set<std::string> heldKeys;
 
-    // Hotkey handlers
-    void ShowToastForAction(const std::string& actionName);
+    // Hotkey toast helpers
+    void ShowToastForAction(const std::string& message, bool isError = false);
+    void ShowToastError(const std::string& reason);
 };
 
 struct HandleKeyPressParams

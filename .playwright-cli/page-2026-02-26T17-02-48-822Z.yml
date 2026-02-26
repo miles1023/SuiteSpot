@@ -1,0 +1,148 @@
+- generic [ref=e3]:
+  - navigation [ref=e4]:
+    - generic [ref=e6]:
+      - generic [ref=e7]:
+        - link "BakkesPlugins Logo BakkesPlugins" [ref=e8] [cursor=pointer]:
+          - /url: /
+          - img "BakkesPlugins Logo" [ref=e9]
+          - generic [ref=e10]: BakkesPlugins
+        - generic [ref=e11]:
+          - link "Plugins" [ref=e12] [cursor=pointer]:
+            - /url: /plugins
+          - link "Cars" [ref=e13] [cursor=pointer]:
+            - /url: /cars
+          - link "Maps" [ref=e14] [cursor=pointer]:
+            - /url: /maps
+      - generic [ref=e15]:
+        - generic [ref=e17]:
+          - generic [ref=e18]:
+            - combobox [ref=e19]:
+              - option "All" [selected]
+              - option "Plugins"
+              - option "Cars"
+              - option "Maps"
+            - generic:
+              - img
+          - textbox "Search all..." [ref=e21]
+          - button [ref=e22] [cursor=pointer]:
+            - img [ref=e23]
+        - generic [ref=e27]:
+          - button "Sign Up" [ref=e28] [cursor=pointer]
+          - button "Sign In" [ref=e29] [cursor=pointer]
+  - link "./ SafeComms_ [developer-first content moderation API] [SYS] SCANNING USER_CONTENT [ALRT] DETECTED HATE_SPEECH [SAFE] PURGED AUTOMATICALLY [SYS] SCANNING USER_CONTENT START FREE > FREE TIER. NO CREDIT CARD REQ." [ref=e32] [cursor=pointer]:
+    - /url: https://safecomms.dev?utm_source=bakkesplugins&utm_medium=banner&utm_campaign=safecomms_launch
+    - generic [ref=e37]:
+      - generic [ref=e38]: ./
+      - text: SafeComms_
+    - generic [ref=e39]:
+      - generic [ref=e40]: "[developer-first content moderation API]"
+      - generic [ref=e42]:
+        - generic [ref=e43]:
+          - generic [ref=e44]: "[SYS]"
+          - text: SCANNING
+          - generic [ref=e45]: USER_CONTENT
+        - generic [ref=e46]:
+          - generic [ref=e47]: "[ALRT]"
+          - text: DETECTED
+          - generic [ref=e48]: HATE_SPEECH
+        - generic [ref=e49]:
+          - generic [ref=e50]: "[SAFE]"
+          - text: PURGED
+          - generic [ref=e51]: AUTOMATICALLY
+        - generic [ref=e52]:
+          - generic [ref=e53]: "[SYS]"
+          - text: SCANNING
+          - generic [ref=e54]: USER_CONTENT
+    - generic [ref=e55]:
+      - generic [ref=e56]: START FREE >
+      - generic [ref=e57]: FREE TIER. NO CREDIT CARD REQ.
+  - main [ref=e58]:
+    - generic [ref=e60]:
+      - navigation [ref=e61]:
+        - list [ref=e62]:
+          - listitem [ref=e63]:
+            - link "Wikis" [ref=e64] [cursor=pointer]:
+              - /url: /wiki
+          - listitem [ref=e65]:
+            - img [ref=e66]
+          - listitem [ref=e68]:
+            - link "BakkesMod SDK" [ref=e69] [cursor=pointer]:
+              - /url: /wiki/bakkesmod-sdk
+      - generic [ref=e72]:
+        - generic [ref=e73]:
+          - generic [ref=e74]:
+            - heading "BakkesMod SDK" [level=3] [ref=e75]
+            - link "Search this wiki" [ref=e76] [cursor=pointer]:
+              - /url: /wiki/bakkesmod-sdk/search
+              - img [ref=e77]
+          - generic [ref=e80]:
+            - generic:
+              - img
+            - textbox "Filter pages..." [ref=e81]
+        - navigation [ref=e82]:
+          - link "Plugin Tutorial" [ref=e84] [cursor=pointer]:
+            - /url: /wiki/bakkesmod-sdk/plugin-tutorial
+            - button [ref=e85]:
+              - img [ref=e86]
+            - img [ref=e88]
+            - generic [ref=e90]: Plugin Tutorial
+          - link "Code Snippets" [ref=e92] [cursor=pointer]:
+            - /url: /wiki/bakkesmod-sdk/code-snippets
+            - button [ref=e93]:
+              - img [ref=e94]
+            - img [ref=e96]
+            - generic [ref=e98]: Code Snippets
+          - link "ImGui" [ref=e100] [cursor=pointer]:
+            - /url: /wiki/bakkesmod-sdk/imgui
+            - button [ref=e101]:
+              - img [ref=e102]
+            - img [ref=e104]
+            - generic [ref=e106]: ImGui
+          - link "Useful Info" [ref=e108] [cursor=pointer]:
+            - /url: /wiki/bakkesmod-sdk/useful-info
+            - button [ref=e109]:
+              - img [ref=e110]
+            - img [ref=e112]
+            - generic [ref=e114]: Useful Info
+          - link "Functions" [ref=e116] [cursor=pointer]:
+            - /url: /wiki/bakkesmod-sdk/functions
+            - button [ref=e117]:
+              - img [ref=e118]
+            - img [ref=e120]
+            - generic [ref=e122]: Functions
+          - link "BakkesMod API" [ref=e124] [cursor=pointer]:
+            - /url: /wiki/bakkesmod-sdk/bakkesmod-api
+            - button [ref=e125]:
+              - img [ref=e126]
+            - img [ref=e128]
+            - generic [ref=e130]: BakkesMod API
+  - region
+  - contentinfo [ref=e135]:
+    - generic [ref=e137]:
+      - generic [ref=e138]:
+        - heading "BakkesPlugins" [level=3] [ref=e139]
+        - paragraph [ref=e140]: Community-driven platform for BakkesMod plugins and Rocket League customization.
+        - generic [ref=e141]:
+          - generic [ref=e142]: © 2026
+          - generic [ref=e143]: "|"
+          - generic "Frontend version" [ref=e144]: v0.16.479-gcce7e22
+      - generic [ref=e145]:
+        - heading "Community" [level=3] [ref=e146]
+        - navigation [ref=e147]:
+          - link "News & Updates" [ref=e148] [cursor=pointer]:
+            - /url: /news
+          - link "Job Opportunities" [ref=e149] [cursor=pointer]:
+            - /url: /jobs
+          - link "Feature Requests" [ref=e150] [cursor=pointer]:
+            - /url: /feature-requests
+          - link "Discord Community" [ref=e151] [cursor=pointer]:
+            - /url: https://discord.gg/bakkesmod
+      - generic [ref=e152]:
+        - heading "Legal" [level=3] [ref=e153]
+        - navigation [ref=e154]:
+          - link "Terms of Service" [ref=e155] [cursor=pointer]:
+            - /url: /terms
+          - link "Privacy Policy" [ref=e156] [cursor=pointer]:
+            - /url: /privacy-policy
+          - link "Acceptable Use Policy" [ref=e157] [cursor=pointer]:
+            - /url: /acceptable-use-policy

@@ -259,24 +259,20 @@ void SuiteSpot::LoadHooks()
         "ss_heal_current_pack", [this](std::vector<std::string> args) { TryHealCurrentPack(gameWrapper.get()); },
         "Manually heal the currently loaded training pack", PERMISSION_ALL);
 
-    // Hotkey action notifiers — fired by BakkesMod on key1 key-down via setBind in SettingsSync.
-    // If key2 is configured, it must be held (tracked in heldKeys via HandleKeyPress hook).
+    // Hotkey action notifiers — triggered by HandleKeyPress combo detection (not via setBind).
+    // Can also be invoked directly from the BakkasMod console for testing.
     cvarManager->registerNotifier(
         "ss_cycle_map_mode_fwd",
         [this](std::vector<std::string> args) {
             if (!settingsSync || !mapManager) return;
-            auto key2 = settingsSync->GetHotkeyMapModeFwdKey2();
-            if (!key2.empty()) {
-                bool held = heldKeys.count(key2) > 0;
-                LOG("Hotkey Trigger: ss_cycle_map_mode_fwd triggered. Combo key: {}, Held: {}", key2,
-                    held ? "Yes" : "No");
-                if (!held) return;
-            } else {
-                LOG("Hotkey Trigger: ss_cycle_map_mode_fwd triggered. No combo key set.");
-            }
-            ShowToastForAction("Switched map mode forward");
             mapManager->CycleMapMode(true);
             cvarManager->getCvar("suitespot_map_type").setValue(mapManager->GetCurrentMapModeIndex());
+            {
+                static const char* modeNames[] = {"Freeplay", "Training Pack", "Workshop"};
+                int newMode = mapManager->GetCurrentMapModeIndex();
+                std::string modeName = (newMode >= 0 && newMode < 3) ? modeNames[newMode] : "Unknown";
+                ShowToastForAction("Mode Changed: " + modeName, false);
+            }
         },
         "SuiteSpot: Cycle map mode forward", PERMISSION_ALL);
 
@@ -284,16 +280,14 @@ void SuiteSpot::LoadHooks()
         "ss_cycle_map_mode_bk",
         [this](std::vector<std::string> args) {
             if (!settingsSync || !mapManager) return;
-            auto key2 = settingsSync->GetHotkeyMapModeBkKey2();
-            if (!key2.empty()) {
-                bool held = heldKeys.count(key2) > 0;
-                LOG("Hotkey Trigger: ss_cycle_map_mode_bk triggered. Combo key: {}, Held: {}", key2,
-                    held ? "Yes" : "No");
-                if (!held) return;
-            }
-            ShowToastForAction("Switched map mode backward");
             mapManager->CycleMapMode(false);
             cvarManager->getCvar("suitespot_map_type").setValue(mapManager->GetCurrentMapModeIndex());
+            {
+                static const char* modeNames[] = {"Freeplay", "Training Pack", "Workshop"};
+                int newMode = mapManager->GetCurrentMapModeIndex();
+                std::string modeName = (newMode >= 0 && newMode < 3) ? modeNames[newMode] : "Unknown";
+                ShowToastForAction("Mode Changed: " + modeName, false);
+            }
         },
         "SuiteSpot: Cycle map mode backward", PERMISSION_ALL);
 
@@ -301,19 +295,30 @@ void SuiteSpot::LoadHooks()
         "ss_cycle_map_fwd",
         [this](std::vector<std::string> args) {
             if (!settingsSync || !mapManager) return;
-            auto key2 = settingsSync->GetHotkeyCycleMapFwdKey2();
-            if (!key2.empty()) {
-                bool held = heldKeys.count(key2) > 0;
-                LOG("Hotkey Trigger: ss_cycle_map_fwd triggered. Combo key: {}, Held: {}", key2,
-                    held ? "Yes" : "No");
-                if (!held) return;
-            }
-            ShowToastForAction("Next map");
             mapManager->CycleMap(true);
             int mode = mapManager->GetCurrentMapModeIndex();
             if (mode == 0) cvarManager->getCvar("suitespot_current_freeplay_code").setValue(mapManager->GetCurrentFreeplayCode());
             else if (mode == 1) cvarManager->getCvar("suitespot_current_training_code").setValue(mapManager->GetCurrentTrainingCode());
             else if (mode == 2) cvarManager->getCvar("suitespot_current_workshop_path").setValue(mapManager->GetCurrentWorkshopPath());
+            {
+                std::string displayName;
+                if (mode == 0) {
+                    auto code = mapManager->GetCurrentFreeplayCode();
+                    auto it = std::find_if(RLMaps.begin(), RLMaps.end(), [&](const MapEntry& e) { return e.code == code; });
+                    displayName = (it != RLMaps.end()) ? it->name : code;
+                } else if (mode == 1) {
+                    auto code = mapManager->GetCurrentTrainingCode();
+                    if (trainingPackMgr) {
+                        auto entry = trainingPackMgr->GetPackByCode(code);
+                        displayName = entry ? entry->name : code;
+                    }
+                } else if (mode == 2) {
+                    auto path = mapManager->GetCurrentWorkshopPath();
+                    auto it = std::find_if(RLWorkshop.begin(), RLWorkshop.end(), [&](const WorkshopEntry& e) { return e.filePath == path; });
+                    displayName = (it != RLWorkshop.end()) ? it->name : std::filesystem::path(path).stem().string();
+                }
+                ShowToastForAction("Map Changed: " + displayName, false);
+            }
         },
         "SuiteSpot: Cycle map forward", PERMISSION_ALL);
 
@@ -321,19 +326,30 @@ void SuiteSpot::LoadHooks()
         "ss_cycle_map_bk",
         [this](std::vector<std::string> args) {
             if (!settingsSync || !mapManager) return;
-            auto key2 = settingsSync->GetHotkeyCycleMapBkKey2();
-            if (!key2.empty()) {
-                bool held = heldKeys.count(key2) > 0;
-                LOG("Hotkey Trigger: ss_cycle_map_bk triggered. Combo key: {}, Held: {}", key2,
-                    held ? "Yes" : "No");
-                if (!held) return;
-            }
-            ShowToastForAction("Previous map");
             mapManager->CycleMap(false);
             int mode = mapManager->GetCurrentMapModeIndex();
             if (mode == 0) cvarManager->getCvar("suitespot_current_freeplay_code").setValue(mapManager->GetCurrentFreeplayCode());
             else if (mode == 1) cvarManager->getCvar("suitespot_current_training_code").setValue(mapManager->GetCurrentTrainingCode());
             else if (mode == 2) cvarManager->getCvar("suitespot_current_workshop_path").setValue(mapManager->GetCurrentWorkshopPath());
+            {
+                std::string displayName;
+                if (mode == 0) {
+                    auto code = mapManager->GetCurrentFreeplayCode();
+                    auto it = std::find_if(RLMaps.begin(), RLMaps.end(), [&](const MapEntry& e) { return e.code == code; });
+                    displayName = (it != RLMaps.end()) ? it->name : code;
+                } else if (mode == 1) {
+                    auto code = mapManager->GetCurrentTrainingCode();
+                    if (trainingPackMgr) {
+                        auto entry = trainingPackMgr->GetPackByCode(code);
+                        displayName = entry ? entry->name : code;
+                    }
+                } else if (mode == 2) {
+                    auto path = mapManager->GetCurrentWorkshopPath();
+                    auto it = std::find_if(RLWorkshop.begin(), RLWorkshop.end(), [&](const WorkshopEntry& e) { return e.filePath == path; });
+                    displayName = (it != RLWorkshop.end()) ? it->name : std::filesystem::path(path).stem().string();
+                }
+                ShowToastForAction("Map Changed: " + displayName, false);
+            }
         },
         "SuiteSpot: Cycle map backward", PERMISSION_ALL);
 
@@ -341,14 +357,6 @@ void SuiteSpot::LoadHooks()
         "ss_load_now",
         [this](std::vector<std::string> args) {
             if (!settingsSync) return;
-            auto key2 = settingsSync->GetHotkeyLoadNowKey2();
-            if (!key2.empty()) {
-                bool held = heldKeys.count(key2) > 0;
-                LOG("Hotkey Trigger: ss_load_now triggered. Combo key: {}, Held: {}", key2,
-                    held ? "Yes" : "No");
-                if (!held) return;
-            }
-            ShowToastForAction("Loading current map");
             int mapType = settingsSync->GetMapType();
             std::string cmd;
             if (mapType == 0) {
@@ -361,14 +369,17 @@ void SuiteSpot::LoadHooks()
                 auto path = settingsSync->GetCurrentWorkshopPath();
                 if (!path.empty()) cmd = "load_workshop \"" + path + "\"";
             }
-            if (!cmd.empty()) {
-                gameWrapper->Execute([this, cmd](GameWrapper*) { cvarManager->executeCommand(cmd); });
+            if (cmd.empty()) {
+                ShowToastError("no map selected");
+                return;
             }
+            gameWrapper->Execute([this, cmd](GameWrapper*) { cvarManager->executeCommand(cmd); });
         },
         "SuiteSpot: Load current map immediately", PERMISSION_ALL);
 
-    // Raw input hook — tracks held keys for combo checks AND handles capture UI.
-    // Fires on every key press/release; never polls.
+    // Raw input hook — detects key combos, tracks held keys, and handles capture UI.
+    // Fires on every key press/release; never polls. This is the sole trigger for hotkey actions
+    // (no setBind — BakkesMod's bind system is not used for SuiteSpot hotkeys).
     gameWrapper->HookEventWithCaller<ActorWrapper>("Function TAGame.GameViewportClient_TA.HandleKeyPress",
                                                    [this](ActorWrapper caller, void* params, std::string eventName) {
                                                        auto p = static_cast<HandleKeyPressParams*>(params);
@@ -376,11 +387,31 @@ void SuiteSpot::LoadHooks()
                                                        std::string keyName = gameWrapper->GetFNameByIndex(p->KeyIndex);
                                                        if (keyName.empty() || keyName == "None") return;
 
-                                                       // Maintain heldKeys set for combo checks in notifiers.
+                                                       // Maintain heldKeys set for combo detection and capture UI.
                                                        if (p->EventType == 0)      // IE_Pressed
                                                            heldKeys.insert(keyName);
                                                        else if (p->EventType == 1) // IE_Released
                                                            heldKeys.erase(keyName);
+
+                                                       // Combo hotkey detection: fires notifier when key1 is pressed
+                                                       // with key2 held, or alone when no key2 is configured.
+                                                       if (p->EventType == 0 && captureRow < 0 && settingsSync) {
+                                                           auto checkAndFire = [&](const std::string& key1,
+                                                                                   const std::string& key2,
+                                                                                   const char* notifier) {
+                                                               if (key1.empty() || keyName != key1) return;
+                                                               if (!key2.empty() && heldKeys.count(key2) == 0) return;
+                                                               std::string cmd = notifier;
+                                                               gameWrapper->Execute([this, cmd](GameWrapper*) {
+                                                                   cvarManager->executeCommand(cmd);
+                                                               });
+                                                           };
+                                                           checkAndFire(settingsSync->GetHotkeyMapModeFwdKey1(), settingsSync->GetHotkeyMapModeFwdKey2(), "ss_cycle_map_mode_fwd");
+                                                           checkAndFire(settingsSync->GetHotkeyMapModeBkKey1(), settingsSync->GetHotkeyMapModeBkKey2(), "ss_cycle_map_mode_bk");
+                                                           checkAndFire(settingsSync->GetHotkeyCycleMapFwdKey1(), settingsSync->GetHotkeyCycleMapFwdKey2(), "ss_cycle_map_fwd");
+                                                           checkAndFire(settingsSync->GetHotkeyCycleMapBkKey1(), settingsSync->GetHotkeyCycleMapBkKey2(), "ss_cycle_map_bk");
+                                                           checkAndFire(settingsSync->GetHotkeyLoadNowKey1(), settingsSync->GetHotkeyLoadNowKey2(), "ss_load_now");
+                                                       }
 
                                                        // Hotkey capture UI — only active when captureRow >= 0.
                                                        if (captureRow < 0) return;
@@ -566,42 +597,6 @@ void SuiteSpot::onLoad()
 
     LoadHooks();
 
-    // Register always-on canvas drawable for hotkey toast notifications.
-    // Fires every frame regardless of window state — no ImGui dependency.
-    gameWrapper->RegisterDrawable([this](CanvasWrapper canvas) {
-        if (!hotkeyOverlay.visible) return;
-
-        auto elapsed = std::chrono::duration<float>(
-            std::chrono::steady_clock::now() - hotkeyOverlay.startTime).count();
-
-        if (elapsed >= hotkeyOverlay.duration) {
-            hotkeyOverlay.visible = false;
-            return;
-        }
-
-        // Linear fade: alpha goes from 1.0 (fresh) to 0.0 (expired)
-        float alpha = 1.0f - (elapsed / hotkeyOverlay.duration);
-
-        // Measure text to auto-size the background box
-        Vector2F textSize = canvas.GetStringSize(hotkeyOverlay.text, 1.5f, 1.5f);
-        float padX = 14.f, padY = 10.f;
-        float boxW = textSize.X + padX * 2.f;
-        float boxH = textSize.Y + padY * 2.f;
-
-        // Top-left position with a 20px screen margin
-        float x = 20.f, y = 20.f;
-
-        // Semi-transparent dark background
-        canvas.SetPosition(Vector2F{x, y});
-        canvas.SetColor(LinearColor{0.f, 0.f, 0.f, 180.f * alpha});
-        canvas.FillBox(Vector2F{boxW, boxH});
-
-        // Light-blue text matching the Info type convention
-        canvas.SetPosition(Vector2F{x + padX, y + padY});
-        canvas.SetColor(LinearColor{100.f, 190.f, 255.f, 255.f * alpha});
-        canvas.DrawString(hotkeyOverlay.text, 1.5f, 1.5f);
-    });
-
     if (settingsSync) {
         settingsSync->RegisterAllCVars(cvarManager);
 
@@ -620,6 +615,13 @@ void SuiteSpot::onLoad()
         }
     }
     LoadTrainingGameSpeedHooks();
+
+    // Open suitespot_browser silently so Render() fires every frame for the hotkey overlay.
+    // isOverlayAutoOpen guards OnOpen() so the training browser does NOT pop open.
+    isOverlayAutoOpen = true;
+    gameWrapper->Execute([this](GameWrapper*) {
+        cvarManager->executeCommand("openmenu suitespot_browser");
+    });
 
     LOG("SuiteSpot: Plugin initialization complete");
 }
@@ -643,6 +645,7 @@ void SuiteSpot::onLoad()
 // event unhooking will cause BakkesMod to call freed memory on reload.
 void SuiteSpot::onUnload()
 {
+    isUnloading = true;
     LOG("SuiteSpot unloading...");
 
     // Wait for texture download to complete if running
@@ -692,8 +695,48 @@ void SuiteSpot::onUnload()
 
 void SuiteSpot::Render()
 {
-    // No ImGui content here — CanvasWrapper toast is driven by RegisterDrawable (always-on).
-    // TrainingPackUI is a PluginWindow registered with BakkesMod and renders automatically.
+    if (!imgui_ctx) return;
+    ImGui::SetCurrentContext(reinterpret_cast<ImGuiContext*>(imgui_ctx));
+
+    if (!hotkeyOverlay.visible) return;
+
+    auto elapsed = std::chrono::duration<float>(
+        std::chrono::steady_clock::now() - hotkeyOverlay.startTime).count();
+
+    if (elapsed >= hotkeyOverlay.duration) {
+        hotkeyOverlay.visible = false;
+        return;
+    }
+
+    // Hold at full opacity for 5s, then linear fade over the final 2s (total 7s)
+    float alpha = (elapsed < 5.0f) ? 1.0f : 1.0f - ((elapsed - 5.0f) / 2.0f);
+
+    ImGuiWindowFlags flags = ImGuiWindowFlags_NoDecoration
+        | ImGuiWindowFlags_AlwaysAutoResize
+        | ImGuiWindowFlags_NoInputs
+        | ImGuiWindowFlags_NoFocusOnAppearing
+        | ImGuiWindowFlags_NoMove;
+
+    // RL Blue rounded bubble (#0079CF approx), slightly transparent background
+    ImGui::PushStyleVar(ImGuiStyleVar_WindowRounding, 12.0f);
+    ImGui::PushStyleVar(ImGuiStyleVar_WindowPadding, ImVec2(16.f, 10.f));
+    ImGui::PushStyleColor(ImGuiCol_WindowBg, ImVec4(0.0f, 0.47f, 0.81f, 0.80f * alpha));
+
+    ImGui::SetNextWindowPos(ImVec2(20.f, 20.f), ImGuiCond_Always);
+    ImGui::SetNextWindowBgAlpha(0.80f * alpha);
+
+    ImGui::Begin("##ss_hotkey_overlay", nullptr, flags);
+
+    // Orange for success, Red for errors
+    ImVec4 textColor = hotkeyOverlay.isError
+        ? ImVec4(0.95f, 0.25f, 0.25f, alpha)
+        : ImVec4(1.0f, 0.55f, 0.0f, alpha);
+
+    ImGui::TextColored(textColor, "%s", hotkeyOverlay.text.c_str());
+
+    ImGui::End();
+    ImGui::PopStyleColor();
+    ImGui::PopStyleVar(2);
 }
 
 std::string SuiteSpot::GetMenuName()
@@ -755,25 +798,27 @@ bool SuiteSpot::ShouldBlockInput()
 
 bool SuiteSpot::IsActiveOverlay()
 {
-    return isBrowserOpen;
+    return true;
 }
 
 void SuiteSpot::OnOpen()
 {
-
-    LOG("SuiteSpot: OnOpen called");
-
+    LOG("SuiteSpot: OnOpen called (autoOpen={})", isOverlayAutoOpen);
     isBrowserOpen = true;
-
-    if (trainingPackUI) {
-
+    if (!isOverlayAutoOpen && trainingPackUI) {
         trainingPackUI->SetOpen(true);
     }
+    isOverlayAutoOpen = false;
 }
 
 void SuiteSpot::OnClose()
 {
-    LOG("SuiteSpot: OnClose called (Ignoring state change to keep browser open)");
+    if (isUnloading) return; // plugin is shutting down — do not schedule Execute() with a soon-to-be-freed `this`
+    LOG("SuiteSpot: OnClose — re-opening silently to keep hotkey overlay alive");
+    isOverlayAutoOpen = true;
+    gameWrapper->Execute([this](GameWrapper*) {
+        cvarManager->executeCommand("openmenu suitespot_browser");
+    });
 }
 
 std::filesystem::path SuiteSpot::GetTrainingPacksPath() const
@@ -788,30 +833,16 @@ void SuiteSpot::LoadTrainingPacksFromFile(const std::filesystem::path& filePath)
     }
 }
 
-void SuiteSpot::ShowToastForAction(const std::string& actionName)
+void SuiteSpot::ShowToastForAction(const std::string& message, bool isError)
 {
-    // Build message with action + current selection
-    std::string message = actionName;
-
-    // Append current map/pack info if available
-    int mapType = settingsSync->GetMapType();
-    std::string currentSelection;
-
-    if (mapType == 0) { // Freeplay
-        currentSelection = settingsSync->GetCurrentFreeplayCode();
-    } else if (mapType == 1) { // Training
-        currentSelection = settingsSync->GetCurrentTrainingCode();
-    } else if (mapType == 2) { // Workshop
-        currentSelection = settingsSync->GetCurrentWorkshopPath();
-    }
-
-    if (!currentSelection.empty()) {
-        message += " • " + currentSelection;
-    }
-
-    // Arm the canvas toast — RegisterDrawable reads these fields every frame
     hotkeyOverlay.text = message;
     hotkeyOverlay.startTime = std::chrono::steady_clock::now();
     hotkeyOverlay.duration = 7.0f;
+    hotkeyOverlay.isError = isError;
     hotkeyOverlay.visible = true;
+}
+
+void SuiteSpot::ShowToastError(const std::string& reason)
+{
+    ShowToastForAction("Load Now: Failed - " + reason, true);
 }
