@@ -81,10 +81,8 @@ void StatusMessage::RenderOverlay(float deltaTime)
 		return;
 	}
 
-	ImGuiIO& io = ImGui::GetIO();
-	// Anchor to bottom-center, 15% up from bottom edge
-	ImVec2 pos(io.DisplaySize.x * 0.5f, io.DisplaySize.y * 0.85f);
-	ImGui::SetNextWindowPos(pos, ImGuiCond_Always, ImVec2(0.5f, 0.5f));
+	// Anchor to top-left with a 20px margin
+	ImGui::SetNextWindowPos(ImVec2(20.f, 20.f), ImGuiCond_Always, ImVec2(0.0f, 0.0f));
 	ImGui::SetNextWindowBgAlpha(0.72f * alpha);
 
 	ImGuiWindowFlags flags =

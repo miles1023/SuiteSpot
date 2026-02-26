@@ -566,6 +566,42 @@ void SuiteSpot::onLoad()
 
     LoadHooks();
 
+    // Register always-on canvas drawable for hotkey toast notifications.
+    // Fires every frame regardless of window state — no ImGui dependency.
+    gameWrapper->RegisterDrawable([this](CanvasWrapper canvas) {
+        if (!hotkeyOverlay.visible) return;
+
+        auto elapsed = std::chrono::duration<float>(
+            std::chrono::steady_clock::now() - hotkeyOverlay.startTime).count();
+
+        if (elapsed >= hotkeyOverlay.duration) {
+            hotkeyOverlay.visible = false;
+            return;
+        }
+
+        // Linear fade: alpha goes from 1.0 (fresh) to 0.0 (expired)
+        float alpha = 1.0f - (elapsed / hotkeyOverlay.duration);
+
+        // Measure text to auto-size the background box
+        Vector2F textSize = canvas.GetStringSize(hotkeyOverlay.text, 1.5f, 1.5f);
+        float padX = 14.f, padY = 10.f;
+        float boxW = textSize.X + padX * 2.f;
+        float boxH = textSize.Y + padY * 2.f;
+
+        // Top-left position with a 20px screen margin
+        float x = 20.f, y = 20.f;
+
+        // Semi-transparent dark background
+        canvas.SetPosition(Vector2F{x, y});
+        canvas.SetColor(LinearColor{0.f, 0.f, 0.f, 180.f * alpha});
+        canvas.FillBox(Vector2F{boxW, boxH});
+
+        // Light-blue text matching the Info type convention
+        canvas.SetPosition(Vector2F{x + padX, y + padY});
+        canvas.SetColor(LinearColor{100.f, 190.f, 255.f, 255.f * alpha});
+        canvas.DrawString(hotkeyOverlay.text, 1.5f, 1.5f);
+    });
+
     if (settingsSync) {
         settingsSync->RegisterAllCVars(cvarManager);
 
@@ -626,12 +662,13 @@ void SuiteSpot::onUnload()
 
     UnloadTrainingGameSpeedHooks();
 
-    // STEP 3: Unhook all game events (CRITICAL - SDK requirement)
+    // STEP 3: Unhook all game events and drawables (CRITICAL - SDK requirement)
     gameWrapper->UnhookEventPost("Function TAGame.GameEvent_Soccar_TA.EventMatchEnded");
     gameWrapper->UnhookEventPost("Function TAGame.GameEvent_TrainingEditor_TA.OnInit");
     gameWrapper->UnhookEventPost("Function TAGame.TrainingEditorMetrics_TA.TrainingShotAttempt");
     gameWrapper->UnhookEvent("Function TAGame.GameViewportClient_TA.HandleKeyPress");
-    LOG("Event hooks removed");
+    gameWrapper->UnregisterDrawables();
+    LOG("Event hooks and drawables removed");
 
     // STEP 4: Reset UI components (releases ImGui resources)
     settingsUI.reset();
@@ -655,14 +692,8 @@ void SuiteSpot::onUnload()
 
 void SuiteSpot::Render()
 {
-    if (!imgui_ctx) return;
-    ImGui::SetCurrentContext(reinterpret_cast<ImGuiContext*>(imgui_ctx));
-
-    // Render toast notification (hotkey feedback)
-    hotKeyToast.RenderOverlay(ImGui::GetIO().DeltaTime);
-
-    // Note: TrainingPackUI is a PluginWindow registered with BakkesMod,
-    // so it's rendered automatically by the framework. No need to call it here.
+    // No ImGui content here — CanvasWrapper toast is driven by RegisterDrawable (always-on).
+    // TrainingPackUI is a PluginWindow registered with BakkesMod and renders automatically.
 }
 
 std::string SuiteSpot::GetMenuName()
@@ -724,7 +755,6 @@ bool SuiteSpot::ShouldBlockInput()
 
 bool SuiteSpot::IsActiveOverlay()
 {
-
     return isBrowserOpen;
 }
 
@@ -779,6 +809,9 @@ void SuiteSpot::ShowToastForAction(const std::string& actionName)
         message += " • " + currentSelection;
     }
 
-    // Display toast with 7-second fade
-    hotKeyToast.ShowInfo(message, 7.0f, UI::StatusMessage::DisplayMode::TimerWithFade);
+    // Arm the canvas toast — RegisterDrawable reads these fields every frame
+    hotkeyOverlay.text = message;
+    hotkeyOverlay.startTime = std::chrono::steady_clock::now();
+    hotkeyOverlay.duration = 7.0f;
+    hotkeyOverlay.visible = true;
 }

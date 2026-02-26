@@ -37,12 +37,11 @@
 #include "LoadoutManager.h"
 #include "PackUsageTracker.h"
 #include "TextureDownloader.h"
-#include "StatusMessageUI.h"
 #include "version.h"
 #include <filesystem>
 #include <set>
 #include <memory>
-
+#include <chrono>
 #include <atomic>
 
 class SettingsWindowBase : public BakkesMod::Plugin::PluginSettingsWindow
@@ -154,8 +153,14 @@ class SuiteSpot final : public BakkesMod::Plugin::BakkesModPlugin,
     std::atomic<bool> isRenderingSettings{false};
     std::thread textureDownloadThread; // Managed texture download thread
 
-    // Toast notification system for hotkey feedback
-    UI::StatusMessage hotKeyToast;
+    // Canvas HUD overlay for hotkey action feedback (RegisterDrawable-driven, no ImGui dependency)
+    // NOTE: This is NOT gameWrapper->Toast() — it is a CanvasWrapper drawn overlay.
+    struct {
+        std::string text;
+        std::chrono::steady_clock::time_point startTime{};
+        float duration = 0.0f;
+        bool visible = false;
+    } hotkeyOverlay;
 
     // Hotkey capture state
     int captureRow = -1;
