@@ -324,84 +324,149 @@ void SettingsUI::RenderMainSettingsWindow()
         // ===== HOTKEYS TAB =====
         if (ImGui::BeginTabItem("Hotkeys")) {
             ImGui::Spacing();
-            ImGui::TextDisabled("Click \xe2\x97\x8f to capture a key press, or type the UE3 name manually.");
+            ImGui::TextDisabled("Click Bind to capture a key press, or type the UE3 name manually.");
             ImGui::TextDisabled("Key 1 = trigger.  Key 2 = held combo partner (optional).");
-            ImGui::TextDisabled("Xbox buttons are captured automatically.");
-            ImGui::Spacing();
-            ImGui::Separator();
             ImGui::Spacing();
 
-            ImGui::Columns(2, "HotkeysTabCols", false);
-            ImGui::SetColumnWidth(0, UI::SettingsUI::HOTKEY_LABEL_COL_WIDTH);
+            // Color per action group
+            static const ImVec4 kGroupColors[] = {
+                {0.40f, 0.65f, 1.00f, 1.0f},   // Cycle Mode Fwd  — blue
+                {0.40f, 0.65f, 1.00f, 1.0f},   // Cycle Mode Back — blue
+                {0.35f, 0.85f, 0.55f, 1.0f},   // Cycle Map Fwd   — green
+                {0.35f, 0.85f, 0.55f, 1.0f},   // Cycle Map Back  — green
+                {1.00f, 0.65f, 0.10f, 1.0f},   // Load Now        — orange
+            };
+
+            ImDrawList* wdl = ImGui::GetWindowDrawList();
 
             for (int i = 0; i < 5; i++) {
                 const auto& row = UI::SettingsUI::HOTKEY_ROWS[i];
                 ImGui::PushID(i);
 
-                // Col 0: action label
-                ImGui::AlignTextToFramePadding();
-                ImGui::TextUnformatted(row.label);
-                ImGui::NextColumn();
+                // Separator before "Load Now" group
+                if (i == 4) {
+                    ImGui::Spacing(); ImGui::Separator(); ImGui::Spacing();
+                }
 
-                // Helper: render one key slot (key1 or key2)
-                auto renderSlot = [&](int slot, const char* cvarName, const char* inputId, const char* capBtnId,
-                                      const char* clrBtnId, const char* tip) {
+                // Card background using splitter
+                ImDrawListSplitter splitter;
+                splitter.Split(wdl, 2);
+                splitter.SetCurrentChannel(wdl, 1);  // controls on front
+
+                ImVec2 rowMin = ImGui::GetCursorScreenPos();
+                rowMin.x -= 4.0f;
+                rowMin.y -= 2.0f;
+
+                // Action label — full width, colored by group
+                ImGui::PushStyleColor(ImGuiCol_Text, kGroupColors[i]);
+                ImGui::TextUnformatted(row.label);
+                ImGui::PopStyleColor();
+
+                // Render two key slots vertically
+                for (int slot = 0; slot < 2; slot++) {
+                    const char* cvarName = (slot == 0) ? row.key1CVar : row.key2CVar;
                     char buf[64] = {};
                     if (auto cvar = plugin_->cvarManager->getCvar(cvarName); !cvar.IsNull())
                         strncpy_s(buf, cvar.getStringValue().c_str(), sizeof(buf) - 1);
 
                     bool cap = (plugin_->captureRow == i && plugin_->captureSlot == slot);
+
+                    ImGui::Indent(12.0f);
+                    ImGui::AlignTextToFramePadding();
+                    ImGui::TextDisabled("Key %d", slot + 1);
+                    ImGui::SameLine();
+
+                    float inputW = ImGui::GetContentRegionAvail().x * 0.55f;
+
+                    // Styled key input (badge look)
+                    ImGui::PushStyleColor(ImGuiCol_FrameBg,        IM_COL32(18, 24, 42, 220));
+                    ImGui::PushStyleColor(ImGuiCol_FrameBgHovered, IM_COL32(28, 36, 60, 255));
+                    ImGui::PushStyleColor(ImGuiCol_Border,         IM_COL32(70, 110, 180, 200));
+                    ImGui::PushStyleVar(ImGuiStyleVar_FrameRounding, 5.0f);
+                    ImGui::PushStyleVar(ImGuiStyleVar_FramePadding, ImVec2(8.0f, 4.0f));
+
+                    char inputId[16];
+                    snprintf(inputId, sizeof(inputId), "##k%d", slot);
+
                     if (cap) {
-                        ImGui::PushStyleColor(ImGuiCol_Button, ImVec4(0.7f, 0.2f, 0.2f, 1.0f));
-                        ImGui::Button("Press any key...", ImVec2(UI::SettingsUI::HOTKEY_KEY_INPUT_WIDTH, 0));
+                        ImGui::SetNextItemWidth(inputW);
+                        char capBuf[] = "Press any key...";
+                        ImGui::PushStyleColor(ImGuiCol_FrameBg, IM_COL32(80, 20, 20, 220));
+                        ImGui::InputText(inputId, capBuf, sizeof(capBuf), ImGuiInputTextFlags_ReadOnly);
                         ImGui::PopStyleColor();
                     } else {
-                        ImGui::SetNextItemWidth(UI::SettingsUI::HOTKEY_KEY_INPUT_WIDTH);
+                        ImGui::SetNextItemWidth(inputW);
                         if (ImGui::InputText(inputId, buf, sizeof(buf), ImGuiInputTextFlags_EnterReturnsTrue))
                             UI::Helpers::SetCVarSafely(cvarName, std::string(buf), plugin_->cvarManager,
                                                        plugin_->gameWrapper);
                         if (ImGui::IsItemDeactivatedAfterEdit())
                             UI::Helpers::SetCVarSafely(cvarName, std::string(buf), plugin_->cvarManager,
                                                        plugin_->gameWrapper);
+                        const char* tip = (slot == 0)
+                            ? "Trigger key — press Bind to capture, or type UE3 name"
+                            : "Held key — must also be down when Key 1 fires (empty = single-key bind)";
                         if (ImGui::IsItemHovered()) ImGui::SetTooltip("%s", tip);
                     }
-                    ImGui::SameLine(0, 2);
-                    ImGui::PushID(slot); // Unique ID per slot within the row
-                    if (ImGui::SmallButton(cap ? "\xe2\x96\xa0" : "\xe2\x97\x8f")) { // ■ / ●
-                        plugin_->captureRow = cap ? -1 : i;
-                        plugin_->captureSlot = slot;
+
+                    ImGui::PopStyleVar(2);
+                    ImGui::PopStyleColor(3);
+
+                    // Bind / Stop button
+                    ImGui::SameLine(0, 4);
+                    ImGui::PushID(slot);
+                    if (cap) {
+                        ImGui::PushStyleColor(ImGuiCol_Button,        IM_COL32(160, 40,  40,  255));
+                        ImGui::PushStyleColor(ImGuiCol_ButtonHovered, IM_COL32(200, 60,  60,  255));
+                        if (ImGui::Button("Stop", ImVec2(48, 0))) {
+                            plugin_->captureRow = -1;
+                        }
+                        ImGui::PopStyleColor(2);
+                        if (ImGui::IsItemHovered()) ImGui::SetTooltip("Cancel (or press Esc)");
+                    } else {
+                        ImGui::PushStyleColor(ImGuiCol_Button, IM_COL32(30, 50, 90, 200));
+                        if (ImGui::Button("Bind", ImVec2(48, 0))) {
+                            plugin_->captureRow = i;
+                            plugin_->captureSlot = slot;
+                        }
+                        ImGui::PopStyleColor();
+                        if (ImGui::IsItemHovered()) ImGui::SetTooltip("Click then press any key to capture");
                     }
-                    ImGui::PopID();
-                    if (ImGui::IsItemHovered())
-                        ImGui::SetTooltip(cap ? "Cancel (or press Esc)"
-                                              : "Click then press any key (Keyboard or Xbox) to capture");
+
+                    // Clear X button
                     if (!cap && buf[0] != '\0') {
                         ImGui::SameLine(0, 2);
-                        if (ImGui::SmallButton(clrBtnId))
+                        char clrId[16];
+                        snprintf(clrId, sizeof(clrId), "X##k%dx", slot);
+                        if (ImGui::SmallButton(clrId))
                             UI::Helpers::SetCVarSafely(cvarName, std::string(""), plugin_->cvarManager,
                                                        plugin_->gameWrapper);
                     }
-                };
+                    ImGui::PopID();
+                    ImGui::Unindent(12.0f);
+                }
 
-                // Col 1: [Key1 slot]  +  [Key2 slot]
-                renderSlot(0, row.key1CVar, "##k1", "##cb1", "X##k1x",
-                           "Trigger key — click \xe2\x97\x8f to capture, or type UE3 name");
-                ImGui::SameLine(0, 6);
-                ImGui::AlignTextToFramePadding();
-                ImGui::TextUnformatted("+");
-                ImGui::SameLine(0, 6);
-                renderSlot(1, row.key2CVar, "##k2", "##cb2", "X##k2x",
-                           "Held key — must also be down when Key 1 fires (empty = single-key bind)");
+                // Draw card background behind the row content
+                ImVec2 rowMax = {rowMin.x + ImGui::GetContentRegionAvail().x + 8.0f,
+                                 ImGui::GetCursorScreenPos().y + 2.0f};
+                splitter.SetCurrentChannel(wdl, 0);  // bg behind
+                wdl->AddRectFilled(rowMin, rowMax, IM_COL32(22, 28, 48, 160), 6.0f);
+                splitter.Merge(wdl);
 
-                ImGui::NextColumn();
                 ImGui::PopID();
                 ImGui::Spacing();
             }
-            ImGui::Columns(1);
+
             ImGui::Spacing();
             ImGui::Separator();
             ImGui::Spacing();
+
+            // Styled Save Hotkeys button
+            ImGui::PushStyleColor(ImGuiCol_Button,        IM_COL32(0,  100, 200, 220));
+            ImGui::PushStyleColor(ImGuiCol_ButtonHovered, IM_COL32(30, 130, 240, 255));
+            ImGui::PushStyleVar(ImGuiStyleVar_FramePadding, ImVec2(16.0f, 6.0f));
             if (ImGui::Button("Save Hotkeys")) plugin_->cvarManager->executeCommand("writeconfig", false);
+            ImGui::PopStyleVar();
+            ImGui::PopStyleColor(2);
             if (ImGui::IsItemHovered()) ImGui::SetTooltip("Persist hotkey settings to config file");
             ImGui::EndTabItem();
         }
@@ -526,9 +591,10 @@ void SettingsUI::RenderTrainingMode(int trainingModeValue, std::string& currentT
     ImGui::Spacing();
 
     if (ImGui::Button("Open Training Pack Browser", ImVec2(250, 30))) {
-        SuiteSpot* p = plugin_;
-        p->gameWrapper
-            ->SetTimeout([p](GameWrapper* gw) { p->cvarManager->executeCommand("togglemenu suitespot_browser"); }, 0.0f);
+        if (plugin_->trainingPackUI) {
+            plugin_->trainingPackUI->SetOpen(true);
+            plugin_->isBrowserOpen = true;
+        }
     }
     if (ImGui::IsItemHovered()) {
         ImGui::SetTooltip("Open the full training pack browser to manage bags and packs");
@@ -663,24 +729,29 @@ void SettingsUI::RenderInstalledMaps(std::string& currentWorkshopPath)
                 selectedMap.isImageLoaded = true;
             }
 
-            // Preview image
-            if (selectedMap.previewImage && selectedMap.previewImage->GetImGuiTex()) {
-                ImGui::Image(selectedMap.previewImage->GetImGuiTex(),
-                             ImVec2(UI::WorkshopBrowserUI::PREVIEW_IMAGE_WIDTH,
-                                    UI::WorkshopBrowserUI::PREVIEW_IMAGE_HEIGHT));
-            } else {
-                // Placeholder box
-                ImVec2 p = ImGui::GetCursorScreenPos();
-                ImDrawList* drawList = ImGui::GetWindowDrawList();
-                drawList->AddRectFilled(p,
-                                        ImVec2(p.x + UI::WorkshopBrowserUI::PREVIEW_IMAGE_WIDTH,
-                                               p.y + UI::WorkshopBrowserUI::PREVIEW_IMAGE_HEIGHT),
-                                        ImColor(40, 40, 45, 255), 4.0f);
-                drawList->AddText(ImVec2(p.x + UI::WorkshopBrowserUI::PREVIEW_IMAGE_WIDTH / 2 - 40,
-                                         p.y + UI::WorkshopBrowserUI::PREVIEW_IMAGE_HEIGHT / 2 - 8),
-                                  ImColor(100, 100, 100, 255), "No Preview");
-                ImGui::Dummy(
-                    ImVec2(UI::WorkshopBrowserUI::PREVIEW_IMAGE_WIDTH, UI::WorkshopBrowserUI::PREVIEW_IMAGE_HEIGHT));
+            // Preview image — fills available panel width at 16:9
+            {
+                float previewW = ImGui::GetContentRegionAvail().x;
+                float previewH = previewW * (9.0f / 16.0f);
+                if (selectedMap.previewImage && selectedMap.previewImage->GetImGuiTex()) {
+                    ImVec2 p = ImGui::GetCursorScreenPos();
+                    ImGui::GetWindowDrawList()->AddImageRounded(
+                        selectedMap.previewImage->GetImGuiTex(),
+                        p, ImVec2(p.x + previewW, p.y + previewH),
+                        ImVec2(0, 0), ImVec2(1, 1), IM_COL32_WHITE, 6.0f);
+                    ImGui::Dummy(ImVec2(previewW, previewH));
+                } else {
+                    // Placeholder box
+                    ImVec2 p = ImGui::GetCursorScreenPos();
+                    ImDrawList* drawList = ImGui::GetWindowDrawList();
+                    drawList->AddRectFilled(p,
+                                            ImVec2(p.x + previewW, p.y + previewH),
+                                            ImColor(40, 40, 45, 255), 6.0f);
+                    drawList->AddText(ImVec2(p.x + previewW / 2 - 40,
+                                             p.y + previewH / 2 - 8),
+                                      ImColor(100, 100, 100, 255), "No Preview");
+                    ImGui::Dummy(ImVec2(previewW, previewH));
+                }
             }
 
             ImGui::Spacing();
@@ -1222,21 +1293,28 @@ void SettingsUI::RLMAPS_RenderSearchWorkshopResults(const char* mapspath)
                 }
             }
 
-            if (image && image->GetImGuiTex()) {
-                ImGui::Image(image->GetImGuiTex(), ImVec2(UI::WorkshopBrowserUI::PREVIEW_IMAGE_WIDTH,
-                                                          UI::WorkshopBrowserUI::PREVIEW_IMAGE_HEIGHT));
-            } else {
-                ImVec2 p = ImGui::GetCursorScreenPos();
-                ImDrawList* dl = ImGui::GetWindowDrawList();
-                dl->AddRectFilled(p,
-                                  ImVec2(p.x + UI::WorkshopBrowserUI::PREVIEW_IMAGE_WIDTH,
-                                         p.y + UI::WorkshopBrowserUI::PREVIEW_IMAGE_HEIGHT),
-                                  ImColor(40, 40, 45, 255), 4.0f);
-                dl->AddText(ImVec2(p.x + UI::WorkshopBrowserUI::PREVIEW_IMAGE_WIDTH / 2 - 40,
-                                   p.y + UI::WorkshopBrowserUI::PREVIEW_IMAGE_HEIGHT / 2 - 8),
-                            ImColor(100, 100, 100, 255), "No Preview");
-                ImGui::Dummy(
-                    ImVec2(UI::WorkshopBrowserUI::PREVIEW_IMAGE_WIDTH, UI::WorkshopBrowserUI::PREVIEW_IMAGE_HEIGHT));
+            // Preview image — fills available panel width at 16:9
+            {
+                float previewW = ImGui::GetContentRegionAvail().x;
+                float previewH = previewW * (9.0f / 16.0f);
+                if (image && image->GetImGuiTex()) {
+                    ImVec2 p = ImGui::GetCursorScreenPos();
+                    ImGui::GetWindowDrawList()->AddImageRounded(
+                        image->GetImGuiTex(),
+                        p, ImVec2(p.x + previewW, p.y + previewH),
+                        ImVec2(0, 0), ImVec2(1, 1), IM_COL32_WHITE, 6.0f);
+                    ImGui::Dummy(ImVec2(previewW, previewH));
+                } else {
+                    ImVec2 p = ImGui::GetCursorScreenPos();
+                    ImDrawList* dl = ImGui::GetWindowDrawList();
+                    dl->AddRectFilled(p,
+                                      ImVec2(p.x + previewW, p.y + previewH),
+                                      ImColor(40, 40, 45, 255), 6.0f);
+                    dl->AddText(ImVec2(p.x + previewW / 2 - 40,
+                                       p.y + previewH / 2 - 8),
+                                ImColor(100, 100, 100, 255), "No Preview");
+                    ImGui::Dummy(ImVec2(previewW, previewH));
+                }
             }
 
             ImGui::Spacing();

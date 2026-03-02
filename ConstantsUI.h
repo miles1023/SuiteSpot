@@ -113,11 +113,7 @@ inline const ImVec4 CUSTOM_PACK_SUCCESS_TEXT_COLOR = ImVec4(0.0f, 1.0f, 0.0f, 1.
 
 // === Hotkeys Tab ===
 
-// Width of the label column in the Hotkeys tab
-constexpr float HOTKEY_LABEL_COL_WIDTH = 150.0f;
-
-// Width of each key name input field in the Hotkeys tab
-constexpr float HOTKEY_KEY_INPUT_WIDTH = 110.0f;
+// HOTKEY_LABEL_COL_WIDTH and HOTKEY_KEY_INPUT_WIDTH removed — layout is now vertical/dynamic
 
 struct HotkeyRow
 {
@@ -396,7 +392,7 @@ constexpr float LEFT_PANEL_MIN_WIDTH = 200.0f;
 // Height of the two-panel browser area
 constexpr float BROWSER_HEIGHT = 400.0f;
 
-// Preview image dimensions
+// Preview image dimensions (DEPRECATED — preview now uses dynamic sizing via GetContentRegionAvail)
 constexpr float PREVIEW_IMAGE_WIDTH = 280.0f;
 constexpr float PREVIEW_IMAGE_HEIGHT = 158.0f; // 16:9 aspect ratio
 

@@ -804,7 +804,7 @@ bool SuiteSpot::IsActiveOverlay()
 void SuiteSpot::OnOpen()
 {
     LOG("SuiteSpot: OnOpen called (autoOpen={})", isOverlayAutoOpen);
-    isBrowserOpen = true;
+    isBrowserOpen = !isOverlayAutoOpen;  // true if user opened, false if auto-open
     if (!isOverlayAutoOpen && trainingPackUI) {
         trainingPackUI->SetOpen(true);
     }
@@ -814,11 +814,20 @@ void SuiteSpot::OnOpen()
 void SuiteSpot::OnClose()
 {
     if (isUnloading) return; // plugin is shutting down — do not schedule Execute() with a soon-to-be-freed `this`
-    LOG("SuiteSpot: OnClose — re-opening silently to keep hotkey overlay alive");
-    isOverlayAutoOpen = true;
-    gameWrapper->Execute([this](GameWrapper*) {
-        cvarManager->executeCommand("openmenu suitespot_browser");
-    });
+    LOG("SuiteSpot: OnClose");
+
+    if (isBrowserOpen && trainingPackUI) {
+        // User was viewing the browser: close the UI and let window stay closed
+        trainingPackUI->SetOpen(false);
+        isBrowserOpen = false;
+    } else {
+        // Window was in silent mode: re-open silently to keep hotkey overlay alive
+        LOG("SuiteSpot: Re-opening silently to keep hotkey overlay alive");
+        isOverlayAutoOpen = true;
+        gameWrapper->Execute([this](GameWrapper*) {
+            cvarManager->executeCommand("openmenu suitespot_browser");
+        });
+    }
 }
 
 std::filesystem::path SuiteSpot::GetTrainingPacksPath() const
