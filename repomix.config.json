@@ -1,0 +1,22 @@
+{
+  "output": {
+    "filePath": "repomix-output.md",
+    "style": "md"
+  },
+  "include": [
+    "*.zip",
+    "bakkesmodsdk/**"
+  ],
+  "ignore": {
+    "useGitignore": true,
+    "customPatterns": [
+      "IMGUI/**",
+      "tests/**",
+      "build/**",
+      "bakkesmodsdk/**",
+      "vcpkg_installed/**",
+      "pch.cpp",
+      "pch.h"
+    ]
+  }
+}
