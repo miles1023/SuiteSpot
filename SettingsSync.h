@@ -53,17 +53,17 @@ class SettingsSync
     std::string GetQuickPicksSelectedCode() const { return quickPicksSelected; }
     std::string GetCurrentWorkshopPath() const { return currentWorkshopPath; }
 
-    // Hotkey getters — key1 triggers via setBind; key2 (optional) must also be held for combos
-    std::string GetHotkeyMapModeFwdKey1() const { return hotkeyMapModeFwdKey; }
-    std::string GetHotkeyMapModeFwdKey2() const { return hotkeyMapModeFwdKey2; }
-    std::string GetHotkeyMapModeBkKey1() const { return hotkeyMapModeBkKey; }
-    std::string GetHotkeyMapModeBkKey2() const { return hotkeyMapModeBkKey2; }
-    std::string GetHotkeyCycleMapFwdKey1() const { return hotkeyCycleMapFwdKey; }
-    std::string GetHotkeyCycleMapFwdKey2() const { return hotkeyCycleMapFwdKey2; }
-    std::string GetHotkeyCycleMapBkKey1() const { return hotkeyCycleMapBkKey; }
-    std::string GetHotkeyCycleMapBkKey2() const { return hotkeyCycleMapBkKey2; }
-    std::string GetHotkeyLoadNowKey1() const { return hotkeyLoadNowKey; }
-    std::string GetHotkeyLoadNowKey2() const { return hotkeyLoadNowKey2; }
+    // TODO: hotkey getters — disabled pending crash investigation; re-enable with hotkeys feature
+    // std::string GetHotkeyMapModeFwdKey1() const { return hotkeyMapModeFwdKey; }
+    // std::string GetHotkeyMapModeFwdKey2() const { return hotkeyMapModeFwdKey2; }
+    // std::string GetHotkeyMapModeBkKey1()  const { return hotkeyMapModeBkKey; }
+    // std::string GetHotkeyMapModeBkKey2()  const { return hotkeyMapModeBkKey2; }
+    // std::string GetHotkeyCycleMapFwdKey1() const { return hotkeyCycleMapFwdKey; }
+    // std::string GetHotkeyCycleMapFwdKey2() const { return hotkeyCycleMapFwdKey2; }
+    // std::string GetHotkeyCycleMapBkKey1()  const { return hotkeyCycleMapBkKey; }
+    // std::string GetHotkeyCycleMapBkKey2()  const { return hotkeyCycleMapBkKey2; }
+    // std::string GetHotkeyLoadNowKey1()  const { return hotkeyLoadNowKey; }
+    // std::string GetHotkeyLoadNowKey2()  const { return hotkeyLoadNowKey2; }
 
     // Setters: Update the local value (used when loading data)
     void SetCurrentFreeplayCode(const std::string& code);
@@ -92,15 +92,15 @@ class SettingsSync
     std::string currentTrainingCode; // Training pack code (e.g., "XXXX-XXXX-XXXX-XXXX")
     std::string currentWorkshopPath; // Workshop map path (e.g., "C:/path/to/map.udk")
 
-    // Hotkey bindings: key1 (UE3 string, trigger key) + key2 (UE3 string, optional held combo partner)
-    std::string hotkeyMapModeFwdKey;
-    std::string hotkeyMapModeFwdKey2;
-    std::string hotkeyMapModeBkKey;
-    std::string hotkeyMapModeBkKey2;
-    std::string hotkeyCycleMapFwdKey;
-    std::string hotkeyCycleMapFwdKey2;
-    std::string hotkeyCycleMapBkKey;
-    std::string hotkeyCycleMapBkKey2;
-    std::string hotkeyLoadNowKey;
-    std::string hotkeyLoadNowKey2;
+    // TODO: hotkey member vars — disabled pending crash investigation; re-enable with hotkeys feature
+    // std::string hotkeyMapModeFwdKey;
+    // std::string hotkeyMapModeFwdKey2;
+    // std::string hotkeyMapModeBkKey;
+    // std::string hotkeyMapModeBkKey2;
+    // std::string hotkeyCycleMapFwdKey;
+    // std::string hotkeyCycleMapFwdKey2;
+    // std::string hotkeyCycleMapBkKey;
+    // std::string hotkeyCycleMapBkKey2;
+    // std::string hotkeyLoadNowKey;
+    // std::string hotkeyLoadNowKey2;
 };

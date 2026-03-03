@@ -1,0 +1,277 @@
+- generic [ref=e3]:
+  - navigation [ref=e4]:
+    - generic [ref=e6]:
+      - generic [ref=e7]:
+        - link "BakkesPlugins Logo BakkesPlugins" [ref=e8] [cursor=pointer]:
+          - /url: /
+          - img "BakkesPlugins Logo" [ref=e9]
+          - generic [ref=e10]: BakkesPlugins
+        - generic [ref=e11]:
+          - link "Plugins" [ref=e12] [cursor=pointer]:
+            - /url: /plugins
+          - link "Cars" [ref=e13] [cursor=pointer]:
+            - /url: /cars
+          - link "Maps" [ref=e14] [cursor=pointer]:
+            - /url: /maps
+      - generic [ref=e15]:
+        - generic [ref=e17]:
+          - generic [ref=e18]:
+            - combobox [ref=e19]:
+              - option "All" [selected]
+              - option "Plugins"
+              - option "Cars"
+              - option "Maps"
+            - generic:
+              - img
+          - textbox "Search all..." [ref=e21]
+          - button [ref=e22] [cursor=pointer]:
+            - img [ref=e23]
+        - generic [ref=e27]:
+          - button "Sign Up" [ref=e28] [cursor=pointer]
+          - button "Sign In" [ref=e29] [cursor=pointer]
+  - link "./ SafeComms_ [developer-first content moderation API] [SYS] SCANNING USER_CONTENT [ALRT] DETECTED HATE_SPEECH [SAFE] PURGED AUTOMATICALLY [SYS] SCANNING USER_CONTENT START FREE > FREE TIER. NO CREDIT CARD REQ." [ref=e32] [cursor=pointer]:
+    - /url: https://safecomms.dev?utm_source=bakkesplugins&utm_medium=banner&utm_campaign=safecomms_launch
+    - generic [ref=e37]:
+      - generic [ref=e38]: ./
+      - text: SafeComms_
+    - generic [ref=e39]:
+      - generic [ref=e40]: "[developer-first content moderation API]"
+      - generic [ref=e42]:
+        - generic [ref=e43]:
+          - generic [ref=e44]: "[SYS]"
+          - text: SCANNING
+          - generic [ref=e45]: USER_CONTENT
+        - generic [ref=e46]:
+          - generic [ref=e47]: "[ALRT]"
+          - text: DETECTED
+          - generic [ref=e48]: HATE_SPEECH
+        - generic [ref=e49]:
+          - generic [ref=e50]: "[SAFE]"
+          - text: PURGED
+          - generic [ref=e51]: AUTOMATICALLY
+        - generic [ref=e52]:
+          - generic [ref=e53]: "[SYS]"
+          - text: SCANNING
+          - generic [ref=e54]: USER_CONTENT
+    - generic [ref=e55]:
+      - generic [ref=e56]: START FREE >
+      - generic [ref=e57]: FREE TIER. NO CREDIT CARD REQ.
+  - main [ref=e58]:
+    - generic [ref=e60]:
+      - navigation [ref=e61]:
+        - list [ref=e62]:
+          - listitem [ref=e63]:
+            - link "Wikis" [ref=e64] [cursor=pointer]:
+              - /url: /wiki
+          - listitem [ref=e65]:
+            - img [ref=e66]
+          - listitem [ref=e68]:
+            - link "BakkesMod SDK" [ref=e69] [cursor=pointer]:
+              - /url: /wiki/bakkesmod-sdk
+          - listitem [ref=e70]:
+            - img [ref=e71]
+          - listitem [ref=e73]:
+            - link "Code Snippets" [ref=e74] [cursor=pointer]:
+              - /url: /wiki/bakkesmod-sdk/code-snippets
+          - listitem [ref=e75]:
+            - img [ref=e76]
+          - listitem [ref=e78]: Toasts
+      - generic [ref=e79]:
+        - generic [ref=e81]:
+          - generic [ref=e82]:
+            - generic [ref=e83]:
+              - heading "BakkesMod SDK" [level=3] [ref=e84]
+              - link "Search this wiki" [ref=e85] [cursor=pointer]:
+                - /url: /wiki/bakkesmod-sdk/search
+                - img [ref=e86]
+            - generic [ref=e89]:
+              - generic:
+                - img
+              - textbox "Filter pages..." [ref=e90]
+          - navigation [ref=e91]:
+            - link "Plugin Tutorial" [ref=e93] [cursor=pointer]:
+              - /url: /wiki/bakkesmod-sdk/plugin-tutorial
+              - button [ref=e94]:
+                - img [ref=e95]
+              - img [ref=e97]
+              - generic [ref=e99]: Plugin Tutorial
+            - generic [ref=e100]:
+              - link "Code Snippets" [ref=e101] [cursor=pointer]:
+                - /url: /wiki/bakkesmod-sdk/code-snippets
+                - button [ref=e102]:
+                  - img [ref=e103]
+                - img [ref=e105]
+                - generic [ref=e107]: Code Snippets
+              - generic [ref=e108]:
+                - link "Code Snippet Example" [ref=e110] [cursor=pointer]:
+                  - /url: /wiki/bakkesmod-sdk/code-snippets/code-snippet-example
+                  - img [ref=e111]
+                  - generic [ref=e114]: Code Snippet Example
+                - link "Canvas" [ref=e116] [cursor=pointer]:
+                  - /url: /wiki/bakkesmod-sdk/code-snippets/canvas
+                  - img [ref=e117]
+                  - generic [ref=e120]: Canvas
+                - link "Creating an ImageWrapper" [ref=e122] [cursor=pointer]:
+                  - /url: /wiki/bakkesmod-sdk/code-snippets/creating-image-wrapper
+                  - img [ref=e123]
+                  - generic [ref=e126]: Creating an ImageWrapper
+                - link "How CVars Work" [ref=e128] [cursor=pointer]:
+                  - /url: /wiki/bakkesmod-sdk/code-snippets/how-cvars-work
+                  - img [ref=e129]
+                  - generic [ref=e132]: How CVars Work
+                - link "Persistent Storage" [ref=e134] [cursor=pointer]:
+                  - /url: /wiki/bakkesmod-sdk/code-snippets/persistent-storage
+                  - img [ref=e135]
+                  - generic [ref=e138]: Persistent Storage
+                - link "Known Playlist IDs" [ref=e140] [cursor=pointer]:
+                  - /url: /wiki/bakkesmod-sdk/code-snippets/playlist-id
+                  - img [ref=e141]
+                  - generic [ref=e144]: Known Playlist IDs
+                - link "Plugin Exclusive Logging" [ref=e146] [cursor=pointer]:
+                  - /url: /wiki/bakkesmod-sdk/code-snippets/plugin-exclusive-logging
+                  - img [ref=e147]
+                  - generic [ref=e150]: Plugin Exclusive Logging
+                - link "Plugin Types" [ref=e152] [cursor=pointer]:
+                  - /url: /wiki/bakkesmod-sdk/code-snippets/plugin-types
+                  - img [ref=e153]
+                  - generic [ref=e156]: Plugin Types
+                - link "Toasts" [ref=e158] [cursor=pointer]:
+                  - /url: /wiki/bakkesmod-sdk/code-snippets/toasts
+                  - img [ref=e159]
+                  - generic [ref=e162]: Toasts
+                - link "Using HttpWrapper" [ref=e164] [cursor=pointer]:
+                  - /url: /wiki/bakkesmod-sdk/code-snippets/using-http-wrapper
+                  - img [ref=e165]
+                  - generic [ref=e168]: Using HttpWrapper
+            - link "ImGui" [ref=e170] [cursor=pointer]:
+              - /url: /wiki/bakkesmod-sdk/imgui
+              - button [ref=e171]:
+                - img [ref=e172]
+              - img [ref=e174]
+              - generic [ref=e176]: ImGui
+            - link "Useful Info" [ref=e178] [cursor=pointer]:
+              - /url: /wiki/bakkesmod-sdk/useful-info
+              - button [ref=e179]:
+                - img [ref=e180]
+              - img [ref=e182]
+              - generic [ref=e184]: Useful Info
+            - link "Functions" [ref=e186] [cursor=pointer]:
+              - /url: /wiki/bakkesmod-sdk/functions
+              - button [ref=e187]:
+                - img [ref=e188]
+              - img [ref=e190]
+              - generic [ref=e192]: Functions
+            - link "BakkesMod API" [ref=e194] [cursor=pointer]:
+              - /url: /wiki/bakkesmod-sdk/bakkesmod-api
+              - button [ref=e195]:
+                - img [ref=e196]
+              - img [ref=e198]
+              - generic [ref=e200]: BakkesMod API
+        - generic [ref=e202]:
+          - heading "Toasts" [level=1] [ref=e204]
+          - generic [ref=e207]:
+            - generic [ref=e208]:
+              - img [ref=e209]
+              - text: Last edited by
+              - link "JerryTheBee" [ref=e212] [cursor=pointer]:
+                - /url: /members/JerryTheBee
+            - generic [ref=e213]:
+              - img [ref=e214]
+              - text: 10/15/2025
+          - generic [ref=e218]:
+            - paragraph [ref=e219]: Toasts are cool little popups that show on the top right of your game
+            - paragraph:
+              - img "toast example"
+            - paragraph [ref=e220]: These are useful for quick notifications that you want to disappear quickly
+            - paragraph [ref=e221]: First you need to enable them in f2 - Misc - Enable notifications
+            - paragraph:
+              - img "enable notifications"
+            - paragraph [ref=e222]:
+              - text: Watch out though! Every user also has to enable this, so make sure your plugin page or
+              - link "interface" [ref=e223] [cursor=pointer]:
+                - /url: /wiki/bakkesmod-sdk/wiki/bakkesmod-sdk/plugin-tutorial/plugin-interface
+              - text: is quite clear that this is necessary
+            - paragraph [ref=e224]: Now to the code
+            - paragraph [ref=e225]:
+              - text: Make a toast pop up with
+              - link "GameWrapper" [ref=e226] [cursor=pointer]:
+                - /url: /wiki/bakkesmod-sdk/classes/wrappers/gamewrapper
+              - link ".Toast()" [ref=e227] [cursor=pointer]:
+                - /url: https://github.com/bakkesmodorg/BakkesModSDK/blob/master/include/bakkesmod/wrappers/GameWrapper.h#L111
+            - paragraph [ref=e228]: There are 7 parameters. The first two are required. They are
+            - list [ref=e229]:
+              - listitem [ref=e230]: The title, which is the word on top
+              - listitem [ref=e231]: The text, which is the smaller text below
+              - listitem [ref=e232]: The texture name which I'll explain in the next paragraph
+              - listitem [ref=e233]: The time to show the toast, which defaults to 3.5 seconds
+              - listitem [ref=e234]:
+                - text: The
+                - link "ToastType" [ref=e235] [cursor=pointer]:
+                  - /url: /wiki/bakkesmod-sdk/enums/toasttype
+                - text: ", which chooses the color and defaults to black"
+              - listitem [ref=e236]: The width in pixels. The toast automatically resizes to fit your text, so don't worry about these too much
+              - listitem [ref=e237]: The height in pixels
+            - paragraph [ref=e238]:
+              - text: If you want to have a custom image, load it in your onLoad() using
+              - link "GameWrapper" [ref=e239] [cursor=pointer]:
+                - /url: /wiki/bakkesmod-sdk/classes/wrappers/gamewrapper
+              - text: .LoadToastTexture(). Provide the function with a name for your toast, and the path to the image. Most likely you'll want it to be in the data folder.
+            - paragraph [ref=e240]: Toasts can be one of 4 colors based on the ToastType
+            - paragraph:
+              - img "Image of 4 toast colors"
+            - paragraph [ref=e241]:
+              - text: I've made an example using CoolPlugin. I put this code in the onLoad() in CoolPlugin.cpp and cool.png in the
+              - code [ref=e242]: bakkesmod/data
+              - text: folder
+            - code [ref=e244]: "gameWrapper->LoadToastTexture(\"cool\", gameWrapper->GetDataFolder() / \"cool.png\"); cvarManager->registerNotifier(\"cool_toast\", [this](std::vector<std::string> args) { gameWrapper->Toast(\"Whoa you're cool\", \"Super cool\", \"cool\", 5.0, ToastType_Warning); }, \"\", PERMISSION_ALL);"
+            - paragraph [ref=e245]:
+              - text: The result when I call
+              - code [ref=e246]: cool_toast
+              - text: from the f6 console
+            - paragraph:
+              - img "toast in action"
+            - paragraph [ref=e247]: For perspective, it's quite small but still legible
+            - paragraph:
+              - img "image of toast zoomed in"
+            - paragraph [ref=e248]:
+              - text: Full code here
+              - link "https://github.com/ubelhj/BakkesModStarterPlugin/tree/toasts" [ref=e249] [cursor=pointer]:
+                - /url: https://github.com/ubelhj/BakkesModStarterPlugin/tree/toasts
+          - generic [ref=e251]:
+            - heading "Was this article helpful?" [level=3] [ref=e253]
+            - generic [ref=e254]:
+              - button "Yes, this was helpful" [ref=e255] [cursor=pointer]:
+                - img [ref=e256]
+              - button "No, this needs improvement" [ref=e258] [cursor=pointer]:
+                - img [ref=e259]
+            - paragraph [ref=e261]: Your feedback helps us improve our documentation
+  - region
+  - contentinfo [ref=e264]:
+    - generic [ref=e266]:
+      - generic [ref=e267]:
+        - heading "BakkesPlugins" [level=3] [ref=e268]
+        - paragraph [ref=e269]: Community-driven platform for BakkesMod plugins and Rocket League customization.
+        - generic [ref=e270]:
+          - generic [ref=e271]: © 2026
+          - generic [ref=e272]: "|"
+          - generic "Frontend version" [ref=e273]: v0.16.479-gcce7e22
+      - generic [ref=e274]:
+        - heading "Community" [level=3] [ref=e275]
+        - navigation [ref=e276]:
+          - link "News & Updates" [ref=e277] [cursor=pointer]:
+            - /url: /news
+          - link "Job Opportunities" [ref=e278] [cursor=pointer]:
+            - /url: /jobs
+          - link "Feature Requests" [ref=e279] [cursor=pointer]:
+            - /url: /feature-requests
+          - link "Discord Community" [ref=e280] [cursor=pointer]:
+            - /url: https://discord.gg/bakkesmod
+      - generic [ref=e281]:
+        - heading "Legal" [level=3] [ref=e282]
+        - navigation [ref=e283]:
+          - link "Terms of Service" [ref=e284] [cursor=pointer]:
+            - /url: /terms
+          - link "Privacy Policy" [ref=e285] [cursor=pointer]:
+            - /url: /privacy-policy
+          - link "Acceptable Use Policy" [ref=e286] [cursor=pointer]:
+            - /url: /acceptable-use-policy

@@ -1,4 +1,6 @@
+// TODO: HotkeyToastOverlay — disabled pending crash investigation; re-enable with hotkeys feature
 #include "pch.h"
+#if 0
 #include "HotkeyToastOverlay.h"
 #include <cmath>
 #include <algorithm>
@@ -203,3 +205,4 @@ void HotkeyToastOverlay::Render(ImDrawList* dl, ImFont* titleFont, ImFont* bodyF
         dl->PopClipRect();
     }
 }
+#endif

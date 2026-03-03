@@ -112,7 +112,8 @@ constexpr float SUCCESS_MESSAGE_FADE_DIVISOR = 3.0f;
 inline const ImVec4 CUSTOM_PACK_SUCCESS_TEXT_COLOR = ImVec4(0.0f, 1.0f, 0.0f, 1.0f);
 
 // === Hotkeys Tab ===
-
+// TODO: hotkey constants — disabled pending crash investigation; re-enable with hotkeys feature
+/*
 // HOTKEY_LABEL_COL_WIDTH and HOTKEY_KEY_INPUT_WIDTH removed — layout is now vertical/dynamic
 
 struct HotkeyRow
@@ -129,6 +130,7 @@ static const HotkeyRow HOTKEY_ROWS[] = {
     {"Cycle Map Back", "suitespot_hotkey_cycle_map_bk_key", "suitespot_hotkey_cycle_map_bk_key2"},
     {"Load Now", "suitespot_hotkey_load_now_key", "suitespot_hotkey_load_now_key2"},
 };
+*/
 
 // === F6 For Dummies Layout Constants ===
 

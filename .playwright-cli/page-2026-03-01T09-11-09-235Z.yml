@@ -1,0 +1,576 @@
+- generic [ref=e3]:
+  - navigation [ref=e4]:
+    - generic [ref=e6]:
+      - generic [ref=e7]:
+        - link "BakkesPlugins Logo BakkesPlugins" [ref=e8] [cursor=pointer]:
+          - /url: /
+          - img "BakkesPlugins Logo" [ref=e9]
+          - generic [ref=e10]: BakkesPlugins
+        - generic [ref=e11]:
+          - link "Plugins" [ref=e12] [cursor=pointer]:
+            - /url: /plugins
+          - link "Cars" [ref=e13] [cursor=pointer]:
+            - /url: /cars
+          - link "Maps" [ref=e14] [cursor=pointer]:
+            - /url: /maps
+      - generic [ref=e15]:
+        - generic [ref=e17]:
+          - generic [ref=e18]:
+            - combobox [ref=e19]:
+              - option "All"
+              - option "Plugins" [selected]
+              - option "Cars"
+              - option "Maps"
+            - generic:
+              - img
+          - textbox "Search plugins..." [ref=e21]
+          - button [ref=e22] [cursor=pointer]:
+            - img [ref=e23]
+        - generic [ref=e27]:
+          - button "Sign Up" [ref=e28] [cursor=pointer]
+          - button "Sign In" [ref=e29] [cursor=pointer]
+  - link "./ SafeComms_ [developer-first content moderation API] [SYS] SCANNING USER_CONTENT [ALRT] DETECTED HATE_SPEECH [SAFE] PURGED AUTOMATICALLY [SYS] SCANNING USER_CONTENT START FREE > FREE TIER. NO CREDIT CARD REQ." [ref=e32] [cursor=pointer]:
+    - /url: https://safecomms.dev?utm_source=bakkesplugins&utm_medium=banner&utm_campaign=safecomms_launch
+    - generic [ref=e37]:
+      - generic [ref=e38]: ./
+      - text: SafeComms_
+    - generic [ref=e39]:
+      - generic [ref=e40]: "[developer-first content moderation API]"
+      - generic [ref=e42]:
+        - generic [ref=e43]:
+          - generic [ref=e44]: "[SYS]"
+          - text: SCANNING
+          - generic [ref=e45]: USER_CONTENT
+        - generic [ref=e46]:
+          - generic [ref=e47]: "[ALRT]"
+          - text: DETECTED
+          - generic [ref=e48]: HATE_SPEECH
+        - generic [ref=e49]:
+          - generic [ref=e50]: "[SAFE]"
+          - text: PURGED
+          - generic [ref=e51]: AUTOMATICALLY
+        - generic [ref=e52]:
+          - generic [ref=e53]: "[SYS]"
+          - text: SCANNING
+          - generic [ref=e54]: USER_CONTENT
+    - generic [ref=e55]:
+      - generic [ref=e56]: START FREE >
+      - generic [ref=e57]: FREE TIER. NO CREDIT CARD REQ.
+  - main [ref=e58]:
+    - generic [ref=e60]:
+      - generic [ref=e61]:
+        - generic [ref=e62]:
+          - generic [ref=e63]:
+            - heading "Browse Plugins" [level=1] [ref=e64]
+            - paragraph [ref=e65]: Discover and download amazing plugins for your game
+          - link "Get BakkesMod" [ref=e66] [cursor=pointer]:
+            - /url: https://bakkesmod.com/
+            - img [ref=e67]
+            - generic [ref=e70]: Get BakkesMod
+        - link "Want to create your own plugin? Learn how to build BakkesMod plugins with our comprehensive SDK tutorial →" [ref=e72] [cursor=pointer]:
+          - /url: /wiki/bakkesmod-sdk/plugin-tutorial/getting-started
+          - generic [ref=e75]:
+            - heading "Want to create your own plugin?" [level=3] [ref=e76]
+            - paragraph [ref=e77]: Learn how to build BakkesMod plugins with our comprehensive SDK tutorial →
+        - generic [ref=e79]:
+          - generic [ref=e80]:
+            - generic [ref=e81]:
+              - generic:
+                - img
+              - textbox "Search plugins..." [ref=e82]
+            - button "Search" [ref=e83] [cursor=pointer]
+          - generic [ref=e84]:
+            - button "Filters" [ref=e86] [cursor=pointer]:
+              - img [ref=e87]
+              - generic [ref=e89]: Filters
+              - img [ref=e90]
+            - button "Sort" [ref=e93] [cursor=pointer]:
+              - img [ref=e94]
+              - generic [ref=e95]: Sort
+              - img [ref=e96]
+            - button "Switch to list view" [ref=e98] [cursor=pointer]:
+              - img [ref=e99]
+            - button "Clear" [disabled] [ref=e100]:
+              - img [ref=e101]
+              - generic [ref=e104]: Clear
+        - generic [ref=e105]:
+          - generic [ref=e106]: Showing 335 plugins
+          - generic [ref=e107]: Page 1 of 21 (1-16 of 335)
+      - generic [ref=e109]:
+        - link "AlphaConsole for BakkesMod ⭐ 4.4 v2.0.13 AlphaConsole for BakkesMod G glhglh A selection of features ported from AlphaConsole into BakkesMod Quality of Life 5.99M downloads 3.74M views Updated 1/16/2026 View Details →" [ref=e110] [cursor=pointer]:
+          - /url: /plugin/108
+          - generic [ref=e111]:
+            - img "AlphaConsole for BakkesMod" [ref=e112]
+            - generic [ref=e116]:
+              - generic [ref=e117]: ⭐
+              - generic [ref=e118]: "4.4"
+            - generic [ref=e119]: v2.0.13
+          - generic [ref=e120]:
+            - heading "AlphaConsole for BakkesMod" [level=3] [ref=e121]
+            - generic [ref=e122]:
+              - generic [ref=e124]: G
+              - generic "glhglh" [ref=e125]
+            - paragraph [ref=e126]: A selection of features ported from AlphaConsole into BakkesMod
+            - generic [ref=e127]:
+              - generic "Improves/aids the usage of the game itself" [ref=e129]: Quality of Life
+              - generic [ref=e130]:
+                - generic [ref=e131]:
+                  - img [ref=e132]
+                  - text: 5.99M downloads
+                - generic [ref=e135]:
+                  - img [ref=e136]
+                  - text: 3.74M views
+          - generic [ref=e139]:
+            - generic [ref=e140]: Updated 1/16/2026
+            - generic [ref=e141]: View Details →
+        - link "Workshop Map Loader & Downloader ⭐ 4.1 v1.0.19 Workshop Map Loader & Downloader Avatar Vync_ A plugin to load & download Workshop Maps For Epic Games Automatic Functions Custom Training 3.85M downloads 4.55M views Updated 4/6/2024 View Details →" [ref=e142] [cursor=pointer]:
+          - /url: /plugin/223
+          - generic [ref=e143]:
+            - img "Workshop Map Loader & Downloader" [ref=e144]
+            - generic [ref=e148]:
+              - generic [ref=e149]: ⭐
+              - generic [ref=e150]: "4.1"
+            - generic [ref=e151]: v1.0.19
+          - generic [ref=e152]:
+            - heading "Workshop Map Loader & Downloader" [level=3] [ref=e153]
+            - generic [ref=e154]:
+              - img "Avatar" [ref=e156]
+              - generic "Vync_" [ref=e157]
+            - paragraph [ref=e158]: A plugin to load & download Workshop Maps For Epic Games
+            - generic [ref=e159]:
+              - generic [ref=e160]:
+                - generic "Automatically performs actions" [ref=e161]: Automatic Functions
+                - generic "Available in custom trainings" [ref=e162]: Custom Training
+              - generic [ref=e163]:
+                - generic [ref=e164]:
+                  - img [ref=e165]
+                  - text: 3.85M downloads
+                - generic [ref=e168]:
+                  - img [ref=e169]
+                  - text: 4.55M views
+          - generic [ref=e172]:
+            - generic [ref=e173]: Updated 4/6/2024
+            - generic [ref=e174]: View Details →
+        - link "IngameRank ⭐ 4.2 v1.2.9 IngameRank B BenTheDan View player ranks in-game next to the scoreboard. Quality of Life 2.33M downloads 1.51M views Updated 1/16/2026 View Details →" [ref=e175] [cursor=pointer]:
+          - /url: /plugin/282
+          - generic [ref=e176]:
+            - img "IngameRank" [ref=e177]
+            - generic [ref=e181]:
+              - generic [ref=e182]: ⭐
+              - generic [ref=e183]: "4.2"
+            - generic [ref=e184]: v1.2.9
+          - generic [ref=e185]:
+            - heading "IngameRank" [level=3] [ref=e186]
+            - generic [ref=e187]:
+              - generic [ref=e189]: B
+              - generic "BenTheDan" [ref=e190]
+            - paragraph [ref=e191]: View player ranks in-game next to the scoreboard.
+            - generic [ref=e192]:
+              - generic "Improves/aids the usage of the game itself" [ref=e194]: Quality of Life
+              - generic [ref=e195]:
+                - generic [ref=e196]:
+                  - img [ref=e197]
+                  - text: 2.33M downloads
+                - generic [ref=e200]:
+                  - img [ref=e201]
+                  - text: 1.51M views
+          - generic [ref=e204]:
+            - generic [ref=e205]: Updated 1/16/2026
+            - generic [ref=e206]: View Details →
+        - link "Alternative Crossbar Sounds ⭐ 4.0 v1.0.4 Alternative Crossbar Sounds N NinjaGloppy Replaces the crossbar ping with a different sound 2.22M downloads 256k views Updated 4/19/2025 View Details →" [ref=e207] [cursor=pointer]:
+          - /url: /plugin/523
+          - generic [ref=e208]:
+            - img "Alternative Crossbar Sounds" [ref=e209]
+            - generic [ref=e213]:
+              - generic [ref=e214]: ⭐
+              - generic [ref=e215]: "4.0"
+            - generic [ref=e216]: v1.0.4
+          - generic [ref=e217]:
+            - heading "Alternative Crossbar Sounds" [level=3] [ref=e218]
+            - generic [ref=e219]:
+              - generic [ref=e221]: "N"
+              - generic "NinjaGloppy" [ref=e222]
+            - paragraph [ref=e223]: Replaces the crossbar ping with a different sound
+            - generic [ref=e225]:
+              - generic [ref=e226]:
+                - img [ref=e227]
+                - text: 2.22M downloads
+              - generic [ref=e230]:
+                - img [ref=e231]
+                - text: 256k views
+          - generic [ref=e234]:
+            - generic [ref=e235]: Updated 4/19/2025
+            - generic [ref=e236]: View Details →
+        - link "RocketStats ⭐ 5.0 v1.0.47 RocketStats R RocketStats RocketStats is a Plugin working with bakkesmod, allowing to display some information in game and/or OBS 1.86M downloads 1.12M views Updated 9/9/2025 View Details →" [ref=e237] [cursor=pointer]:
+          - /url: /plugin/30
+          - generic [ref=e238]:
+            - img "RocketStats" [ref=e239]
+            - generic [ref=e243]:
+              - generic [ref=e244]: ⭐
+              - generic [ref=e245]: "5.0"
+            - generic [ref=e246]: v1.0.47
+          - generic [ref=e247]:
+            - heading "RocketStats" [level=3] [ref=e248]
+            - generic [ref=e249]:
+              - generic [ref=e251]: R
+              - generic "RocketStats" [ref=e252]
+            - paragraph [ref=e253]: RocketStats is a Plugin working with bakkesmod, allowing to display some information in game and/or OBS
+            - generic [ref=e255]:
+              - generic [ref=e256]:
+                - img [ref=e257]
+                - text: 1.86M downloads
+              - generic [ref=e260]:
+                - img [ref=e261]
+                - text: 1.12M views
+          - generic [ref=e264]:
+            - generic [ref=e265]: Updated 9/9/2025
+            - generic [ref=e266]: View Details →
+        - link "Rocket Plugin ⭐ 5.0 v1.0.28 Rocket Plugin Avatar Stanbroek A Bakkesmod plugin for joining, hosting and manipulating local games. Quality of Life Freeplay Automatic Functions Game Mode Multiplayer 1.81M downloads 1.44M views Updated 9/18/2019 View Details →" [ref=e267] [cursor=pointer]:
+          - /url: /plugin/26
+          - generic [ref=e268]:
+            - img "Rocket Plugin" [ref=e269]
+            - generic [ref=e273]:
+              - generic [ref=e274]: ⭐
+              - generic [ref=e275]: "5.0"
+            - generic [ref=e276]: v1.0.28
+          - generic [ref=e277]:
+            - heading "Rocket Plugin" [level=3] [ref=e278]
+            - generic [ref=e279]:
+              - img "Avatar" [ref=e281]
+              - generic "Stanbroek" [ref=e282]
+            - paragraph [ref=e283]: A Bakkesmod plugin for joining, hosting and manipulating local games.
+            - generic [ref=e284]:
+              - generic [ref=e285]:
+                - generic "Improves/aids the usage of the game itself" [ref=e286]: Quality of Life
+                - generic "Available in freeplay" [ref=e287]: Freeplay
+                - generic "Automatically performs actions" [ref=e288]: Automatic Functions
+                - generic "A new gamemode that's not part of the base game" [ref=e289]: Game Mode
+                - generic "Available in multiplayer" [ref=e290]: Multiplayer
+              - generic [ref=e291]:
+                - generic [ref=e292]:
+                  - img [ref=e293]
+                  - text: 1.81M downloads
+                - generic [ref=e296]:
+                  - img [ref=e297]
+                  - text: 1.44M views
+          - generic [ref=e300]:
+            - generic [ref=e301]: Updated 9/18/2019
+            - generic [ref=e302]: View Details →
+        - link "Looking For Mates (LFM) ⭐ 5.0 v1.0.0 Looking For Mates (LFM) Avatar Vync_ A plugin to find people to play with easily and quickly Quality of Life Automatic Functions 1.25M downloads 76.7k views Updated 9/2/2023 View Details →" [ref=e303] [cursor=pointer]:
+          - /url: /plugin/397
+          - generic [ref=e304]:
+            - img "Looking For Mates (LFM)" [ref=e305]
+            - generic [ref=e309]:
+              - generic [ref=e310]: ⭐
+              - generic [ref=e311]: "5.0"
+            - generic [ref=e312]: v1.0.0
+          - generic [ref=e313]:
+            - heading "Looking For Mates (LFM)" [level=3] [ref=e314]
+            - generic [ref=e315]:
+              - img "Avatar" [ref=e317]
+              - generic "Vync_" [ref=e318]
+            - paragraph [ref=e319]: A plugin to find people to play with easily and quickly
+            - generic [ref=e320]:
+              - generic [ref=e321]:
+                - generic "Improves/aids the usage of the game itself" [ref=e322]: Quality of Life
+                - generic "Automatically performs actions" [ref=e323]: Automatic Functions
+              - generic [ref=e324]:
+                - generic [ref=e325]:
+                  - img [ref=e326]
+                  - text: 1.25M downloads
+                - generic [ref=e329]:
+                  - img [ref=e330]
+                  - text: 76.7k views
+          - generic [ref=e333]:
+            - generic [ref=e334]: Updated 9/2/2023
+            - generic [ref=e335]: View Details →
+        - link "Rocket Host ⭐ 5.0 v1.2.2 Rocket Host J JetFox Starts an external RL server for you + friends Quality of Life Game Mode Multiplayer 1.15M downloads 367k views Updated 12/17/2025 View Details →" [ref=e336] [cursor=pointer]:
+          - /url: /plugin/216
+          - generic [ref=e337]:
+            - img "Rocket Host" [ref=e338]
+            - generic [ref=e342]:
+              - generic [ref=e343]: ⭐
+              - generic [ref=e344]: "5.0"
+            - generic [ref=e345]: v1.2.2
+          - generic [ref=e346]:
+            - heading "Rocket Host" [level=3] [ref=e347]
+            - generic [ref=e348]:
+              - generic [ref=e350]: J
+              - generic "JetFox" [ref=e351]
+            - paragraph [ref=e352]: Starts an external RL server for you + friends
+            - generic [ref=e353]:
+              - generic [ref=e354]:
+                - generic "Improves/aids the usage of the game itself" [ref=e355]: Quality of Life
+                - generic "A new gamemode that's not part of the base game" [ref=e356]: Game Mode
+                - generic "Available in multiplayer" [ref=e357]: Multiplayer
+              - generic [ref=e358]:
+                - generic [ref=e359]:
+                  - img [ref=e360]
+                  - text: 1.15M downloads
+                - generic [ref=e363]:
+                  - img [ref=e364]
+                  - text: 367k views
+          - generic [ref=e367]:
+            - generic [ref=e368]: Updated 12/17/2025
+            - generic [ref=e369]: View Details →
+        - link "RankViewer ⭐ 5.0 v1.0.6 RankViewer B BeardedOranges Shows the MMR needed for the division above and below your rank! Quality of Life Automatic Functions 560k downloads 755k views Updated 8/7/2021 View Details →" [ref=e370] [cursor=pointer]:
+          - /url: /plugin/91
+          - generic [ref=e371]:
+            - img "RankViewer" [ref=e372]
+            - generic [ref=e376]:
+              - generic [ref=e377]: ⭐
+              - generic [ref=e378]: "5.0"
+            - generic [ref=e379]: v1.0.6
+          - generic [ref=e380]:
+            - heading "RankViewer" [level=3] [ref=e381]
+            - generic [ref=e382]:
+              - generic [ref=e384]: B
+              - generic "BeardedOranges" [ref=e385]
+            - paragraph [ref=e386]: Shows the MMR needed for the division above and below your rank!
+            - generic [ref=e387]:
+              - generic [ref=e388]:
+                - generic "Improves/aids the usage of the game itself" [ref=e389]: Quality of Life
+                - generic "Automatically performs actions" [ref=e390]: Automatic Functions
+              - generic [ref=e391]:
+                - generic [ref=e392]:
+                  - img [ref=e393]
+                  - text: 560k downloads
+                - generic [ref=e396]:
+                  - img [ref=e397]
+                  - text: 755k views
+          - generic [ref=e400]:
+            - generic [ref=e401]: Updated 8/7/2021
+            - generic [ref=e402]: View Details →
+        - link "Predictdator (ball prediction) ⭐ 5.0 v1.0.5 Predictdator (ball prediction) J Jan_ Get the ball path predicted in training. BallPredictionPluginV2 Quality of Life Freeplay Custom Training 491k downloads 576k views Updated 11/8/2022 View Details →" [ref=e403] [cursor=pointer]:
+          - /url: /plugin/117
+          - generic [ref=e404]:
+            - img "Predictdator (ball prediction)" [ref=e405]
+            - generic [ref=e409]:
+              - generic [ref=e410]: ⭐
+              - generic [ref=e411]: "5.0"
+            - generic [ref=e412]: v1.0.5
+          - generic [ref=e413]:
+            - heading "Predictdator (ball prediction)" [level=3] [ref=e414]
+            - generic [ref=e415]:
+              - generic [ref=e417]: J
+              - generic "Jan_" [ref=e418]
+            - paragraph [ref=e419]: Get the ball path predicted in training. BallPredictionPluginV2
+            - generic [ref=e420]:
+              - generic [ref=e421]:
+                - generic "Improves/aids the usage of the game itself" [ref=e422]: Quality of Life
+                - generic "Available in freeplay" [ref=e423]: Freeplay
+                - generic "Available in custom trainings" [ref=e424]: Custom Training
+              - generic [ref=e425]:
+                - generic [ref=e426]:
+                  - img [ref=e427]
+                  - text: 491k downloads
+                - generic [ref=e430]:
+                  - img [ref=e431]
+                  - text: 576k views
+          - generic [ref=e434]:
+            - generic [ref=e435]: Updated 11/8/2022
+            - generic [ref=e436]: View Details →
+        - link "Controller Overlay ⭐ 5.0 v1.0.7 Controller Overlay H Haltepunkt Render a controller overlay during gameplay. 448k downloads 684k views Updated 4/2/2020 View Details →" [ref=e437] [cursor=pointer]:
+          - /url: /plugin/59
+          - generic [ref=e438]:
+            - img "Controller Overlay" [ref=e439]
+            - generic [ref=e443]:
+              - generic [ref=e444]: ⭐
+              - generic [ref=e445]: "5.0"
+            - generic [ref=e446]: v1.0.7
+          - generic [ref=e447]:
+            - heading "Controller Overlay" [level=3] [ref=e448]
+            - generic [ref=e449]:
+              - generic [ref=e451]: H
+              - generic "Haltepunkt" [ref=e452]
+            - paragraph [ref=e453]: Render a controller overlay during gameplay.
+            - generic [ref=e455]:
+              - generic [ref=e456]:
+                - img [ref=e457]
+                - text: 448k downloads
+              - generic [ref=e460]:
+                - img [ref=e461]
+                - text: 684k views
+          - generic [ref=e464]:
+            - generic [ref=e465]: Updated 4/2/2020
+            - generic [ref=e466]: View Details →
+        - link "PlatformDisplay ⭐ 5.0 v1.0.11 PlatformDisplay Avatar SoulDaMeep Displays the platform of every player in a game Quality of Life 398k downloads 290k views Updated 7/25/2025 View Details →" [ref=e467] [cursor=pointer]:
+          - /url: /plugin/376
+          - generic [ref=e468]:
+            - img "PlatformDisplay" [ref=e469]
+            - generic [ref=e473]:
+              - generic [ref=e474]: ⭐
+              - generic [ref=e475]: "5.0"
+            - generic [ref=e476]: v1.0.11
+          - generic [ref=e477]:
+            - heading "PlatformDisplay" [level=3] [ref=e478]
+            - generic [ref=e479]:
+              - img "Avatar" [ref=e481]
+              - generic "SoulDaMeep" [ref=e482]
+            - paragraph [ref=e483]: Displays the platform of every player in a game
+            - generic [ref=e484]:
+              - generic "Improves/aids the usage of the game itself" [ref=e486]: Quality of Life
+              - generic [ref=e487]:
+                - generic [ref=e488]:
+                  - img [ref=e489]
+                  - text: 398k downloads
+                - generic [ref=e492]:
+                  - img [ref=e493]
+                  - text: 290k views
+          - generic [ref=e496]:
+            - generic [ref=e497]: Updated 7/25/2025
+            - generic [ref=e498]: View Details →
+        - link "Speedflip Trainer ⭐ 5.0 v1.0.3 Speedflip Trainer T tyni Helps while using Musty - Speedflip Kickoff test to train speedflip 345k downloads 501k views Updated 10/12/2021 View Details →" [ref=e499] [cursor=pointer]:
+          - /url: /plugin/286
+          - generic [ref=e500]:
+            - img "Speedflip Trainer" [ref=e501]
+            - generic [ref=e505]:
+              - generic [ref=e506]: ⭐
+              - generic [ref=e507]: "5.0"
+            - generic [ref=e508]: v1.0.3
+          - generic [ref=e509]:
+            - heading "Speedflip Trainer" [level=3] [ref=e510]
+            - generic [ref=e511]:
+              - generic [ref=e513]: T
+              - generic "tyni" [ref=e514]
+            - paragraph [ref=e515]: Helps while using Musty - Speedflip Kickoff test to train speedflip
+            - generic [ref=e517]:
+              - generic [ref=e518]:
+                - img [ref=e519]
+                - text: 345k downloads
+              - generic [ref=e522]:
+                - img [ref=e523]
+                - text: 501k views
+          - generic [ref=e526]:
+            - generic [ref=e527]: Updated 10/12/2021
+            - generic [ref=e528]: View Details →
+        - link "gidekPlugin ⭐ 5.0 v1.0.5 gidekPlugin G gidek MMR/Wins/Losses Counter 306k downloads 308k views Updated 7/19/2019 View Details →" [ref=e529] [cursor=pointer]:
+          - /url: /plugin/13
+          - generic [ref=e530]:
+            - img "gidekPlugin" [ref=e531]
+            - generic [ref=e535]:
+              - generic [ref=e536]: ⭐
+              - generic [ref=e537]: "5.0"
+            - generic [ref=e538]: v1.0.5
+          - generic [ref=e539]:
+            - heading "gidekPlugin" [level=3] [ref=e540]
+            - generic [ref=e541]:
+              - generic [ref=e543]: G
+              - generic "gidek" [ref=e544]
+            - paragraph [ref=e545]: MMR/Wins/Losses Counter
+            - generic [ref=e547]:
+              - generic [ref=e548]:
+                - img [ref=e549]
+                - text: 306k downloads
+              - generic [ref=e552]:
+                - img [ref=e553]
+                - text: 308k views
+          - generic [ref=e556]:
+            - generic [ref=e557]: Updated 7/19/2019
+            - generic [ref=e558]: View Details →
+        - link "Aimbot ⭐ 5.0 v1.0.4 Aimbot C CinderBlock pwn your enemies with 1337 hax Freeplay Game Mode Multiplayer 304k downloads 529k views Updated 2/18/2021 View Details →" [ref=e559] [cursor=pointer]:
+          - /url: /plugin/121
+          - generic [ref=e560]:
+            - img "Aimbot" [ref=e561]
+            - generic [ref=e565]:
+              - generic [ref=e566]: ⭐
+              - generic [ref=e567]: "5.0"
+            - generic [ref=e568]: v1.0.4
+          - generic [ref=e569]:
+            - heading "Aimbot" [level=3] [ref=e570]
+            - generic [ref=e571]:
+              - generic [ref=e573]: C
+              - generic "CinderBlock" [ref=e574]
+            - paragraph [ref=e575]: pwn your enemies with 1337 hax
+            - generic [ref=e576]:
+              - generic [ref=e577]:
+                - generic "Available in freeplay" [ref=e578]: Freeplay
+                - generic "A new gamemode that's not part of the base game" [ref=e579]: Game Mode
+                - generic "Available in multiplayer" [ref=e580]: Multiplayer
+              - generic [ref=e581]:
+                - generic [ref=e582]:
+                  - img [ref=e583]
+                  - text: 304k downloads
+                - generic [ref=e586]:
+                  - img [ref=e587]
+                  - text: 529k views
+          - generic [ref=e590]:
+            - generic [ref=e591]: Updated 2/18/2021
+            - generic [ref=e592]: View Details →
+        - link "Instant Suite ⭐ 4.5 v1.0.7 Instant Suite T ToolB0x Waste no time between games! Auto-queue, Instant Freeplay, or exit to Main Menu, right after a match ends! Configurable! Quality of Life Freeplay Automatic Functions Custom Training 265k downloads 332k views Updated 6/7/2019 View Details →" [ref=e593] [cursor=pointer]:
+          - /url: /plugin/14
+          - generic [ref=e594]:
+            - img "Instant Suite" [ref=e595]
+            - generic [ref=e599]:
+              - generic [ref=e600]: ⭐
+              - generic [ref=e601]: "4.5"
+            - generic [ref=e602]: v1.0.7
+          - generic [ref=e603]:
+            - heading "Instant Suite" [level=3] [ref=e604]
+            - generic [ref=e605]:
+              - generic [ref=e607]: T
+              - generic "ToolB0x" [ref=e608]
+            - paragraph [ref=e609]: Waste no time between games! Auto-queue, Instant Freeplay, or exit to Main Menu, right after a match ends! Configurable!
+            - generic [ref=e610]:
+              - generic [ref=e611]:
+                - generic "Improves/aids the usage of the game itself" [ref=e612]: Quality of Life
+                - generic "Available in freeplay" [ref=e613]: Freeplay
+                - generic "Automatically performs actions" [ref=e614]: Automatic Functions
+                - generic "Available in custom trainings" [ref=e615]: Custom Training
+              - generic [ref=e616]:
+                - generic [ref=e617]:
+                  - img [ref=e618]
+                  - text: 265k downloads
+                - generic [ref=e621]:
+                  - img [ref=e622]
+                  - text: 332k views
+          - generic [ref=e625]:
+            - generic [ref=e626]: Updated 6/7/2019
+            - generic [ref=e627]: View Details →
+      - navigation [ref=e629]:
+        - button "Previous" [disabled] [ref=e630]:
+          - generic [ref=e631]:
+            - img [ref=e632]
+            - text: Previous
+        - generic [ref=e634]:
+          - generic [ref=e635]: "1"
+          - link "2" [ref=e636] [cursor=pointer]:
+            - /url: /plugins?page=2
+          - generic [ref=e637]: ...
+          - link "21" [ref=e638] [cursor=pointer]:
+            - /url: /plugins?page=21
+        - link "Next" [ref=e639] [cursor=pointer]:
+          - /url: /plugins?page=2
+          - generic [ref=e640]:
+            - text: Next
+            - img [ref=e641]
+  - region
+  - contentinfo [ref=e644]:
+    - generic [ref=e646]:
+      - generic [ref=e647]:
+        - heading "BakkesPlugins" [level=3] [ref=e648]
+        - paragraph [ref=e649]: Community-driven platform for BakkesMod plugins and Rocket League customization.
+        - generic [ref=e650]:
+          - generic [ref=e651]: © 2026
+          - generic [ref=e652]: "|"
+          - generic "Frontend version" [ref=e653]: v0.16.479-gcce7e22
+      - generic [ref=e654]:
+        - heading "Community" [level=3] [ref=e655]
+        - navigation [ref=e656]:
+          - link "News & Updates" [ref=e657] [cursor=pointer]:
+            - /url: /news
+          - link "Job Opportunities" [ref=e658] [cursor=pointer]:
+            - /url: /jobs
+          - link "Feature Requests" [ref=e659] [cursor=pointer]:
+            - /url: /feature-requests
+          - link "Discord Community" [ref=e660] [cursor=pointer]:
+            - /url: https://discord.gg/bakkesmod
+      - generic [ref=e661]:
+        - heading "Legal" [level=3] [ref=e662]
+        - navigation [ref=e663]:
+          - link "Terms of Service" [ref=e664] [cursor=pointer]:
+            - /url: /terms
+          - link "Privacy Policy" [ref=e665] [cursor=pointer]:
+            - /url: /privacy-policy
+          - link "Acceptable Use Policy" [ref=e666] [cursor=pointer]:
+            - /url: /acceptable-use-policy

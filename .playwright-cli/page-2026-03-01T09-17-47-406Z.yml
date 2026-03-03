@@ -1,0 +1,399 @@
+- generic [ref=e2]:
+  - region
+  - generic [ref=e3]:
+    - link "Skip to content" [ref=e4] [cursor=pointer]:
+      - /url: "#start-of-content"
+    - banner [ref=e6]:
+      - heading "Navigation Menu" [level=2] [ref=e7]
+      - generic [ref=e8]:
+        - link "Homepage" [ref=e10] [cursor=pointer]:
+          - /url: /
+          - img [ref=e11]
+        - generic [ref=e13]:
+          - navigation "Global" [ref=e16]:
+            - list [ref=e17]:
+              - listitem [ref=e18]:
+                - button "Platform" [ref=e20] [cursor=pointer]:
+                  - text: Platform
+                  - img [ref=e21]
+              - listitem [ref=e23]:
+                - button "Solutions" [ref=e25] [cursor=pointer]:
+                  - text: Solutions
+                  - img [ref=e26]
+              - listitem [ref=e28]:
+                - button "Resources" [ref=e30] [cursor=pointer]:
+                  - text: Resources
+                  - img [ref=e31]
+              - listitem [ref=e33]:
+                - button "Open Source" [ref=e35] [cursor=pointer]:
+                  - text: Open Source
+                  - img [ref=e36]
+              - listitem [ref=e38]:
+                - button "Enterprise" [ref=e40] [cursor=pointer]:
+                  - text: Enterprise
+                  - img [ref=e41]
+              - listitem [ref=e43]:
+                - link "Pricing" [ref=e44] [cursor=pointer]:
+                  - /url: https://github.com/pricing
+                  - generic [ref=e45]: Pricing
+          - generic [ref=e46]:
+            - button "Search or jump to…" [ref=e49] [cursor=pointer]:
+              - img [ref=e51]
+            - link "Sign in" [ref=e54] [cursor=pointer]:
+              - /url: /login?return_to=https%3A%2F%2Fgithub.com%2FEricPlayZ%2FCustomOverlay
+            - link "Sign up" [ref=e55] [cursor=pointer]:
+              - /url: /signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E&source=header-repo&source_repo=EricPlayZ%2FCustomOverlay
+            - button "Appearance settings" [ref=e58] [cursor=pointer]:
+              - img
+  - main [ref=e62]:
+    - generic [ref=e63]:
+      - generic [ref=e64]:
+        - generic [ref=e66]:
+          - img [ref=e67]
+          - link "EricPlayZ" [ref=e70] [cursor=pointer]:
+            - /url: /EricPlayZ
+          - generic [ref=e71]: /
+          - strong [ref=e72]:
+            - link "CustomOverlay" [ref=e73] [cursor=pointer]:
+              - /url: /EricPlayZ/CustomOverlay
+          - generic [ref=e74]: Public
+        - generic [ref=e75]:
+          - list:
+            - listitem [ref=e76]:
+              - link "You must be signed in to change notification settings" [ref=e77] [cursor=pointer]:
+                - /url: /login?return_to=%2FEricPlayZ%2FCustomOverlay
+                - img [ref=e78]
+                - text: Notifications
+            - listitem [ref=e80]:
+              - link "Fork 5" [ref=e81] [cursor=pointer]:
+                - /url: /login?return_to=%2FEricPlayZ%2FCustomOverlay
+                - img [ref=e82]
+                - text: Fork
+                - generic "5" [ref=e84]
+            - listitem [ref=e85]:
+              - link "You must be signed in to star a repository" [ref=e87] [cursor=pointer]:
+                - /url: /login?return_to=%2FEricPlayZ%2FCustomOverlay
+                - img [ref=e88]
+                - text: Star
+                - generic "6 users starred this repository" [ref=e90]: "6"
+      - navigation "Repository" [ref=e91]:
+        - list [ref=e92]:
+          - listitem [ref=e93]:
+            - link "Code" [ref=e94] [cursor=pointer]:
+              - /url: /EricPlayZ/CustomOverlay
+              - img [ref=e95]
+              - generic [ref=e97]: Code
+          - listitem [ref=e98]:
+            - link "Issues 2" [ref=e99] [cursor=pointer]:
+              - /url: /EricPlayZ/CustomOverlay/issues
+              - img [ref=e100]
+              - generic [ref=e103]: Issues
+              - generic "2" [ref=e104]
+          - listitem [ref=e105]:
+            - link "Pull requests" [ref=e106] [cursor=pointer]:
+              - /url: /EricPlayZ/CustomOverlay/pulls
+              - img [ref=e107]
+              - generic [ref=e109]: Pull requests
+          - listitem [ref=e110]:
+            - link "Actions" [ref=e111] [cursor=pointer]:
+              - /url: /EricPlayZ/CustomOverlay/actions
+              - img [ref=e112]
+              - generic [ref=e114]: Actions
+          - listitem [ref=e115]:
+            - link "Projects" [ref=e116] [cursor=pointer]:
+              - /url: /EricPlayZ/CustomOverlay/projects
+              - img [ref=e117]
+              - generic [ref=e119]: Projects
+          - listitem [ref=e120]:
+            - link "Security" [ref=e121] [cursor=pointer]:
+              - /url: /EricPlayZ/CustomOverlay/security
+              - img [ref=e122]
+              - generic [ref=e124]: Security
+          - listitem [ref=e125]:
+            - link "Insights" [ref=e126] [cursor=pointer]:
+              - /url: /EricPlayZ/CustomOverlay/pulse
+              - img [ref=e127]
+              - generic [ref=e129]: Insights
+    - generic [ref=e131]:
+      - heading "EricPlayZ/CustomOverlay" [level=1] [ref=e132]
+      - generic [ref=e135]:
+        - generic [ref=e139]:
+          - generic [ref=e140]:
+            - generic [ref=e141]:
+              - button "master branch" [ref=e143] [cursor=pointer]:
+                - generic [ref=e144]:
+                  - generic [ref=e146]:
+                    - img [ref=e148]
+                    - generic [ref=e151]: master
+                  - generic:
+                    - img
+              - generic [ref=e152]:
+                - link "Branches" [ref=e153] [cursor=pointer]:
+                  - /url: /EricPlayZ/CustomOverlay/branches
+                  - generic [ref=e154]:
+                    - generic:
+                      - img
+                    - generic [ref=e155]: Branches
+                - link "Tags" [ref=e156] [cursor=pointer]:
+                  - /url: /EricPlayZ/CustomOverlay/tags
+                  - generic [ref=e157]:
+                    - generic:
+                      - img
+                    - generic [ref=e158]: Tags
+            - generic [ref=e159]:
+              - generic [ref=e163]:
+                - img [ref=e165]
+                - combobox "Go to file" [ref=e167]
+              - button "Code" [ref=e168] [cursor=pointer]:
+                - generic [ref=e169]:
+                  - generic:
+                    - img
+                  - generic [ref=e170]: Code
+                  - generic:
+                    - img
+          - generic [ref=e171]:
+            - generic [ref=e172]:
+              - heading "Folders and files" [level=2] [ref=e173]
+              - table "Folders and files" [ref=e174]:
+                - rowgroup:
+                  - row "Name Last commit message Last commit date":
+                    - columnheader "Name"
+                    - columnheader "Last commit message":
+                      - generic "Last commit message"
+                    - columnheader "Last commit date":
+                      - generic "Last commit date"
+                - rowgroup [ref=e175]:
+                  - row "Latest commit History 10 Commits" [ref=e176]:
+                    - cell "Latest commit History 10 Commits" [ref=e177]:
+                      - generic [ref=e178]:
+                        - heading "Latest commit" [level=2] [ref=e179]
+                        - generic [ref=e182]:
+                          - heading "History" [level=2] [ref=e183]
+                          - link "10 Commits" [ref=e184] [cursor=pointer]:
+                            - /url: /EricPlayZ/CustomOverlay/commits/master/
+                            - generic [ref=e185]:
+                              - generic:
+                                - img
+                              - generic [ref=e186]: 10 Commits
+                  - row "CustomOverlay, (Directory)" [ref=e187]:
+                    - cell "CustomOverlay, (Directory)" [ref=e188]:
+                      - generic [ref=e189]:
+                        - img [ref=e190]
+                        - link "CustomOverlay, (Directory)" [ref=e195] [cursor=pointer]:
+                          - /url: /EricPlayZ/CustomOverlay/tree/master/CustomOverlay
+                          - text: CustomOverlay
+                    - cell [ref=e196]
+                    - cell [ref=e198]
+                  - row ".gitattributes, (File)" [ref=e200]:
+                    - cell ".gitattributes, (File)" [ref=e201]:
+                      - generic [ref=e202]:
+                        - img [ref=e203]
+                        - link ".gitattributes, (File)" [ref=e208] [cursor=pointer]:
+                          - /url: /EricPlayZ/CustomOverlay/blob/master/.gitattributes
+                          - text: .gitattributes
+                    - cell [ref=e209]
+                    - cell [ref=e211]
+                  - row ".gitignore, (File)" [ref=e213]:
+                    - cell ".gitignore, (File)" [ref=e214]:
+                      - generic [ref=e215]:
+                        - img [ref=e216]
+                        - link ".gitignore, (File)" [ref=e221] [cursor=pointer]:
+                          - /url: /EricPlayZ/CustomOverlay/blob/master/.gitignore
+                          - text: .gitignore
+                    - cell [ref=e222]
+                    - cell [ref=e224]
+                  - row "CustomOverlay.sln, (File)" [ref=e226]:
+                    - cell "CustomOverlay.sln, (File)" [ref=e227]:
+                      - generic [ref=e228]:
+                        - img [ref=e229]
+                        - link "CustomOverlay.sln, (File)" [ref=e234] [cursor=pointer]:
+                          - /url: /EricPlayZ/CustomOverlay/blob/master/CustomOverlay.sln
+                          - text: CustomOverlay.sln
+                    - cell [ref=e235]
+                    - cell [ref=e237]
+                  - row "LICENSE, (File)" [ref=e239]:
+                    - cell "LICENSE, (File)" [ref=e240]:
+                      - generic [ref=e241]:
+                        - img [ref=e242]
+                        - link "LICENSE, (File)" [ref=e247] [cursor=pointer]:
+                          - /url: /EricPlayZ/CustomOverlay/blob/master/LICENSE
+                          - text: LICENSE
+                    - cell [ref=e248]
+                    - cell [ref=e250]
+                  - row "README.md, (File)" [ref=e252]:
+                    - cell "README.md, (File)" [ref=e253]:
+                      - generic [ref=e254]:
+                        - img [ref=e255]
+                        - link "README.md, (File)" [ref=e260] [cursor=pointer]:
+                          - /url: /EricPlayZ/CustomOverlay/blob/master/README.md
+                          - text: README.md
+                    - cell [ref=e261]
+                    - cell [ref=e263]
+            - generic [ref=e266]:
+              - generic [ref=e267]:
+                - heading "Repository files navigation" [level=2] [ref=e268]
+                - navigation "Repository files" [ref=e269]:
+                  - list [ref=e270]:
+                    - listitem [ref=e271]:
+                      - link "README" [ref=e272] [cursor=pointer]:
+                        - /url: "#"
+                        - img [ref=e274]
+                        - generic [ref=e276]: README
+                    - listitem [ref=e277]:
+                      - link "MIT license" [ref=e278] [cursor=pointer]:
+                        - /url: "#"
+                        - img [ref=e280]
+                        - generic [ref=e282]: MIT license
+                - button "Outline" [ref=e283] [cursor=pointer]:
+                  - img [ref=e284]
+              - article [ref=e287]:
+                - generic [ref=e288]:
+                  - heading "Custom Overlay 2.0" [level=1] [ref=e289]
+                  - 'link "Permalink: Custom Overlay 2.0" [ref=e290] [cursor=pointer]':
+                    - /url: "#custom-overlay-20"
+                    - img [ref=e291]
+                - paragraph [ref=e293]:
+                  - text: A BakkesMod plugin which uses a custom overlay in-game to improve FPS.
+                  - link "Plugin Homepage" [ref=e294] [cursor=pointer]:
+                    - /url: https://bakkesplugins.com/plugins/view/152
+                - paragraph [ref=e295]:
+                  - text: Since this plugin was already made by JerryTheBee (
+                  - link "his plugin page" [ref=e296] [cursor=pointer]:
+                    - /url: https://bakkesplugins.com/plugins/view/148
+                  - text: if you wanna check it out), I've named this 2.0 because, you could say, this is a remastered version of his plugin.
+                - paragraph [ref=e297]: "Why did I \"remaster\" it? Because it had a few issues:"
+                - list [ref=e298]:
+                  - listitem [ref=e299]: The biggest issue was resizing text based on your screen resolution. I tried his plugin and the text was all over the screen, I couldn't see anything. And I actually saw an improvement in FPS, so instead of just going back with using the default UI rendering, I decided to remake the plugin from scratch. I don't think he shared the source for his plugin anywhere either, so, why not remake it from scratch? I love coding, especially in new languages (in this case, C++).
+                  - listitem [ref=e300]: It was kinda janky, as he mentioned in his description. It was really meant to be used only for testing purposes and such, and I took this seriously, because... Well, nvm, I don't think you wanna know my laptop specs lol.
+                - paragraph [ref=e301]: "What this plugin does better is: everything, absolutely everything will be 1:1 the same on every single resolution. So no matter your resolution, the UI will be sized exactly the same as at every other resolution! The time is also fixed, separating minutes and seconds, and your team's score and the opponents' team's score are both properly positioned on the scoreboard on top."
+                - paragraph [ref=e302]: Everything else that his plugin does is also present in my plugin (well, at least from what I can tell), such as automatically disabling the default UI rendering and enabling my custom overlay on kickoff's GO!, or vice versa when a goal gets scored.
+                - paragraph [ref=e303]: "I'mma be quoting some of his important stuff from the description in here, in case you've missed it:"
+                - generic [ref=e304]:
+                  - heading "\"In order to get any FPS improvement, you must disable all default rendering. This means you cannot see the game menu, chat, stat events, countdowns, the scoreboard, or time remaining in a tournament match before a tiebreaker. This plugin is objectively a disadvantage to use, but I wanted to see if I could improve FPS for people upset about the move to DX11, and I think I have. You could of course use this plugin with default rendering on, just to get a cool colored scoreboard, but will not see any change in your framerate.\"" [level=5] [ref=e305]
+                  - 'link "Permalink: \"In order to get any FPS improvement, you must disable all default rendering. This means you cannot see the game menu, chat, stat events, countdowns, the scoreboard, or time remaining in a tournament match before a tiebreaker. This plugin is objectively a disadvantage to use, but I wanted to see if I could improve FPS for people upset about the move to DX11, and I think I have. You could of course use this plugin with default rendering on, just to get a cool colored scoreboard, but will not see any change in your framerate.\"" [ref=e306] [cursor=pointer]':
+                    - /url: "#in-order-to-get-any-fps-improvement-you-must-disable-all-default-rendering-this-means-you-cannot-see-the-game-menu-chat-stat-events-countdowns-the-scoreboard-or-time-remaining-in-a-tournament-match-before-a-tiebreaker-this-plugin-is-objectively-a-disadvantage-to-use-but-i-wanted-to-see-if-i-could-improve-fps-for-people-upset-about-the-move-to-dx11-and-i-think-i-have-you-could-of-course-use-this-plugin-with-default-rendering-on-just-to-get-a-cool-colored-scoreboard-but-will-not-see-any-change-in-your-framerate"
+                    - img [ref=e307]
+                - generic [ref=e309]:
+                  - heading "\"I still recommend binding this to a button that you can easily use and doesn't interfere with your gameplay. This is necessary to use the plugin in freeplay, and is also useful so you can pause and quit or forfeit while not in a goal replay. I like to use a random keyboard button, as I play with controller, so I can do it often but it doesn't take a button on a small controller. Press f6 and copy whichever of these commands makes most sense for you with your choice of button (note that any controller is called XboxTypeS)\"" [level=5] [ref=e310]
+                  - 'link "Permalink: \"I still recommend binding this to a button that you can easily use and doesn''t interfere with your gameplay. This is necessary to use the plugin in freeplay, and is also useful so you can pause and quit or forfeit while not in a goal replay. I like to use a random keyboard button, as I play with controller, so I can do it often but it doesn''t take a button on a small controller. Press f6 and copy whichever of these commands makes most sense for you with your choice of button (note that any controller is called XboxTypeS)\"" [ref=e311] [cursor=pointer]':
+                    - /url: "#i-still-recommend-binding-this-to-a-button-that-you-can-easily-use-and-doesnt-interfere-with-your-gameplay-this-is-necessary-to-use-the-plugin-in-freeplay-and-is-also-useful-so-you-can-pause-and-quit-or-forfeit-while-not-in-a-goal-replay-i-like-to-use-a-random-keyboard-button-as-i-play-with-controller-so-i-can-do-it-often-but-it-doesnt-take-a-button-on-a-small-controller-press-f6-and-copy-whichever-of-these-commands-makes-most-sense-for-you-with-your-choice-of-button-note-that-any-controller-is-called-xboxtypes"
+                    - img [ref=e312]
+                - generic [ref=e314]:
+                  - code [ref=e316]: bind XboxTypeS_LeftThumbStick "toggle cl_rendering_scaleform_disabled 1 0" bind P "toggle cl_rendering_scaleform_disabled 1 0"
+                  - button "Copy" [ref=e318] [cursor=pointer]:
+                    - img [ref=e319]
+                - generic [ref=e322]:
+                  - heading "\"Please be aware that the plugin only supports 2 digit scores (0 - 99)[...] Anything above those two restrictions will just look bad.\"" [level=5] [ref=e323]
+                  - 'link "Permalink: \"Please be aware that the plugin only supports 2 digit scores (0 - 99)[...] Anything above those two restrictions will just look bad.\"" [ref=e324] [cursor=pointer]':
+                    - /url: "#please-be-aware-that-the-plugin-only-supports-2-digit-scores-0---99-anything-above-those-two-restrictions-will-just-look-bad"
+                    - img [ref=e325]
+                - paragraph [ref=e327]: And the timer at the top only supports 5 characters (which includes the colon), so basically e.g. "99:59", everything above will "stretch" the text out of the center box and will make it look ugly. Yeah man, this plugin isn't perfect either lol, if you got any solutions to that, visit my GitHub repo and make a suggestion.
+                - paragraph [ref=e328]: Now finally, if you want to contribute to the plugin in any sort of way, or if you have any issues or if you just wanna see the source code (which isn't great btw, it's my first C++ project lol), well um... You're on the repository right now, so feel free to do any of that.
+        - generic [ref=e330]:
+          - generic [ref=e333]:
+            - heading "About" [level=2] [ref=e334]
+            - paragraph [ref=e335]: A BakkesMod plugin which uses a custom overlay in-game to improve FPS.
+            - heading "Resources" [level=3] [ref=e336]
+            - link "Readme" [ref=e338] [cursor=pointer]:
+              - /url: "#readme-ov-file"
+              - img [ref=e339]
+              - text: Readme
+            - heading "License" [level=3] [ref=e341]
+            - link "MIT license" [ref=e343] [cursor=pointer]:
+              - /url: "#MIT-1-ov-file"
+              - img [ref=e344]
+              - text: MIT license
+            - link "Activity" [ref=e347] [cursor=pointer]:
+              - /url: /EricPlayZ/CustomOverlay/activity
+              - img [ref=e348]
+              - text: Activity
+            - heading "Stars" [level=3] [ref=e350]
+            - link "6 stars" [ref=e352] [cursor=pointer]:
+              - /url: /EricPlayZ/CustomOverlay/stargazers
+              - img [ref=e353]
+              - strong [ref=e355]: "6"
+              - text: stars
+            - heading "Watchers" [level=3] [ref=e356]
+            - link "3 watching" [ref=e358] [cursor=pointer]:
+              - /url: /EricPlayZ/CustomOverlay/watchers
+              - img [ref=e359]
+              - strong [ref=e361]: "3"
+              - text: watching
+            - heading "Forks" [level=3] [ref=e362]
+            - link "5 forks" [ref=e364] [cursor=pointer]:
+              - /url: /EricPlayZ/CustomOverlay/forks
+              - img [ref=e365]
+              - strong [ref=e367]: "5"
+              - text: forks
+            - link "Report repository" [ref=e369] [cursor=pointer]:
+              - /url: /contact/report-content?content_url=https%3A%2F%2Fgithub.com%2FEricPlayZ%2FCustomOverlay&report=EricPlayZ+%28user%29
+          - generic [ref=e371]:
+            - heading "Releases" [level=2] [ref=e372]:
+              - link "Releases" [ref=e373] [cursor=pointer]:
+                - /url: /EricPlayZ/CustomOverlay/releases
+            - generic [ref=e374]: No releases published
+          - generic [ref=e376]:
+            - heading "Packages" [level=2] [ref=e377]:
+              - link "Packages" [ref=e378] [cursor=pointer]:
+                - /url: /users/EricPlayZ/packages?repo_name=CustomOverlay
+            - generic [ref=e379]: No packages published
+          - generic [ref=e381]:
+            - heading "Contributors 1" [level=2] [ref=e382]:
+              - link "Contributors 1" [ref=e383] [cursor=pointer]:
+                - /url: /EricPlayZ/CustomOverlay/graphs/contributors
+                - text: Contributors
+                - generic "1" [ref=e384]
+            - list [ref=e385]:
+              - listitem [ref=e386]:
+                - link "@EricPlayZ" [ref=e387] [cursor=pointer]:
+                  - /url: https://github.com/EricPlayZ
+                  - img "@EricPlayZ" [ref=e388]
+                - link "EricPlayZ EricPlayZ" [ref=e390] [cursor=pointer]:
+                  - /url: https://github.com/EricPlayZ
+                  - strong [ref=e391]: EricPlayZ
+                  - text: EricPlayZ
+          - generic [ref=e393]:
+            - heading "Languages" [level=2] [ref=e394]
+            - list [ref=e398]:
+              - listitem [ref=e399]:
+                - link "C++ 100.0%" [ref=e400] [cursor=pointer]:
+                  - /url: /EricPlayZ/CustomOverlay/search?l=c%2B%2B
+                  - img [ref=e401]
+                  - generic [ref=e403]: C++
+                  - generic [ref=e404]: 100.0%
+  - contentinfo [ref=e405]:
+    - heading "Footer" [level=2] [ref=e406]
+    - generic [ref=e407]:
+      - generic [ref=e408]:
+        - link "GitHub Homepage" [ref=e409] [cursor=pointer]:
+          - /url: https://github.com
+          - img [ref=e410]
+        - generic [ref=e412]: © 2026 GitHub, Inc.
+      - navigation "Footer" [ref=e413]:
+        - heading "Footer navigation" [level=3] [ref=e414]
+        - list "Footer navigation" [ref=e415]:
+          - listitem [ref=e416]:
+            - link "Terms" [ref=e417] [cursor=pointer]:
+              - /url: https://docs.github.com/site-policy/github-terms/github-terms-of-service
+          - listitem [ref=e418]:
+            - link "Privacy" [ref=e419] [cursor=pointer]:
+              - /url: https://docs.github.com/site-policy/privacy-policies/github-privacy-statement
+          - listitem [ref=e420]:
+            - link "Security" [ref=e421] [cursor=pointer]:
+              - /url: https://github.com/security
+          - listitem [ref=e422]:
+            - link "Status" [ref=e423] [cursor=pointer]:
+              - /url: https://www.githubstatus.com/
+          - listitem [ref=e424]:
+            - link "Community" [ref=e425] [cursor=pointer]:
+              - /url: https://github.community/
+          - listitem [ref=e426]:
+            - link "Docs" [ref=e427] [cursor=pointer]:
+              - /url: https://docs.github.com/
+          - listitem [ref=e428]:
+            - link "Contact" [ref=e429] [cursor=pointer]:
+              - /url: https://support.github.com?tags=dotcom-footer
+          - listitem [ref=e430]:
+            - button "Manage cookies" [ref=e432] [cursor=pointer]
+          - listitem [ref=e433]:
+            - button "Do not share my personal information" [ref=e435] [cursor=pointer]

@@ -182,6 +182,8 @@ class SuiteSpot final : public BakkesMod::Plugin::BakkesModPlugin,
     //void ShowToastError(const std::string& reason);
 };
 
+// TODO: HandleKeyPressParams struct — disabled pending crash investigation; re-enable with hotkeys feature
+/*
 struct HandleKeyPressParams
 {
     int ControllerId;
@@ -192,3 +194,4 @@ struct HandleKeyPressParams
     float AmountDepressed;
     unsigned int bGamepad;
 };
+*/

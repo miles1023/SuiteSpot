@@ -1,0 +1,210 @@
+- generic [ref=e3]:
+  - navigation [ref=e4]:
+    - generic [ref=e6]:
+      - generic [ref=e7]:
+        - link "BakkesPlugins Logo BakkesPlugins" [ref=e8] [cursor=pointer]:
+          - /url: /
+          - img "BakkesPlugins Logo" [ref=e9]
+          - generic [ref=e10]: BakkesPlugins
+        - generic [ref=e11]:
+          - link "Plugins" [ref=e12] [cursor=pointer]:
+            - /url: /plugins
+          - link "Cars" [ref=e13] [cursor=pointer]:
+            - /url: /cars
+          - link "Maps" [ref=e14] [cursor=pointer]:
+            - /url: /maps
+      - generic [ref=e17]:
+        - generic [ref=e18]:
+          - combobox [ref=e19]:
+            - option "All" [selected]
+            - option "Plugins"
+            - option "Cars"
+            - option "Maps"
+          - generic:
+            - img
+        - textbox "Search all..." [ref=e21]
+        - button [ref=e22] [cursor=pointer]:
+          - img [ref=e23]
+  - link "./ SafeComms_ [developer-first content moderation API] [SYS] SCANNING USER_CONTENT [ALRT] DETECTED HATE_SPEECH [SAFE] PURGED AUTOMATICALLY [SYS] SCANNING USER_CONTENT START FREE > FREE TIER. NO CREDIT CARD REQ." [ref=e32] [cursor=pointer]:
+    - /url: https://safecomms.dev?utm_source=bakkesplugins&utm_medium=banner&utm_campaign=safecomms_launch
+    - generic [ref=e37]:
+      - generic [ref=e38]: ./
+      - text: SafeComms_
+    - generic [ref=e39]:
+      - generic [ref=e40]: "[developer-first content moderation API]"
+      - generic [ref=e42]:
+        - generic [ref=e43]:
+          - generic [ref=e44]: "[SYS]"
+          - text: SCANNING
+          - generic [ref=e45]: USER_CONTENT
+        - generic [ref=e46]:
+          - generic [ref=e47]: "[ALRT]"
+          - text: DETECTED
+          - generic [ref=e48]: HATE_SPEECH
+        - generic [ref=e49]:
+          - generic [ref=e50]: "[SAFE]"
+          - text: PURGED
+          - generic [ref=e51]: AUTOMATICALLY
+        - generic [ref=e52]:
+          - generic [ref=e53]: "[SYS]"
+          - text: SCANNING
+          - generic [ref=e54]: USER_CONTENT
+    - generic [ref=e55]:
+      - generic [ref=e56]: START FREE >
+      - generic [ref=e57]: FREE TIER. NO CREDIT CARD REQ.
+  - main [ref=e58]:
+    - generic [ref=e60]:
+      - navigation [ref=e61]:
+        - list [ref=e62]:
+          - listitem [ref=e63]:
+            - link "Wikis" [ref=e64] [cursor=pointer]:
+              - /url: /wiki
+          - listitem [ref=e65]:
+            - img [ref=e66]
+          - listitem [ref=e68]:
+            - link "BakkesMod SDK" [ref=e69] [cursor=pointer]:
+              - /url: /wiki/bakkesmod-sdk
+          - listitem [ref=e70]:
+            - img [ref=e71]
+          - listitem [ref=e73]: Code Snippets
+      - generic [ref=e74]:
+        - generic [ref=e76]:
+          - generic [ref=e77]:
+            - generic [ref=e78]:
+              - heading "BakkesMod SDK" [level=3] [ref=e79]
+              - link "Search this wiki" [ref=e80] [cursor=pointer]:
+                - /url: /wiki/bakkesmod-sdk/search
+                - img [ref=e81]
+            - generic [ref=e84]:
+              - generic:
+                - img
+              - textbox "Filter pages..." [ref=e85]
+          - navigation [ref=e86]:
+            - link "Plugin Tutorial" [ref=e88] [cursor=pointer]:
+              - /url: /wiki/bakkesmod-sdk/plugin-tutorial
+              - button [ref=e89]:
+                - img [ref=e90]
+              - img [ref=e92]
+              - generic [ref=e94]: Plugin Tutorial
+            - link "Code Snippets" [ref=e96] [cursor=pointer]:
+              - /url: /wiki/bakkesmod-sdk/code-snippets
+              - button [ref=e97]:
+                - img [ref=e98]
+              - img [ref=e100]
+              - generic [ref=e102]: Code Snippets
+            - link "ImGui" [ref=e104] [cursor=pointer]:
+              - /url: /wiki/bakkesmod-sdk/imgui
+              - button [ref=e105]:
+                - img [ref=e106]
+              - img [ref=e108]
+              - generic [ref=e110]: ImGui
+            - link "Useful Info" [ref=e112] [cursor=pointer]:
+              - /url: /wiki/bakkesmod-sdk/useful-info
+              - button [ref=e113]:
+                - img [ref=e114]
+              - img [ref=e116]
+              - generic [ref=e118]: Useful Info
+            - link "Functions" [ref=e120] [cursor=pointer]:
+              - /url: /wiki/bakkesmod-sdk/functions
+              - button [ref=e121]:
+                - img [ref=e122]
+              - img [ref=e124]
+              - generic [ref=e126]: Functions
+            - link "BakkesMod API" [ref=e128] [cursor=pointer]:
+              - /url: /wiki/bakkesmod-sdk/bakkesmod-api
+              - button [ref=e129]:
+                - img [ref=e130]
+              - img [ref=e132]
+              - generic [ref=e134]: BakkesMod API
+        - generic [ref=e136]:
+          - heading "Code Snippets" [level=1] [ref=e138]
+          - generic [ref=e141]:
+            - generic [ref=e142]:
+              - img [ref=e143]
+              - text: Last edited by
+              - link "JerryTheBee" [ref=e146] [cursor=pointer]:
+                - /url: /members/JerryTheBee
+            - generic [ref=e147]:
+              - img [ref=e148]
+              - text: 10/16/2025
+          - generic [ref=e152]:
+            - heading "Related Pages" [level=2] [ref=e153]
+            - generic [ref=e154]:
+              - link "Code Snippet Example" [ref=e155] [cursor=pointer]:
+                - /url: /wiki/bakkesmod-sdk/code-snippets/code-snippet-example
+                - img [ref=e156]
+                - text: Code Snippet Example
+              - link "Canvas" [ref=e159] [cursor=pointer]:
+                - /url: /wiki/bakkesmod-sdk/code-snippets/canvas
+                - img [ref=e160]
+                - text: Canvas
+              - link "Creating an ImageWrapper" [ref=e163] [cursor=pointer]:
+                - /url: /wiki/bakkesmod-sdk/code-snippets/creating-image-wrapper
+                - img [ref=e164]
+                - text: Creating an ImageWrapper
+              - link "How CVars Work" [ref=e167] [cursor=pointer]:
+                - /url: /wiki/bakkesmod-sdk/code-snippets/how-cvars-work
+                - img [ref=e168]
+                - text: How CVars Work
+              - link "Persistent Storage" [ref=e171] [cursor=pointer]:
+                - /url: /wiki/bakkesmod-sdk/code-snippets/persistent-storage
+                - img [ref=e172]
+                - text: Persistent Storage
+              - link "Known Playlist IDs" [ref=e175] [cursor=pointer]:
+                - /url: /wiki/bakkesmod-sdk/code-snippets/playlist-id
+                - img [ref=e176]
+                - text: Known Playlist IDs
+              - link "Plugin Exclusive Logging" [ref=e179] [cursor=pointer]:
+                - /url: /wiki/bakkesmod-sdk/code-snippets/plugin-exclusive-logging
+                - img [ref=e180]
+                - text: Plugin Exclusive Logging
+              - link "Plugin Types" [ref=e183] [cursor=pointer]:
+                - /url: /wiki/bakkesmod-sdk/code-snippets/plugin-types
+                - img [ref=e184]
+                - text: Plugin Types
+              - link "Toasts" [ref=e187] [cursor=pointer]:
+                - /url: /wiki/bakkesmod-sdk/code-snippets/toasts
+                - img [ref=e188]
+                - text: Toasts
+              - link "Using HttpWrapper" [ref=e191] [cursor=pointer]:
+                - /url: /wiki/bakkesmod-sdk/code-snippets/using-http-wrapper
+                - img [ref=e192]
+                - text: Using HttpWrapper
+          - generic [ref=e196]:
+            - heading "Was this article helpful?" [level=3] [ref=e198]
+            - generic [ref=e199]:
+              - button "Yes, this was helpful" [ref=e200] [cursor=pointer]:
+                - img [ref=e201]
+              - button "No, this needs improvement" [ref=e203] [cursor=pointer]:
+                - img [ref=e204]
+            - paragraph [ref=e206]: Your feedback helps us improve our documentation
+  - region
+  - contentinfo [ref=e209]:
+    - generic [ref=e211]:
+      - generic [ref=e212]:
+        - heading "BakkesPlugins" [level=3] [ref=e213]
+        - paragraph [ref=e214]: Community-driven platform for BakkesMod plugins and Rocket League customization.
+        - generic [ref=e215]:
+          - generic [ref=e216]: © 2026
+          - generic [ref=e217]: "|"
+          - generic "Frontend version" [ref=e218]: v0.16.479-gcce7e22
+      - generic [ref=e219]:
+        - heading "Community" [level=3] [ref=e220]
+        - navigation [ref=e221]:
+          - link "News & Updates" [ref=e222] [cursor=pointer]:
+            - /url: /news
+          - link "Job Opportunities" [ref=e223] [cursor=pointer]:
+            - /url: /jobs
+          - link "Feature Requests" [ref=e224] [cursor=pointer]:
+            - /url: /feature-requests
+          - link "Discord Community" [ref=e225] [cursor=pointer]:
+            - /url: https://discord.gg/bakkesmod
+      - generic [ref=e226]:
+        - heading "Legal" [level=3] [ref=e227]
+        - navigation [ref=e228]:
+          - link "Terms of Service" [ref=e229] [cursor=pointer]:
+            - /url: /terms
+          - link "Privacy Policy" [ref=e230] [cursor=pointer]:
+            - /url: /privacy-policy
+          - link "Acceptable Use Policy" [ref=e231] [cursor=pointer]:
+            - /url: /acceptable-use-policy

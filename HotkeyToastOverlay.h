@@ -1,4 +1,6 @@
 #pragma once
+// TODO: HotkeyToastOverlay — disabled pending crash investigation; re-enable with hotkeys feature
+#if 0
 #include "imgui/imgui.h"
 #include <string>
 #include <chrono>
@@ -17,3 +19,4 @@ private:
     bool  visible  = false;
     bool  isError  = false;
 };
+#endif

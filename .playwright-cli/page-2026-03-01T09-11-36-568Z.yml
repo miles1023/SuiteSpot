@@ -1,0 +1,233 @@
+- generic [ref=e3]:
+  - navigation [ref=e4]:
+    - generic [ref=e6]:
+      - generic [ref=e7]:
+        - link "BakkesPlugins Logo BakkesPlugins" [ref=e8] [cursor=pointer]:
+          - /url: /
+          - img "BakkesPlugins Logo" [ref=e9]
+          - generic [ref=e10]: BakkesPlugins
+        - generic [ref=e11]:
+          - link "Plugins" [ref=e12] [cursor=pointer]:
+            - /url: /plugins
+          - link "Cars" [ref=e13] [cursor=pointer]:
+            - /url: /cars
+          - link "Maps" [ref=e14] [cursor=pointer]:
+            - /url: /maps
+      - generic [ref=e15]:
+        - generic [ref=e17]:
+          - generic [ref=e18]:
+            - combobox [ref=e19]:
+              - option "All" [selected]
+              - option "Plugins"
+              - option "Cars"
+              - option "Maps"
+            - generic:
+              - img
+          - textbox "Search all..." [ref=e21]
+          - button [ref=e22] [cursor=pointer]:
+            - img [ref=e23]
+        - generic [ref=e27]:
+          - button "Sign Up" [ref=e28] [cursor=pointer]
+          - button "Sign In" [ref=e29] [cursor=pointer]
+  - link "./ SafeComms_ [developer-first content moderation API] [SYS] SCANNING USER_CONTENT [ALRT] DETECTED HATE_SPEECH [SAFE] PURGED AUTOMATICALLY [SYS] SCANNING USER_CONTENT START FREE > FREE TIER. NO CREDIT CARD REQ." [ref=e32] [cursor=pointer]:
+    - /url: https://safecomms.dev?utm_source=bakkesplugins&utm_medium=banner&utm_campaign=safecomms_launch
+    - generic [ref=e37]:
+      - generic [ref=e38]: ./
+      - text: SafeComms_
+    - generic [ref=e39]:
+      - generic [ref=e40]: "[developer-first content moderation API]"
+      - generic [ref=e42]:
+        - generic [ref=e43]:
+          - generic [ref=e44]: "[SYS]"
+          - text: SCANNING
+          - generic [ref=e45]: USER_CONTENT
+        - generic [ref=e46]:
+          - generic [ref=e47]: "[ALRT]"
+          - text: DETECTED
+          - generic [ref=e48]: HATE_SPEECH
+        - generic [ref=e49]:
+          - generic [ref=e50]: "[SAFE]"
+          - text: PURGED
+          - generic [ref=e51]: AUTOMATICALLY
+        - generic [ref=e52]:
+          - generic [ref=e53]: "[SYS]"
+          - text: SCANNING
+          - generic [ref=e54]: USER_CONTENT
+    - generic [ref=e55]:
+      - generic [ref=e56]: START FREE >
+      - generic [ref=e57]: FREE TIER. NO CREDIT CARD REQ.
+  - main [ref=e58]:
+    - generic [ref=e61]:
+      - generic [ref=e63]:
+        - img "RocketStats" [ref=e64]
+        - generic [ref=e65]:
+          - generic [ref=e66]:
+            - heading "RocketStats" [level=1] [ref=e67]
+            - paragraph [ref=e68]: RocketStats is a Plugin working with bakkesmod, allowing to display some information in game and/or OBS
+          - generic [ref=e69]: v1.0.47
+      - generic [ref=e71]:
+        - generic [ref=e73]:
+          - generic [ref=e74]:
+            - generic [ref=e75]:
+              - generic [ref=e77]: R
+              - link "RocketStats" [ref=e78] [cursor=pointer]:
+                - /url: /members/RocketStats
+            - generic [ref=e79]:
+              - img [ref=e80]
+              - generic [ref=e82]: Updated September 9, 2025 at 4:03 PM
+          - generic [ref=e83]:
+            - generic [ref=e84]:
+              - generic [ref=e85]:
+                - img [ref=e86]
+                - generic [ref=e89]: 1.12M views
+              - generic [ref=e90]:
+                - img [ref=e91]
+                - generic [ref=e94]: 1.86M downloads
+            - generic [ref=e96] [cursor=pointer]:
+              - generic [ref=e97]:
+                - img [ref=e98]
+                - generic [ref=e100]: "5.0"
+              - generic [ref=e101]: (4)
+        - generic [ref=e103]:
+          - button "Install with BakkesMod" [ref=e104] [cursor=pointer]:
+            - img [ref=e105]
+            - generic [ref=e107]: Install with BakkesMod
+          - button "More actions" [ref=e108] [cursor=pointer]:
+            - img [ref=e109]
+      - generic [ref=e111]:
+        - generic [ref=e112]:
+          - navigation "Plugin detail tabs" [ref=e114]:
+            - button "Details" [ref=e115] [cursor=pointer]
+            - button "Comments (0)" [ref=e116] [cursor=pointer]
+            - button "Versions" [ref=e117] [cursor=pointer]
+          - generic [ref=e118]:
+            - heading "Plugin Details" [level=2] [ref=e119]
+            - generic [ref=e121]:
+              - heading "RocketStats" [level=1] [ref=e122]
+              - paragraph [ref=e123]:
+                - strong [ref=e124]: RocketStats
+                - text: is a Plugin working with
+                - strong [ref=e125]: BakkesMod
+                - text: ", allowing you to display session information (MMR, win, loss, streak, eg.)"
+                - strong [ref=e126]: in game
+                - text: and/or
+                - strong [ref=e127]: in OBS
+                - text: .Version 4 introduces themes and the ability to create them from A to Z, only using a JSON file.
+              - paragraph
+              - heading "Prerequisites" [level=3] [ref=e128]
+              - paragraph [ref=e129]:
+                - text: First, you'll need to install
+                - link "Bakkesmod" [ref=e130] [cursor=pointer]:
+                  - /url: https://www.bakkesmod.com/
+                - text: and make sure it's running.
+              - heading "Install & Explanations" [level=3] [ref=e131]
+              - paragraph [ref=e132]: Use the Wiki available in the menu at the top of the page. You will have all the information easily accessible to understand the plugin.
+              - paragraph [ref=e133]:
+                - text: "Wiki:"
+                - link "https://github.com/Lyliya/RocketStats/wiki" [ref=e134] [cursor=pointer]:
+                  - /url: https://github.com/Lyliya/RocketStats/wiki
+              - heading "Additional themes" [level=3] [ref=e135]
+              - paragraph [ref=e136]:
+                - text: "If you want more themes while waiting for the future website:"
+                - link "https://github.com/Arubinu/RocketStats_themes" [ref=e137] [cursor=pointer]:
+                  - /url: https://github.com/Arubinu/RocketStats_themes
+              - paragraph [ref=e138]: For more details on how to install these themes, visit the Wiki.
+              - heading "Community & Thanks :)" [level=2] [ref=e139]
+              - paragraph [ref=e140]:
+                - text: You can come and ask your questions or discuss with the community in our
+                - link "discord" [ref=e141] [cursor=pointer]:
+                  - /url: https://discord.gg/weBCBE4
+                - text: .
+              - paragraph [ref=e142]: Thanks to all the people who helped us during the development.
+              - heading "Thanks for ideas and support:" [level=5] [ref=e143]
+              - list [ref=e144]:
+                - listitem [ref=e145]:
+                  - link "Maylie" [ref=e146] [cursor=pointer]:
+                    - /url: https://www.twitch.tv/Maylie_tv
+              - heading "Thanks for tests:" [level=5] [ref=e147]
+              - list [ref=e148]:
+                - listitem [ref=e149]:
+                  - link "Daakiii_" [ref=e150] [cursor=pointer]:
+                    - /url: https://www.twitch.tv/daakiii_
+                - listitem [ref=e151]:
+                  - link "Ekon" [ref=e152] [cursor=pointer]:
+                    - /url: https://www.twitch.tv/ekonrl
+                - listitem [ref=e153]:
+                  - link "Fuury" [ref=e154] [cursor=pointer]:
+                    - /url: https://www.twitch.tv/FuuRy_Off
+                - listitem [ref=e155]:
+                  - link "Loppeur" [ref=e156] [cursor=pointer]:
+                    - /url: https://www.twitch.tv/loppeur
+                - listitem [ref=e157]:
+                  - link "sw1tch_rl" [ref=e158] [cursor=pointer]:
+                    - /url: https://www.twitch.tv/sw1tch_rl
+                - listitem [ref=e159]:
+                  - link "totone_tv" [ref=e160] [cursor=pointer]:
+                    - /url: https://www.twitch.tv/totone_tv
+              - heading "Development Team & Contributors" [level=4] [ref=e161]
+              - list [ref=e162]:
+                - listitem [ref=e163]:
+                  - link "Lyliya" [ref=e164] [cursor=pointer]:
+                    - /url: https://twitter.com/Lyliiya
+                - listitem [ref=e165]:
+                  - link "Nusa" [ref=e166] [cursor=pointer]:
+                    - /url: https://twitter.com/NuSa_yt
+                - listitem [ref=e167]:
+                  - link "Arubinu42" [ref=e168] [cursor=pointer]:
+                    - /url: https://www.twitch.tv/arubinu42
+                - listitem [ref=e169]: Larsluph#7713
+                - listitem [ref=e170]: Th3Ant#9411
+              - paragraph [ref=e171]:
+                - text: The plugin is now Open Source, you can find the source code
+                - link "here" [ref=e172] [cursor=pointer]:
+                  - /url: https://github.com/Lyliya/RocketStats
+                - text: .If you like the plugin, do not hesitate to put a star on this GitHub page of the project.
+              - paragraph [ref=e173]:
+                - text: "This plugin is provided for free, but if you like our work, you can support us at the following address:"
+                - link "https://www.paypal.me/rocketstats" [ref=e174] [cursor=pointer]:
+                  - /url: https://www.paypal.me/rocketstats
+        - generic [ref=e176]:
+          - heading "Plugin Information" [level=2] [ref=e177]
+          - generic [ref=e178]:
+            - generic [ref=e179]:
+              - generic [ref=e180]: Version
+              - text: 1.0.47
+            - generic [ref=e181]:
+              - generic [ref=e182]: Author
+              - text: RocketStats
+            - generic [ref=e183]:
+              - generic [ref=e184]: Created
+              - text: July 29, 2019 at 3:40 PM
+            - generic [ref=e185]:
+              - generic [ref=e186]: Last Updated
+              - text: September 9, 2025 at 4:03 PM
+  - region
+  - contentinfo [ref=e188]:
+    - generic [ref=e190]:
+      - generic [ref=e191]:
+        - heading "BakkesPlugins" [level=3] [ref=e192]
+        - paragraph [ref=e193]: Community-driven platform for BakkesMod plugins and Rocket League customization.
+        - generic [ref=e194]:
+          - generic [ref=e195]: © 2026
+          - generic [ref=e196]: "|"
+          - generic "Frontend version" [ref=e197]: v0.16.479-gcce7e22
+      - generic [ref=e198]:
+        - heading "Community" [level=3] [ref=e199]
+        - navigation [ref=e200]:
+          - link "News & Updates" [ref=e201] [cursor=pointer]:
+            - /url: /news
+          - link "Job Opportunities" [ref=e202] [cursor=pointer]:
+            - /url: /jobs
+          - link "Feature Requests" [ref=e203] [cursor=pointer]:
+            - /url: /feature-requests
+          - link "Discord Community" [ref=e204] [cursor=pointer]:
+            - /url: https://discord.gg/bakkesmod
+      - generic [ref=e205]:
+        - heading "Legal" [level=3] [ref=e206]
+        - navigation [ref=e207]:
+          - link "Terms of Service" [ref=e208] [cursor=pointer]:
+            - /url: /terms
+          - link "Privacy Policy" [ref=e209] [cursor=pointer]:
+            - /url: /privacy-policy
+          - link "Acceptable Use Policy" [ref=e210] [cursor=pointer]:
+            - /url: /acceptable-use-policy

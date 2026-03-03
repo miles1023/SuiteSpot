@@ -1,0 +1,518 @@
+- generic [ref=e3]:
+  - navigation [ref=e4]:
+    - generic [ref=e6]:
+      - generic [ref=e7]:
+        - link "BakkesPlugins Logo BakkesPlugins" [ref=e8] [cursor=pointer]:
+          - /url: /
+          - img "BakkesPlugins Logo" [ref=e9]
+          - generic [ref=e10]: BakkesPlugins
+        - generic [ref=e11]:
+          - link "Plugins" [ref=e12] [cursor=pointer]:
+            - /url: /plugins
+          - link "Cars" [ref=e13] [cursor=pointer]:
+            - /url: /cars
+          - link "Maps" [ref=e14] [cursor=pointer]:
+            - /url: /maps
+      - generic [ref=e17]:
+        - generic [ref=e18]:
+          - combobox [ref=e19]:
+            - option "All"
+            - option "Plugins" [selected]
+            - option "Cars"
+            - option "Maps"
+          - generic:
+            - img
+        - textbox "Search plugins..." [ref=e21]
+        - button [ref=e22] [cursor=pointer]:
+          - img [ref=e23]
+  - link "./ SafeComms_ [developer-first content moderation API] [SYS] SCANNING USER_CONTENT [ALRT] DETECTED HATE_SPEECH [SAFE] PURGED AUTOMATICALLY [SYS] SCANNING USER_CONTENT START FREE > FREE TIER. NO CREDIT CARD REQ." [ref=e32] [cursor=pointer]:
+    - /url: https://safecomms.dev?utm_source=bakkesplugins&utm_medium=banner&utm_campaign=safecomms_launch
+    - generic [ref=e37]:
+      - generic [ref=e38]: ./
+      - text: SafeComms_
+    - generic [ref=e39]:
+      - generic [ref=e40]: "[developer-first content moderation API]"
+      - generic [ref=e42]:
+        - generic [ref=e43]:
+          - generic [ref=e44]: "[SYS]"
+          - text: SCANNING
+          - generic [ref=e45]: USER_CONTENT
+        - generic [ref=e46]:
+          - generic [ref=e47]: "[ALRT]"
+          - text: DETECTED
+          - generic [ref=e48]: HATE_SPEECH
+        - generic [ref=e49]:
+          - generic [ref=e50]: "[SAFE]"
+          - text: PURGED
+          - generic [ref=e51]: AUTOMATICALLY
+        - generic [ref=e52]:
+          - generic [ref=e53]: "[SYS]"
+          - text: SCANNING
+          - generic [ref=e54]: USER_CONTENT
+    - generic [ref=e55]:
+      - generic [ref=e56]: START FREE >
+      - generic [ref=e57]: FREE TIER. NO CREDIT CARD REQ.
+  - main [ref=e58]:
+    - generic [ref=e60]:
+      - generic [ref=e61]:
+        - generic [ref=e62]:
+          - generic [ref=e63]:
+            - heading "Browse Plugins" [level=1] [ref=e64]
+            - paragraph [ref=e65]: Discover and download amazing plugins for your game
+          - link "Get BakkesMod" [ref=e66] [cursor=pointer]:
+            - /url: https://bakkesmod.com/
+            - img [ref=e67]
+            - generic [ref=e70]: Get BakkesMod
+        - link "Want to create your own plugin? Learn how to build BakkesMod plugins with our comprehensive SDK tutorial →" [ref=e72] [cursor=pointer]:
+          - /url: /wiki/bakkesmod-sdk/plugin-tutorial/getting-started
+          - generic [ref=e75]:
+            - heading "Want to create your own plugin?" [level=3] [ref=e76]
+            - paragraph [ref=e77]: Learn how to build BakkesMod plugins with our comprehensive SDK tutorial →
+        - generic [ref=e79]:
+          - generic [ref=e80]:
+            - generic [ref=e81]:
+              - generic:
+                - img
+              - textbox "Search plugins..." [ref=e82]: overlay
+              - button [ref=e83] [cursor=pointer]:
+                - img [ref=e84]
+            - button "Search" [ref=e87] [cursor=pointer]
+          - generic [ref=e88]:
+            - button "Filters" [ref=e90] [cursor=pointer]:
+              - img [ref=e91]
+              - generic [ref=e93]: Filters
+              - img [ref=e94]
+            - button "Sort" [ref=e97] [cursor=pointer]:
+              - img [ref=e98]
+              - generic [ref=e99]: Sort
+              - img [ref=e100]
+            - button "Switch to list view" [ref=e102] [cursor=pointer]:
+              - img [ref=e103]
+            - button "Clear" [ref=e104] [cursor=pointer]:
+              - img [ref=e105]
+              - generic [ref=e108]: Clear
+        - generic [ref=e109]:
+          - generic [ref=e110]: Found 35 plugins for "overlay"
+          - generic [ref=e111]: Page 1 of 3 (1-16 of 35)
+      - generic [ref=e113]:
+        - link "Controller Overlay ⭐ 5.0 v1.0.7 Controller Overlay H Haltepunkt Render a controller overlay during gameplay. 449k downloads 685k views Updated 4/2/2020 View Details →" [ref=e114] [cursor=pointer]:
+          - /url: /plugin/59
+          - generic [ref=e115]:
+            - img "Controller Overlay" [ref=e116]
+            - generic [ref=e120]:
+              - generic [ref=e121]: ⭐
+              - generic [ref=e122]: "5.0"
+            - generic [ref=e123]: v1.0.7
+          - generic [ref=e124]:
+            - heading "Controller Overlay" [level=3] [ref=e125]
+            - generic [ref=e126]:
+              - generic [ref=e128]: H
+              - generic "Haltepunkt" [ref=e129]
+            - paragraph [ref=e130]: Render a controller overlay during gameplay.
+            - generic [ref=e132]:
+              - generic [ref=e133]:
+                - img [ref=e134]
+                - text: 449k downloads
+              - generic [ref=e137]:
+                - img [ref=e138]
+                - text: 685k views
+          - generic [ref=e141]:
+            - generic [ref=e142]: Updated 4/2/2020
+            - generic [ref=e143]: View Details →
+        - link "Aerial Trainer v1.0.0 Aerial Trainer P Pertech This plugin helps you to improve your aerials 46.5k downloads 91.3k views Updated 1/12/2021 View Details →" [ref=e144] [cursor=pointer]:
+          - /url: /plugin/172
+          - generic [ref=e145]:
+            - img "Aerial Trainer" [ref=e146]
+            - generic [ref=e147]: v1.0.0
+          - generic [ref=e148]:
+            - heading "Aerial Trainer" [level=3] [ref=e149]
+            - generic [ref=e150]:
+              - generic [ref=e152]: P
+              - generic "Pertech" [ref=e153]
+            - paragraph [ref=e154]: This plugin helps you to improve your aerials
+            - generic [ref=e156]:
+              - generic [ref=e157]:
+                - img [ref=e158]
+                - text: 46.5k downloads
+              - generic [ref=e161]:
+                - img [ref=e162]
+                - text: 91.3k views
+          - generic [ref=e165]:
+            - generic [ref=e166]: Updated 1/12/2021
+            - generic [ref=e167]: View Details →
+        - link "KBM Overlay ⭐ 1.0 v1.0.0 KBM Overlay A AreUThreateningme A keyboard and mouse overlay 45.8k downloads 82.4k views Updated 5/14/2023 View Details →" [ref=e168] [cursor=pointer]:
+          - /url: /plugin/388
+          - generic [ref=e169]:
+            - img "KBM Overlay" [ref=e170]
+            - generic [ref=e174]:
+              - generic [ref=e175]: ⭐
+              - generic [ref=e176]: "1.0"
+            - generic [ref=e177]: v1.0.0
+          - generic [ref=e178]:
+            - heading "KBM Overlay" [level=3] [ref=e179]
+            - generic [ref=e180]:
+              - generic [ref=e182]: A
+              - generic "AreUThreateningme" [ref=e183]
+            - paragraph [ref=e184]: A keyboard and mouse overlay
+            - generic [ref=e186]:
+              - generic [ref=e187]:
+                - img [ref=e188]
+                - text: 45.8k downloads
+              - generic [ref=e191]:
+                - img [ref=e192]
+                - text: 82.4k views
+          - generic [ref=e195]:
+            - generic [ref=e196]: Updated 5/14/2023
+            - generic [ref=e197]: View Details →
+        - link "Replay Review Plugin v1.0.2 Replay Review Plugin D Dizz Review RL Gameplay 29.0k downloads 69.2k views Updated 9/21/2021 View Details →" [ref=e198] [cursor=pointer]:
+          - /url: /plugin/173
+          - generic [ref=e199]:
+            - img "Replay Review Plugin" [ref=e200]
+            - generic [ref=e201]: v1.0.2
+          - generic [ref=e202]:
+            - heading "Replay Review Plugin" [level=3] [ref=e203]
+            - generic [ref=e204]:
+              - generic [ref=e206]: D
+              - generic "Dizz" [ref=e207]
+            - paragraph [ref=e208]: Review RL Gameplay
+            - generic [ref=e210]:
+              - generic [ref=e211]:
+                - img [ref=e212]
+                - text: 29.0k downloads
+              - generic [ref=e215]:
+                - img [ref=e216]
+                - text: 69.2k views
+          - generic [ref=e219]:
+            - generic [ref=e220]: Updated 9/21/2021
+            - generic [ref=e221]: View Details →
+        - link "Rank Grapher v1.0.3 Rank Grapher O OceanOinker Displays a graph of rank progression. Can display all games or session games. Displays under scoreboard and/or after game. Quality of Life Automatic Functions Replay Game Mode Multiplayer 26.5k downloads 39.3k views Updated 11/2/2023 View Details →" [ref=e222] [cursor=pointer]:
+          - /url: /plugin/352
+          - generic [ref=e223]:
+            - img "Rank Grapher" [ref=e224]
+            - generic [ref=e225]: v1.0.3
+          - generic [ref=e226]:
+            - heading "Rank Grapher" [level=3] [ref=e227]
+            - generic [ref=e228]:
+              - generic [ref=e230]: O
+              - generic "OceanOinker" [ref=e231]
+            - paragraph [ref=e232]: Displays a graph of rank progression. Can display all games or session games. Displays under scoreboard and/or after game.
+            - generic [ref=e233]:
+              - generic [ref=e234]:
+                - generic "Improves/aids the usage of the game itself" [ref=e235]: Quality of Life
+                - generic "Automatically performs actions" [ref=e236]: Automatic Functions
+                - generic "Available in replays" [ref=e237]: Replay
+                - generic "A new gamemode that's not part of the base game" [ref=e238]: Game Mode
+                - generic "Available in multiplayer" [ref=e239]: Multiplayer
+              - generic [ref=e240]:
+                - generic [ref=e241]:
+                  - img [ref=e242]
+                  - text: 26.5k downloads
+                - generic [ref=e245]:
+                  - img [ref=e246]
+                  - text: 39.3k views
+          - generic [ref=e249]:
+            - generic [ref=e250]: Updated 11/2/2023
+            - generic [ref=e251]: View Details →
+        - link "BetterStats v1.0.2 BetterStats H HvRibbecK Shows you more and detailed statistics when you look at the scoreboard! Quality of Life Automatic Functions Multiplayer 23.0k downloads 60.3k views Updated 12/12/2020 View Details →" [ref=e252] [cursor=pointer]:
+          - /url: /plugin/163
+          - generic [ref=e253]:
+            - img "BetterStats" [ref=e254]
+            - generic [ref=e255]: v1.0.2
+          - generic [ref=e256]:
+            - heading "BetterStats" [level=3] [ref=e257]
+            - generic [ref=e258]:
+              - generic [ref=e260]: H
+              - generic "HvRibbecK" [ref=e261]
+            - paragraph [ref=e262]: Shows you more and detailed statistics when you look at the scoreboard!
+            - generic [ref=e263]:
+              - generic [ref=e264]:
+                - generic "Improves/aids the usage of the game itself" [ref=e265]: Quality of Life
+                - generic "Automatically performs actions" [ref=e266]: Automatic Functions
+                - generic "Available in multiplayer" [ref=e267]: Multiplayer
+              - generic [ref=e268]:
+                - generic [ref=e269]:
+                  - img [ref=e270]
+                  - text: 23.0k downloads
+                - generic [ref=e273]:
+                  - img [ref=e274]
+                  - text: 60.3k views
+          - generic [ref=e277]:
+            - generic [ref=e278]: Updated 12/12/2020
+            - generic [ref=e279]: View Details →
+        - link "Car Switching Plugin v1.0.2 Car Switching Plugin B Bollard A new game mode where you can press a button to switch which car you are controlling. 22.7k downloads 86.0k views Updated 8/26/2019 View Details →" [ref=e280] [cursor=pointer]:
+          - /url: /plugin/40
+          - generic [ref=e281]:
+            - img "Car Switching Plugin" [ref=e282]
+            - generic [ref=e283]: v1.0.2
+          - generic [ref=e284]:
+            - heading "Car Switching Plugin" [level=3] [ref=e285]
+            - generic [ref=e286]:
+              - generic [ref=e288]: B
+              - generic "Bollard" [ref=e289]
+            - paragraph [ref=e290]: A new game mode where you can press a button to switch which car you are controlling.
+            - generic [ref=e292]:
+              - generic [ref=e293]:
+                - img [ref=e294]
+                - text: 22.7k downloads
+              - generic [ref=e297]:
+                - img [ref=e298]
+                - text: 86.0k views
+          - generic [ref=e301]:
+            - generic [ref=e302]: Updated 8/26/2019
+            - generic [ref=e303]: View Details →
+        - link "DataCoach Replay Uploader & Coaching Overlay v1.0.2 DataCoach Replay Uploader & Coaching Overlay R RL_DataCoach Automatically Upload Replays to RLDataCoach's Site for Replay Review & NEW In Game Coaching Overlay Automatic Functions Replay 18.1k downloads 31.6k views Updated 6/5/2025 View Details →" [ref=e304] [cursor=pointer]:
+          - /url: /plugin/383
+          - generic [ref=e305]:
+            - img "DataCoach Replay Uploader & Coaching Overlay" [ref=e306]
+            - generic [ref=e307]: v1.0.2
+          - generic [ref=e308]:
+            - heading "DataCoach Replay Uploader & Coaching Overlay" [level=3] [ref=e309]
+            - generic [ref=e310]:
+              - generic [ref=e312]: R
+              - generic "RL_DataCoach" [ref=e313]
+            - paragraph [ref=e314]: Automatically Upload Replays to RLDataCoach's Site for Replay Review & NEW In Game Coaching Overlay
+            - generic [ref=e315]:
+              - generic [ref=e316]:
+                - generic "Automatically performs actions" [ref=e317]: Automatic Functions
+                - generic "Available in replays" [ref=e318]: Replay
+              - generic [ref=e319]:
+                - generic [ref=e320]:
+                  - img [ref=e321]
+                  - text: 18.1k downloads
+                - generic [ref=e324]:
+                  - img [ref=e325]
+                  - text: 31.6k views
+          - generic [ref=e328]:
+            - generic [ref=e329]: Updated 6/5/2025
+            - generic [ref=e330]: View Details →
+        - link "Stat Counter v1.0.10 Stat Counter J JerryTheBee Counts stats for an in-game overlay or OBS 15.1k downloads 32.4k views Updated 6/30/2022 View Details →" [ref=e331] [cursor=pointer]:
+          - /url: /plugin/126
+          - generic [ref=e332]:
+            - img "Stat Counter" [ref=e333]
+            - generic [ref=e334]: v1.0.10
+          - generic [ref=e335]:
+            - heading "Stat Counter" [level=3] [ref=e336]
+            - generic [ref=e337]:
+              - generic [ref=e339]: J
+              - generic "JerryTheBee" [ref=e340]
+            - paragraph [ref=e341]: Counts stats for an in-game overlay or OBS
+            - generic [ref=e343]:
+              - generic [ref=e344]:
+                - img [ref=e345]
+                - text: 15.1k downloads
+              - generic [ref=e348]:
+                - img [ref=e349]
+                - text: 32.4k views
+          - generic [ref=e352]:
+            - generic [ref=e353]: Updated 6/30/2022
+            - generic [ref=e354]: View Details →
+        - link "Custom Overlay 2.0 v1.0.3 Custom Overlay 2.0 E EricPlayZ A BakkesMod plugin which uses a custom overlay in-game to improve FPS. 14.1k downloads 55.7k views Updated 10/14/2020 View Details →" [ref=e355] [cursor=pointer]:
+          - /url: /plugin/152
+          - generic [ref=e356]:
+            - img "Custom Overlay 2.0" [ref=e357]
+            - generic [ref=e358]: v1.0.3
+          - generic [ref=e359]:
+            - heading "Custom Overlay 2.0" [level=3] [ref=e360]
+            - generic [ref=e361]:
+              - generic [ref=e363]: E
+              - generic "EricPlayZ" [ref=e364]
+            - paragraph [ref=e365]: A BakkesMod plugin which uses a custom overlay in-game to improve FPS.
+            - generic [ref=e367]:
+              - generic [ref=e368]:
+                - img [ref=e369]
+                - text: 14.1k downloads
+              - generic [ref=e372]:
+                - img [ref=e373]
+                - text: 55.7k views
+          - generic [ref=e376]:
+            - generic [ref=e377]: Updated 10/14/2020
+            - generic [ref=e378]: View Details →
+        - link "Syncify v1.0.3 Syncify M Mediacy Displays the current song you are listening to on Spotify Quality of Life Freeplay Multiplayer 13.3k downloads 26.6k views Updated 7/7/2025 View Details →" [ref=e379] [cursor=pointer]:
+          - /url: /plugin/575
+          - generic [ref=e380]:
+            - img "Syncify" [ref=e381]
+            - generic [ref=e382]: v1.0.3
+          - generic [ref=e383]:
+            - heading "Syncify" [level=3] [ref=e384]
+            - generic [ref=e385]:
+              - generic [ref=e387]: M
+              - generic "Mediacy" [ref=e388]
+            - paragraph [ref=e389]: Displays the current song you are listening to on Spotify
+            - generic [ref=e390]:
+              - generic [ref=e391]:
+                - generic "Improves/aids the usage of the game itself" [ref=e392]: Quality of Life
+                - generic "Available in freeplay" [ref=e393]: Freeplay
+                - generic "Available in multiplayer" [ref=e394]: Multiplayer
+              - generic [ref=e395]:
+                - generic [ref=e396]:
+                  - img [ref=e397]
+                  - text: 13.3k downloads
+                - generic [ref=e400]:
+                  - img [ref=e401]
+                  - text: 26.6k views
+          - generic [ref=e404]:
+            - generic [ref=e405]: Updated 7/7/2025
+            - generic [ref=e406]: View Details →
+        - link "All In One v1.0.5 All In One I IReallyLoveMilk AIO is a plugin where you can add multiple plugins into one, just put up a issue on github and it will be resolved 8,867 downloads 28.2k views Updated 11/24/2024 View Details →" [ref=e407] [cursor=pointer]:
+          - /url: /plugin/457
+          - generic [ref=e408]:
+            - img "All In One" [ref=e409]
+            - generic [ref=e410]: v1.0.5
+          - generic [ref=e411]:
+            - heading "All In One" [level=3] [ref=e412]
+            - generic [ref=e413]:
+              - generic [ref=e415]: I
+              - generic "IReallyLoveMilk" [ref=e416]
+            - paragraph [ref=e417]: AIO is a plugin where you can add multiple plugins into one, just put up a issue on github and it will be resolved
+            - generic [ref=e419]:
+              - generic [ref=e420]:
+                - img [ref=e421]
+                - text: 8,867 downloads
+              - generic [ref=e424]:
+                - img [ref=e425]
+                - text: 28.2k views
+          - generic [ref=e428]:
+            - generic [ref=e429]: Updated 11/24/2024
+            - generic [ref=e430]: View Details →
+        - link "KBM Overlay ⭐ 5.0 v1.0.2 KBM Overlay A AkumaRL A new and improved KBM Overlay for Rocket League! 8,681 downloads 21.3k views Updated 1/22/2025 View Details →" [ref=e431] [cursor=pointer]:
+          - /url: /plugin/509
+          - generic [ref=e432]:
+            - img "KBM Overlay" [ref=e433]
+            - generic [ref=e437]:
+              - generic [ref=e438]: ⭐
+              - generic [ref=e439]: "5.0"
+            - generic [ref=e440]: v1.0.2
+          - generic [ref=e441]:
+            - heading "KBM Overlay" [level=3] [ref=e442]
+            - generic [ref=e443]:
+              - generic [ref=e445]: A
+              - generic "AkumaRL" [ref=e446]
+            - paragraph [ref=e447]: A new and improved KBM Overlay for Rocket League!
+            - generic [ref=e449]:
+              - generic [ref=e450]:
+                - img [ref=e451]
+                - text: 8,681 downloads
+              - generic [ref=e454]:
+                - img [ref=e455]
+                - text: 21.3k views
+          - generic [ref=e458]:
+            - generic [ref=e459]: Updated 1/22/2025
+            - generic [ref=e460]: View Details →
+        - link "PeakTracker v1.0.0 PeakTracker S spragouu Keep track of your peak MMR across all ranked game-modes! Quality of Life Automatic Functions 6,025 downloads 13.9k views Updated 8/15/2021 View Details →" [ref=e461] [cursor=pointer]:
+          - /url: /plugin/274
+          - generic [ref=e462]:
+            - img "PeakTracker" [ref=e463]
+            - generic [ref=e464]: v1.0.0
+          - generic [ref=e465]:
+            - heading "PeakTracker" [level=3] [ref=e466]
+            - generic [ref=e467]:
+              - generic [ref=e469]: S
+              - generic "spragouu" [ref=e470]
+            - paragraph [ref=e471]: Keep track of your peak MMR across all ranked game-modes!
+            - generic [ref=e472]:
+              - generic [ref=e473]:
+                - generic "Improves/aids the usage of the game itself" [ref=e474]: Quality of Life
+                - generic "Automatically performs actions" [ref=e475]: Automatic Functions
+              - generic [ref=e476]:
+                - generic [ref=e477]:
+                  - img [ref=e478]
+                  - text: 6,025 downloads
+                - generic [ref=e481]:
+                  - img [ref=e482]
+                  - text: 13.9k views
+          - generic [ref=e485]:
+            - generic [ref=e486]: Updated 8/15/2021
+            - generic [ref=e487]: View Details →
+        - link "Demo Counter v1.0.3 Demo Counter K kevuwk plugin to keep track of demos 6,009 downloads 12.5k views Updated 10/17/2021 View Details →" [ref=e488] [cursor=pointer]:
+          - /url: /plugin/263
+          - generic [ref=e489]:
+            - img "Demo Counter" [ref=e490]
+            - generic [ref=e491]: v1.0.3
+          - generic [ref=e492]:
+            - heading "Demo Counter" [level=3] [ref=e493]
+            - generic [ref=e494]:
+              - generic [ref=e496]: K
+              - generic "kevuwk" [ref=e497]
+            - paragraph [ref=e498]: plugin to keep track of demos
+            - generic [ref=e500]:
+              - generic [ref=e501]:
+                - img [ref=e502]
+                - text: 6,009 downloads
+              - generic [ref=e505]:
+                - img [ref=e506]
+                - text: 12.5k views
+          - generic [ref=e509]:
+            - generic [ref=e510]: Updated 10/17/2021
+            - generic [ref=e511]: View Details →
+        - link "Dodge deadzone overlay v1.0.3 Dodge deadzone overlay R Roickard Draw stick location and dodge deadzone Quality of Life Freeplay Custom Training Game Mode Multiplayer 5,731 downloads 12.9k views Updated 1/20/2024 View Details →" [ref=e512] [cursor=pointer]:
+          - /url: /plugin/337
+          - generic [ref=e513]:
+            - img "Dodge deadzone overlay" [ref=e514]
+            - generic [ref=e515]: v1.0.3
+          - generic [ref=e516]:
+            - heading "Dodge deadzone overlay" [level=3] [ref=e517]
+            - generic [ref=e518]:
+              - generic [ref=e520]: R
+              - generic "Roickard" [ref=e521]
+            - paragraph [ref=e522]: Draw stick location and dodge deadzone
+            - generic [ref=e523]:
+              - generic [ref=e524]:
+                - generic "Improves/aids the usage of the game itself" [ref=e525]: Quality of Life
+                - generic "Available in freeplay" [ref=e526]: Freeplay
+                - generic "Available in custom trainings" [ref=e527]: Custom Training
+                - generic "A new gamemode that's not part of the base game" [ref=e528]: Game Mode
+                - generic "Available in multiplayer" [ref=e529]: Multiplayer
+              - generic [ref=e530]:
+                - generic [ref=e531]:
+                  - img [ref=e532]
+                  - text: 5,731 downloads
+                - generic [ref=e535]:
+                  - img [ref=e536]
+                  - text: 12.9k views
+          - generic [ref=e539]:
+            - generic [ref=e540]: Updated 1/20/2024
+            - generic [ref=e541]: View Details →
+      - navigation [ref=e543]:
+        - button "Previous" [disabled] [ref=e544]:
+          - generic [ref=e545]:
+            - img [ref=e546]
+            - text: Previous
+        - generic [ref=e548]:
+          - generic [ref=e549]: "1"
+          - link "2" [ref=e550] [cursor=pointer]:
+            - /url: /plugins?search=overlay&page=2
+        - link "Next" [ref=e551] [cursor=pointer]:
+          - /url: /plugins?search=overlay&page=2
+          - generic [ref=e552]:
+            - text: Next
+            - img [ref=e553]
+  - region
+  - contentinfo [ref=e556]:
+    - generic [ref=e558]:
+      - generic [ref=e559]:
+        - heading "BakkesPlugins" [level=3] [ref=e560]
+        - paragraph [ref=e561]: Community-driven platform for BakkesMod plugins and Rocket League customization.
+        - generic [ref=e562]:
+          - generic [ref=e563]: © 2026
+          - generic [ref=e564]: "|"
+          - generic "Frontend version" [ref=e565]: v0.16.479-gcce7e22
+      - generic [ref=e566]:
+        - heading "Community" [level=3] [ref=e567]
+        - navigation [ref=e568]:
+          - link "News & Updates" [ref=e569] [cursor=pointer]:
+            - /url: /news
+          - link "Job Opportunities" [ref=e570] [cursor=pointer]:
+            - /url: /jobs
+          - link "Feature Requests" [ref=e571] [cursor=pointer]:
+            - /url: /feature-requests
+          - link "Discord Community" [ref=e572] [cursor=pointer]:
+            - /url: https://discord.gg/bakkesmod
+      - generic [ref=e573]:
+        - heading "Legal" [level=3] [ref=e574]
+        - navigation [ref=e575]:
+          - link "Terms of Service" [ref=e576] [cursor=pointer]:
+            - /url: /terms
+          - link "Privacy Policy" [ref=e577] [cursor=pointer]:
+            - /url: /privacy-policy
+          - link "Acceptable Use Policy" [ref=e578] [cursor=pointer]:
+            - /url: /acceptable-use-policy

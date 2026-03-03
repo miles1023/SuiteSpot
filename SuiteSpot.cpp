@@ -680,7 +680,8 @@ void SuiteSpot::onUnload()
     gameWrapper->UnhookEventPost("Function TAGame.GameEvent_Soccar_TA.EventMatchEnded");
     gameWrapper->UnhookEventPost("Function TAGame.GameEvent_TrainingEditor_TA.OnInit");
     gameWrapper->UnhookEventPost("Function TAGame.TrainingEditorMetrics_TA.TrainingShotAttempt");
-    gameWrapper->UnhookEvent("Function TAGame.GameViewportClient_TA.HandleKeyPress");
+    // TODO: HandleKeyPress unhook — disabled pending crash investigation
+    // gameWrapper->UnhookEvent("Function TAGame.GameViewportClient_TA.HandleKeyPress");
     gameWrapper->UnregisterDrawables();
     LOG("Event hooks and drawables removed");
 

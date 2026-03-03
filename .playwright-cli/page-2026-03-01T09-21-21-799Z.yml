@@ -1,0 +1,187 @@
+- generic [ref=e3]:
+  - navigation [ref=e4]:
+    - generic [ref=e6]:
+      - generic [ref=e7]:
+        - link "BakkesPlugins Logo BakkesPlugins" [ref=e8] [cursor=pointer]:
+          - /url: /
+          - img "BakkesPlugins Logo" [ref=e9]
+          - generic [ref=e10]: BakkesPlugins
+        - generic [ref=e11]:
+          - link "Plugins" [ref=e12] [cursor=pointer]:
+            - /url: /plugins
+          - link "Cars" [ref=e13] [cursor=pointer]:
+            - /url: /cars
+          - link "Maps" [ref=e14] [cursor=pointer]:
+            - /url: /maps
+      - generic [ref=e17]:
+        - generic [ref=e18]:
+          - combobox [ref=e19]:
+            - option "All" [selected]
+            - option "Plugins"
+            - option "Cars"
+            - option "Maps"
+          - generic:
+            - img
+        - textbox "Search all..." [ref=e21]
+        - button [ref=e22] [cursor=pointer]:
+          - img [ref=e23]
+  - link "./ SafeComms_ [developer-first content moderation API] [SYS] SCANNING USER_CONTENT [ALRT] DETECTED HATE_SPEECH [SAFE] PURGED AUTOMATICALLY [SYS] SCANNING USER_CONTENT START FREE > FREE TIER. NO CREDIT CARD REQ." [ref=e32] [cursor=pointer]:
+    - /url: https://safecomms.dev?utm_source=bakkesplugins&utm_medium=banner&utm_campaign=safecomms_launch
+    - generic [ref=e37]:
+      - generic [ref=e38]: ./
+      - text: SafeComms_
+    - generic [ref=e39]:
+      - generic [ref=e40]: "[developer-first content moderation API]"
+      - generic [ref=e42]:
+        - generic [ref=e43]:
+          - generic [ref=e44]: "[SYS]"
+          - text: SCANNING
+          - generic [ref=e45]: USER_CONTENT
+        - generic [ref=e46]:
+          - generic [ref=e47]: "[ALRT]"
+          - text: DETECTED
+          - generic [ref=e48]: HATE_SPEECH
+        - generic [ref=e49]:
+          - generic [ref=e50]: "[SAFE]"
+          - text: PURGED
+          - generic [ref=e51]: AUTOMATICALLY
+        - generic [ref=e52]:
+          - generic [ref=e53]: "[SYS]"
+          - text: SCANNING
+          - generic [ref=e54]: USER_CONTENT
+    - generic [ref=e55]:
+      - generic [ref=e56]: START FREE >
+      - generic [ref=e57]: FREE TIER. NO CREDIT CARD REQ.
+  - main [ref=e58]:
+    - generic [ref=e60]:
+      - navigation [ref=e61]:
+        - list [ref=e62]:
+          - listitem [ref=e63]:
+            - link "Wikis" [ref=e64] [cursor=pointer]:
+              - /url: /wiki
+          - listitem [ref=e65]:
+            - img [ref=e66]
+          - listitem [ref=e68]: BakkesMod SDK
+      - generic [ref=e69]:
+        - generic [ref=e70]:
+          - heading "BakkesMod SDK" [level=1] [ref=e72]
+          - paragraph [ref=e73]: Complete documentation for the BakkesMod SDK, including API references, tutorials, and best practices for plugin development.
+          - generic [ref=e74]:
+            - generic:
+              - img
+            - textbox "Search articles..." [ref=e75]
+        - generic [ref=e76]:
+          - link "Plugin Tutorial Plugin Tutorial JerryTheBee 10/16/2025 6 subpages" [ref=e77] [cursor=pointer]:
+            - /url: /wiki/bakkesmod-sdk/plugin-tutorial
+            - heading "Plugin Tutorial" [level=2] [ref=e78]
+            - paragraph [ref=e79]: Plugin Tutorial
+            - generic [ref=e80]:
+              - generic [ref=e81]:
+                - img [ref=e82]
+                - text: JerryTheBee
+              - generic [ref=e85]:
+                - img [ref=e86]
+                - text: 10/16/2025
+              - generic [ref=e89]:
+                - img [ref=e90]
+                - text: 6 subpages
+          - link "Code Snippets Code Snippets JerryTheBee 10/16/2025 10 subpages" [ref=e93] [cursor=pointer]:
+            - /url: /wiki/bakkesmod-sdk/code-snippets
+            - heading "Code Snippets" [level=2] [ref=e94]
+            - paragraph [ref=e95]: Code Snippets
+            - generic [ref=e96]:
+              - generic [ref=e97]:
+                - img [ref=e98]
+                - text: JerryTheBee
+              - generic [ref=e101]:
+                - img [ref=e102]
+                - text: 10/16/2025
+              - generic [ref=e105]:
+                - img [ref=e106]
+                - text: 10 subpages
+          - link "ImGui ImGui JerryTheBee 10/16/2025 5 subpages" [ref=e109] [cursor=pointer]:
+            - /url: /wiki/bakkesmod-sdk/imgui
+            - heading "ImGui" [level=2] [ref=e110]
+            - paragraph [ref=e111]: ImGui
+            - generic [ref=e112]:
+              - generic [ref=e113]:
+                - img [ref=e114]
+                - text: JerryTheBee
+              - generic [ref=e117]:
+                - img [ref=e118]
+                - text: 10/16/2025
+              - generic [ref=e121]:
+                - img [ref=e122]
+                - text: 5 subpages
+          - link "Useful Info Useful Information JerryTheBee 10/16/2025 12 subpages" [ref=e125] [cursor=pointer]:
+            - /url: /wiki/bakkesmod-sdk/useful-info
+            - heading "Useful Info" [level=2] [ref=e126]
+            - paragraph [ref=e127]: Useful Information
+            - generic [ref=e128]:
+              - generic [ref=e129]:
+                - img [ref=e130]
+                - text: JerryTheBee
+              - generic [ref=e133]:
+                - img [ref=e134]
+                - text: 10/16/2025
+              - generic [ref=e137]:
+                - img [ref=e138]
+                - text: 12 subpages
+          - link "Functions Functions JerryTheBee 10/16/2025 6 subpages" [ref=e141] [cursor=pointer]:
+            - /url: /wiki/bakkesmod-sdk/functions
+            - heading "Functions" [level=2] [ref=e142]
+            - paragraph [ref=e143]: Functions
+            - generic [ref=e144]:
+              - generic [ref=e145]:
+                - img [ref=e146]
+                - text: JerryTheBee
+              - generic [ref=e149]:
+                - img [ref=e150]
+                - text: 10/16/2025
+              - generic [ref=e153]:
+                - img [ref=e154]
+                - text: 6 subpages
+          - link "BakkesMod API BakkesMod provides a powerful SDK, accessible in c++. Visit the [Plugin Tutorial](/wiki/bakkesmod-sdk/plugin-tutorial/getting-started) sections to get started! JerryTheBee 10/16/2025 4 subpages" [ref=e157] [cursor=pointer]:
+            - /url: /wiki/bakkesmod-sdk/bakkesmod-api
+            - heading "BakkesMod API" [level=2] [ref=e158]
+            - paragraph [ref=e159]: BakkesMod provides a powerful SDK, accessible in c++. Visit the [Plugin Tutorial](/wiki/bakkesmod-sdk/plugin-tutorial/getting-started) sections to get started!
+            - generic [ref=e160]:
+              - generic [ref=e161]:
+                - img [ref=e162]
+                - text: JerryTheBee
+              - generic [ref=e165]:
+                - img [ref=e166]
+                - text: 10/16/2025
+              - generic [ref=e169]:
+                - img [ref=e170]
+                - text: 4 subpages
+  - region
+  - contentinfo [ref=e174]:
+    - generic [ref=e176]:
+      - generic [ref=e177]:
+        - heading "BakkesPlugins" [level=3] [ref=e178]
+        - paragraph [ref=e179]: Community-driven platform for BakkesMod plugins and Rocket League customization.
+        - generic [ref=e180]:
+          - generic [ref=e181]: © 2026
+          - generic [ref=e182]: "|"
+          - generic "Frontend version" [ref=e183]: v0.16.479-gcce7e22
+      - generic [ref=e184]:
+        - heading "Community" [level=3] [ref=e185]
+        - navigation [ref=e186]:
+          - link "News & Updates" [ref=e187] [cursor=pointer]:
+            - /url: /news
+          - link "Job Opportunities" [ref=e188] [cursor=pointer]:
+            - /url: /jobs
+          - link "Feature Requests" [ref=e189] [cursor=pointer]:
+            - /url: /feature-requests
+          - link "Discord Community" [ref=e190] [cursor=pointer]:
+            - /url: https://discord.gg/bakkesmod
+      - generic [ref=e191]:
+        - heading "Legal" [level=3] [ref=e192]
+        - navigation [ref=e193]:
+          - link "Terms of Service" [ref=e194] [cursor=pointer]:
+            - /url: /terms
+          - link "Privacy Policy" [ref=e195] [cursor=pointer]:
+            - /url: /privacy-policy
+          - link "Acceptable Use Policy" [ref=e196] [cursor=pointer]:
+            - /url: /acceptable-use-policy
