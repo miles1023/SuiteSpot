@@ -345,7 +345,7 @@ void WorkshopDownloader::FetchReleaseDetails(int index, int generation)
                             if (mapResult.ID == mapId) {
                                 mapResult.releases = releases;
                                 mapResult.PreviewUrl = previewUrl;
-                                mapResult.Size = "10000000"; // Placeholder
+                                mapResult.Size = "10000000"; // TODO: replace with actual file size from API response
 
                                 // Check local cache for image
                                 std::string imageExt = GetImageExtension(previewUrl);

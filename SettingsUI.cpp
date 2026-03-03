@@ -1597,14 +1597,7 @@ void SettingsUI::RenderCvarRow(ParsedCvar& cvar, int rowIndex)
     float rowStartY = ImGui::GetCursorPosY();
 
     // ---- alternating row background ----
-    if (rowIndex % 2 != 0) {
-        ImVec2 winPos = ImGui::GetWindowPos();
-        float scrollX = ImGui::GetScrollX();
-        float scrollY = ImGui::GetScrollY();
-        // We draw it after we know the row height, so defer — use a placeholder height for now.
-        // Will be corrected after we measure afterDescY below via DrawList.
-        // (We'll draw it after measuring.)
-    }
+    // Drawn after afterDescY is known (see lines below near ---- Advance cursor ----)
 
     // ---- Name column ----
     ImGui::SetCursorPos(ImVec2(nameX, rowStartY + F6_PAD_ROW));

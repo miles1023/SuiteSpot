@@ -405,9 +405,10 @@ constexpr float LEFT_PANEL_MIN_WIDTH = 200.0f;
 // Height of the two-panel browser area
 constexpr float BROWSER_HEIGHT = 400.0f;
 
-// Preview image dimensions (DEPRECATED — preview now uses dynamic sizing via GetContentRegionAvail)
-constexpr float PREVIEW_IMAGE_WIDTH = 280.0f;
-constexpr float PREVIEW_IMAGE_HEIGHT = 158.0f; // 16:9 aspect ratio
+// Preview image dimensions (DEPRECATED — unreferenced; preview uses dynamic sizing via GetContentRegionAvail)
+// TODO: remove PREVIEW_IMAGE_WIDTH / PREVIEW_IMAGE_HEIGHT once confirmed no callers remain
+// constexpr float PREVIEW_IMAGE_WIDTH = 280.0f;
+// constexpr float PREVIEW_IMAGE_HEIGHT = 158.0f; // 16:9 aspect ratio
 
 // Colors
 inline const ImVec4 MAP_NAME_COLOR = ImVec4(1.0f, 1.0f, 1.0f, 1.0f);
