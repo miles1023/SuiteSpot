@@ -2,6 +2,7 @@
 #include "IMGUI/imgui.h"
 #include "StatusMessageUI.h"
 #include "WorkshopDownloader.h"
+#include "F6ForDummies/ConfigParser.h"
 #include <string>
 #include <vector>
 #include <map>
@@ -36,6 +37,7 @@ class SettingsUI
   public:
     explicit SettingsUI(SuiteSpot* plugin);
     void RenderMainSettingsWindow();
+    void LoadF6Cvars(const std::string& configPath, const std::string& descPath);
 
   private:
     SuiteSpot* plugin_;
@@ -96,4 +98,16 @@ class SettingsUI
 
     // Texture popup state
     bool showTexturePopup = false;
+
+    // F6 For Dummies tab
+    void RenderF6ForDummiesTab();
+    void RenderCvarRow(ParsedCvar& cvar, int rowIndex);
+    void ExecuteCvar(ParsedCvar& cvar);
+
+    std::vector<ParsedCvar> f6Cvars;
+    char f6SearchBuf[256] = {};
+    std::string f6StatusMsg;
+    float f6StatusTimer = 0.f;
+    bool f6StatusIsError = false;
+    bool f6ShowUncertainOnly = false;
 };

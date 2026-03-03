@@ -130,6 +130,17 @@ static const HotkeyRow HOTKEY_ROWS[] = {
     {"Load Now", "suitespot_hotkey_load_now_key", "suitespot_hotkey_load_now_key2"},
 };
 
+// === F6 For Dummies Layout Constants ===
+
+constexpr float F6_PAD_OUTER  = 10.0f;   // left AND right margin
+constexpr float F6_PAD_TOP    = 8.0f;    // above search bar
+constexpr float F6_PAD_BOTTOM = 8.0f;    // below last row / feedback bar
+constexpr float F6_PAD_ROW    = 6.0f;    // top AND bottom padding inside each row
+constexpr float F6_PAD_COL    = 8.0f;    // horizontal gap between columns
+constexpr float F6_NAME_W     = 180.0f;  // fixed CVar name column width
+constexpr float F6_INPUT_W    = 160.0f;  // fixed input column width
+constexpr float F6_BTN_W      = 36.0f;   // execute button width
+
 } // namespace SettingsUI
 
 // ===================================================================

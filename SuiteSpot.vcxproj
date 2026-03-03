@@ -154,6 +154,8 @@ exit /b 0</Command>
     <ClCompile Include="LoadoutUI.cpp" />
     <ClCompile Include="SettingsUI.cpp" />
     <ClCompile Include="SettingsSync.cpp" />
+    <ClCompile Include="F6ForDummies\ConfigParser.cpp" />
+    <ClCompile Include="F6ForDummies\DescriptionsLoader.cpp" />
     <ClCompile Include="StatusMessageUI.cpp" />
     <ClCompile Include="HelpersUI.cpp" />
     <ClCompile Include="PackUsageTracker.cpp" />
@@ -195,6 +197,8 @@ exit /b 0</Command>
     <ClInclude Include="LoadoutUI.h" />
     <ClInclude Include="SettingsUI.h" />
     <ClInclude Include="SettingsSync.h" />
+    <ClInclude Include="F6ForDummies\ConfigParser.h" />
+    <ClInclude Include="F6ForDummies\DescriptionsLoader.h" />
     <ClInclude Include="StatusMessageUI.h" />
     <ClInclude Include="ConstantsUI.h" />
     <ClInclude Include="HelpersUI.h" />

@@ -11,6 +11,8 @@
 #include "ConstantsUI.h"
 #include "HelpersUI.h"
 #include "DefaultPacks.h"
+#include "F6ForDummies/ConfigParser.h"
+#include "F6ForDummies/DescriptionsLoader.h"
 #include "bakkesmod/wrappers/GuiManagerWrapper.h"
 
 #include <algorithm>
@@ -468,6 +470,12 @@ void SettingsUI::RenderMainSettingsWindow()
             ImGui::PopStyleVar();
             ImGui::PopStyleColor(2);
             if (ImGui::IsItemHovered()) ImGui::SetTooltip("Persist hotkey settings to config file");
+            ImGui::EndTabItem();
+        }
+
+        // ===== F6 FOR DUMMIES TAB =====
+        if (ImGui::BeginTabItem("F6 For Dummies")) {
+            RenderF6ForDummiesTab();
             ImGui::EndTabItem();
         }
 
@@ -1542,4 +1550,260 @@ void SettingsUI::RenderDownloadTexturesPopup(const std::vector<std::string>& mis
         }
         ImGui::EndPopup();
     }
+}
+
+// =============================================================================
+// F6 FOR DUMMIES — CVar Browser
+// =============================================================================
+
+void SettingsUI::LoadF6Cvars(const std::string& configPath, const std::string& descPath)
+{
+    f6Cvars = ConfigParser::Parse(configPath);
+    DescriptionsLoader::Enrich(f6Cvars, descPath);
+}
+
+void SettingsUI::ExecuteCvar(ParsedCvar& cvar)
+{
+    std::string command = cvar.name + " " + cvar.currentValue;
+    plugin_->cvarManager->executeCommand(command, false);
+
+    // Re-read config.cfg to sync live values
+    auto configPath = plugin_->mapManager->GetDataRoot().parent_path() / "cfg" / "config.cfg";
+    auto descPath   = plugin_->mapManager->GetSuiteSpotRoot() / "cvars_descriptions.json";
+    f6Cvars = ConfigParser::Parse(configPath.string());
+    DescriptionsLoader::Enrich(f6Cvars, descPath.string());
+
+    f6StatusMsg      = "\xe2\x9c\x93  " + command;   // ✓ UTF-8
+    f6StatusIsError  = false;
+    f6StatusTimer    = 3.f;
+}
+
+void SettingsUI::RenderCvarRow(ParsedCvar& cvar, int rowIndex)
+{
+    using namespace UI::SettingsUI;
+    float contentWidth = ImGui::GetContentRegionAvail().x;
+    float descWidth = contentWidth - F6_PAD_OUTER - F6_NAME_W - F6_PAD_COL
+                    - F6_INPUT_W - F6_PAD_COL - F6_BTN_W - F6_PAD_OUTER;
+    if (descWidth < 60.f) descWidth = 60.f;
+
+    float nameX  = F6_PAD_OUTER;
+    float descX  = nameX  + F6_NAME_W + F6_PAD_COL;
+    float inputX = descX  + descWidth  + F6_PAD_COL;
+    float btnX   = inputX + F6_INPUT_W + F6_PAD_COL;
+
+    float rowStartY = ImGui::GetCursorPosY();
+
+    // ---- alternating row background ----
+    if (rowIndex % 2 != 0) {
+        ImVec2 winPos = ImGui::GetWindowPos();
+        float scrollX = ImGui::GetScrollX();
+        float scrollY = ImGui::GetScrollY();
+        // We draw it after we know the row height, so defer — use a placeholder height for now.
+        // Will be corrected after we measure afterDescY below via DrawList.
+        // (We'll draw it after measuring.)
+    }
+
+    // ---- Name column ----
+    ImGui::SetCursorPos(ImVec2(nameX, rowStartY + F6_PAD_ROW));
+    if (cvar.uncertain) {
+        ImGui::TextUnformatted(cvar.name.c_str());
+        ImGui::SameLine(0, 2);
+        ImGui::PushStyleColor(ImGuiCol_Text, IM_COL32(180, 140, 60, 200));
+        ImGui::TextUnformatted(" (?)");
+        ImGui::PopStyleColor();
+    } else {
+        ImGui::TextUnformatted(cvar.name.c_str());
+    }
+    if (ImGui::IsItemHovered()) {
+        std::string tip = cvar.uncertain
+            ? "Description may be approximate.\n\n" + cvar.rawComment
+            : (cvar.rawComment.empty() ? cvar.name : cvar.rawComment);
+        ImGui::SetTooltip("%s", tip.c_str());
+    }
+
+    // ---- Description column (drives row height) ----
+    ImGui::SetCursorPos(ImVec2(descX, rowStartY + F6_PAD_ROW));
+    ImGui::PushTextWrapPos(descX + descWidth);
+    std::string desc = cvar.friendlyDescription.empty() ? cvar.rawComment : cvar.friendlyDescription;
+    ImGui::TextWrapped("%s", desc.c_str());
+    ImGui::PopTextWrapPos();
+    float afterDescY = ImGui::GetCursorPosY(); // actual bottom of wrapped text
+
+    // ---- Input column ----
+    ImGui::SetCursorPos(ImVec2(inputX, rowStartY + F6_PAD_ROW));
+
+    std::string inputId = "##val_" + cvar.name;
+    char buf[512];
+    std::strncpy(buf, cvar.currentValue.c_str(), sizeof(buf) - 1);
+    buf[sizeof(buf) - 1] = '\0';
+
+    if (cvar.type == CvarType::Range) {
+        float halfW = (F6_INPUT_W - 4.f) * 0.5f;
+        ImGui::PushItemWidth(halfW);
+        ImGui::InputFloat(("##rmin_" + cvar.name).c_str(), &cvar.rangeMin, 0.f, 0.f, "%.2f");
+        ImGui::SameLine(0, 4);
+        ImGui::InputFloat(("##rmax_" + cvar.name).c_str(), &cvar.rangeMax, 0.f, 0.f, "%.2f");
+        ImGui::PopItemWidth();
+        // Update currentValue string from floats
+        char rangeBuf[64];
+        std::snprintf(rangeBuf, sizeof(rangeBuf), "(%.2f, %.2f)", cvar.rangeMin, cvar.rangeMax);
+        cvar.currentValue = rangeBuf;
+    } else if (cvar.type == CvarType::Color) {
+        float col[4] = { cvar.colorR / 255.f, cvar.colorG / 255.f,
+                         cvar.colorB / 255.f, cvar.colorA / 255.f };
+        ImGui::PushItemWidth(F6_INPUT_W);
+        if (ImGui::ColorEdit4(("##col_" + cvar.name).c_str(), col)) {
+            cvar.colorR = col[0] * 255.f;
+            cvar.colorG = col[1] * 255.f;
+            cvar.colorB = col[2] * 255.f;
+            cvar.colorA = col[3] * 255.f;
+            char colBuf[64];
+            std::snprintf(colBuf, sizeof(colBuf), "(%.0f, %.0f, %.0f, %.0f)",
+                cvar.colorR, cvar.colorG, cvar.colorB, cvar.colorA);
+            cvar.currentValue = colBuf;
+        }
+        ImGui::PopItemWidth();
+    } else {
+        const char* hint = "";
+        if      (cvar.type == CvarType::Boolean) hint = "0 or 1";
+        else if (cvar.type == CvarType::Number)  hint = "whole number";
+        else if (cvar.type == CvarType::Decimal) hint = "e.g. 0.5";
+        else                                     hint = "text";
+
+        ImGui::PushItemWidth(F6_INPUT_W);
+        if (ImGui::InputTextWithHint(inputId.c_str(), hint, buf, sizeof(buf)))
+            cvar.currentValue = buf;
+        ImGui::PopItemWidth();
+
+        if (ImGui::IsItemHovered() && !cvar.default_val.empty())
+            ImGui::SetTooltip("Default: %s", cvar.default_val.c_str());
+    }
+
+    // ---- Execute button ----
+    ImGui::SetCursorPos(ImVec2(btnX, rowStartY + F6_PAD_ROW));
+    if (ImGui::SmallButton(("\xe2\x96\xb6##" + cvar.name).c_str()))  // ▶ UTF-8
+        ExecuteCvar(cvar);
+    if (ImGui::IsItemHovered()) ImGui::SetTooltip("Execute: %s %s", cvar.name.c_str(), cvar.currentValue.c_str());
+
+    // ---- Copy button ----
+    float copyBtnX = btnX + F6_BTN_W + 2.f;
+    ImGui::SetCursorPos(ImVec2(copyBtnX, rowStartY + F6_PAD_ROW));
+    if (ImGui::SmallButton(("\xe2\x8e\x98##cp_" + cvar.name).c_str()))  // ⎘ UTF-8
+        ImGui::SetClipboardText((cvar.name + " " + cvar.currentValue).c_str());
+    if (ImGui::IsItemHovered()) ImGui::SetTooltip("Copy command to clipboard");
+
+    // ---- Alternating row background (drawn behind content) ----
+    if (rowIndex % 2 != 0) {
+        float rowEndY = afterDescY + F6_PAD_ROW;
+        ImVec2 winPos = ImGui::GetWindowPos();
+        float scrollX = ImGui::GetScrollX();
+        float scrollY = ImGui::GetScrollY();
+        ImGui::GetWindowDrawList()->AddRectFilled(
+            ImVec2(winPos.x - scrollX, winPos.y + rowStartY - scrollY),
+            ImVec2(winPos.x - scrollX + contentWidth, winPos.y + rowEndY - scrollY),
+            IM_COL32(255, 255, 255, 8)
+        );
+    }
+
+    // ---- Advance cursor past row ----
+    ImGui::SetCursorPosY(afterDescY + F6_PAD_ROW);
+    ImGui::Separator();
+}
+
+void SettingsUI::RenderF6ForDummiesTab()
+{
+    using namespace UI::SettingsUI;
+
+    // Tick down status timer
+    if (f6StatusTimer > 0.f) {
+        f6StatusTimer -= ImGui::GetIO().DeltaTime;
+        if (f6StatusTimer <= 0.f) {
+            f6StatusTimer = 0.f;
+            f6StatusMsg.clear();
+        }
+    }
+
+    float contentWidth = ImGui::GetContentRegionAvail().x;
+
+    // ---- Top padding ----
+    ImGui::Dummy(ImVec2(0, F6_PAD_TOP));
+
+    // ---- Search bar ----
+    float searchWidth = contentWidth - F6_PAD_OUTER * 2.f - 30.f - 160.f; // leave room for × and checkbox
+    ImGui::SetCursorPosX(F6_PAD_OUTER);
+    ImGui::PushItemWidth(searchWidth);
+    ImGui::InputTextWithHint("##f6search", "Search CVars...", f6SearchBuf, sizeof(f6SearchBuf));
+    ImGui::PopItemWidth();
+
+    ImGui::SameLine(0, 6);
+    if (ImGui::SmallButton("[x]")) {
+        std::memset(f6SearchBuf, 0, sizeof(f6SearchBuf));
+    }
+    if (ImGui::IsItemHovered()) ImGui::SetTooltip("Clear search");
+
+    ImGui::SameLine(0, 10);
+    ImGui::Checkbox("Uncertain only (?)", &f6ShowUncertainOnly);
+
+    // ---- Result count ----
+    std::string searchLower(f6SearchBuf);
+    std::transform(searchLower.begin(), searchLower.end(), searchLower.begin(), ::tolower);
+
+    int visibleCount = 0;
+    for (auto& c : f6Cvars) {
+        if (f6ShowUncertainOnly && !c.uncertain) continue;
+        if (!searchLower.empty()) {
+            std::string nameLower = c.name;
+            std::transform(nameLower.begin(), nameLower.end(), nameLower.begin(), ::tolower);
+            std::string descLower = c.friendlyDescription;
+            std::transform(descLower.begin(), descLower.end(), descLower.begin(), ::tolower);
+            if (nameLower.find(searchLower) == std::string::npos &&
+                descLower.find(searchLower) == std::string::npos) continue;
+        }
+        visibleCount++;
+    }
+
+    ImGui::SetCursorPosX(F6_PAD_OUTER);
+    ImGui::PushStyleColor(ImGuiCol_Text, IM_COL32(150, 150, 150, 200));
+    ImGui::Text("Showing %d of %d CVars", visibleCount, (int)f6Cvars.size());
+    ImGui::PopStyleColor();
+
+    // ---- Status / feedback bar ----
+    if (!f6StatusMsg.empty() && f6StatusTimer > 0.f) {
+        float alpha = (f6StatusTimer / 3.f);
+        if (alpha > 1.f) alpha = 1.f;
+        ImGui::SetCursorPosX(F6_PAD_OUTER);
+        if (f6StatusIsError)
+            ImGui::TextColored(ImVec4(1.f, 0.3f, 0.3f, alpha), "%s", f6StatusMsg.c_str());
+        else
+            ImGui::TextColored(ImVec4(0.2f, 1.f, 0.2f, alpha), "%s", f6StatusMsg.c_str());
+    } else {
+        ImGui::Dummy(ImVec2(0, ImGui::GetTextLineHeight()));
+    }
+
+    // ---- Scrollable list ----
+    ImGui::BeginChild("##f6list", ImVec2(0, 0), false);
+
+    int rowIndex = 0;
+    bool anyVisible = false;
+    for (auto& cvar : f6Cvars) {
+        if (f6ShowUncertainOnly && !cvar.uncertain) continue;
+        if (!searchLower.empty()) {
+            std::string nameLower = cvar.name;
+            std::transform(nameLower.begin(), nameLower.end(), nameLower.begin(), ::tolower);
+            std::string descLower = cvar.friendlyDescription;
+            std::transform(descLower.begin(), descLower.end(), descLower.begin(), ::tolower);
+            if (nameLower.find(searchLower) == std::string::npos &&
+                descLower.find(searchLower) == std::string::npos) continue;
+        }
+        anyVisible = true;
+        RenderCvarRow(cvar, rowIndex++);
+    }
+
+    if (!anyVisible) {
+        ImGui::SetCursorPosX(F6_PAD_OUTER);
+        ImGui::TextDisabled("No CVars match \"%s\"", f6SearchBuf);
+    }
+
+    ImGui::EndChild();
+    ImGui::Dummy(ImVec2(0, F6_PAD_BOTTOM));
 }

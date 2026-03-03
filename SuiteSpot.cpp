@@ -11,6 +11,8 @@
 #include "LoadoutUI.h"
 #include "ConstantsUI.h"
 #include "HelpersUI.h"
+#include "F6ForDummies/ConfigParser.h"
+#include "F6ForDummies/DescriptionsLoader.h"
 #include "bakkesmod/wrappers/GameEvent/TrainingEditorWrapper.h"
 #include "bakkesmod/wrappers/GuiManagerWrapper.h"
 #include <fstream>
@@ -622,6 +624,11 @@ void SuiteSpot::onLoad()
     gameWrapper->Execute([this](GameWrapper*) {
         cvarManager->executeCommand("openmenu suitespot_browser");
     });
+
+    // F6 For Dummies — parse config.cfg and enrich with descriptions
+    auto configPath = mapManager->GetDataRoot().parent_path() / "cfg" / "config.cfg";
+    auto descPath   = mapManager->GetSuiteSpotRoot() / "cvars_descriptions.json";
+    settingsUI->LoadF6Cvars(configPath.string(), descPath.string());
 
     LOG("SuiteSpot: Plugin initialization complete");
 }
