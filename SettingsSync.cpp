@@ -77,9 +77,10 @@ void SettingsSync::RegisterAllCVars(const std::shared_ptr<CVarManagerWrapper>& c
 
     cvarManager->registerCvar("ss_training_maps", "", "Stored training maps", true, false, 0, false, 0);
 
+    // TODO: hotkey CVars — disabled pending crash investigation; re-enable with hotkeys feature
     // Hotkey bindings: key1 triggers via setBind (event-driven); key2 is the optional held combo partner.
     // Both are free-form UE3 key name strings (e.g. "J", "F3", "LeftAlt", "XboxTypeS_DPad_Up").
-
+    /*
     cvarManager->registerCvar("suitespot_hotkey_map_mode_fwd_key", "", "Key 1 for cycle map mode forward", true)
         .addOnValueChanged([this](std::string, CVarWrapper cvar) { hotkeyMapModeFwdKey = cvar.getStringValue(); });
     cvarManager->registerCvar("suitespot_hotkey_map_mode_fwd_key2", "", "Key 2 (held) for cycle map mode forward", true)
@@ -104,6 +105,7 @@ void SettingsSync::RegisterAllCVars(const std::shared_ptr<CVarManagerWrapper>& c
         .addOnValueChanged([this](std::string, CVarWrapper cvar) { hotkeyLoadNowKey = cvar.getStringValue(); });
     cvarManager->registerCvar("suitespot_hotkey_load_now_key2", "", "Key 2 (held) for load now", true)
         .addOnValueChanged([this](std::string, CVarWrapper cvar) { hotkeyLoadNowKey2 = cvar.getStringValue(); });
+    */
 
     // Note: CVars auto-initialize to defaults from registerCvar() above
     // The addOnValueChanged callbacks will sync values if user has saved config
