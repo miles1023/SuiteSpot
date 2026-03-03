@@ -773,17 +773,19 @@ bool SuiteSpot::ShouldBlockInput()
 
 bool SuiteSpot::IsActiveOverlay()
 {
-    return true;
+    // TODO: was set to unconditional `true` during hotkey overlay work (needed Render() always-on).
+    // Restored to isBrowserOpen now that the overlay is disabled — prevents input capture
+    // when the window is not actually open.
+    return isBrowserOpen;
 }
 
 void SuiteSpot::OnOpen()
 {
-    LOG("SuiteSpot: OnOpen called (autoOpen={})", isOverlayAutoOpen);
-    isBrowserOpen = !isOverlayAutoOpen;  // true if user opened, false if auto-open
-    if (!isOverlayAutoOpen && trainingPackUI) {
+    LOG("SuiteSpot: OnOpen called");
+    isBrowserOpen = true;
+    if (trainingPackUI) {
         trainingPackUI->SetOpen(true);
     }
-    isOverlayAutoOpen = false;
 }
 
 void SuiteSpot::OnClose()

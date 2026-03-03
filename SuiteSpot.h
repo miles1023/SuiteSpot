@@ -147,7 +147,6 @@ class SuiteSpot final : public BakkesMod::Plugin::BakkesModPlugin,
     std::unique_ptr<LoadoutUI> loadoutUI;
 
     bool isBrowserOpen = false;
-    bool isOverlayAutoOpen = false; // TODO: always false while overlay is disabled; restore setter when hotkeys re-enabled
     bool isUnloading = false;       // true during onUnload() — prevents OnClose() from re-opening the window
     float officialTrainingGameSpeed = 1.0f;
     uintptr_t imgui_ctx = 0;
