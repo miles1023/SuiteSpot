@@ -157,25 +157,29 @@ class SuiteSpot final : public BakkesMod::Plugin::BakkesModPlugin,
 
     // ImGui overlay for hotkey action feedback — rendered via Render() every frame.
     // NOTE: This is NOT gameWrapper->Toast() — it is an ImGui window drawn as an overlay.
-    struct {
-        std::string text;
-        std::chrono::steady_clock::time_point startTime{};
-        float duration = 0.0f;
-        bool visible = false;
-        bool isError = false;
-    } hotkeyOverlay;
+    // TODO: hotkey overlay — disabled pending crash investigation; re-enable with hotkeys
+    //struct {
+    //    std::string text;
+    //    std::chrono::steady_clock::time_point startTime{};
+    //    float duration = 0.0f;
+    //    bool visible = false;
+    //    bool isError = false;
+    //} hotkeyOverlay;
 
     // Hotkey capture state
-    int captureRow = -1;
-    int captureSlot = 0;
+    // TODO: hotkey capture — disabled pending crash investigation
+    //int captureRow = -1;
+    //int captureSlot = 0;
 
     // Tracks currently-held key names (UE3 strings, e.g. "XboxTypeS_X") via HandleKeyPress hook.
     // Updated on every press/release event — never polled. Used for combo key checks in notifiers.
-    std::set<std::string> heldKeys;
+    // TODO: heldKeys — disabled pending crash investigation
+    //std::set<std::string> heldKeys;
 
     // Hotkey toast helpers
-    void ShowToastForAction(const std::string& message, bool isError = false);
-    void ShowToastError(const std::string& reason);
+    // TODO: toast helpers — disabled pending crash investigation
+    //void ShowToastForAction(const std::string& message, bool isError = false);
+    //void ShowToastError(const std::string& reason);
 };
 
 struct HandleKeyPressParams

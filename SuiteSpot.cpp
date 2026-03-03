@@ -263,6 +263,8 @@ void SuiteSpot::LoadHooks()
 
     // Hotkey action notifiers — triggered by HandleKeyPress combo detection (not via setBind).
     // Can also be invoked directly from the BakkasMod console for testing.
+    // TODO: hotkey notifiers — disabled pending crash investigation; re-enable with hotkeys feature
+    /*
     cvarManager->registerNotifier(
         "ss_cycle_map_mode_fwd",
         [this](std::vector<std::string> args) {
@@ -446,6 +448,7 @@ void SuiteSpot::LoadHooks()
                                                            captureRow = -1;
                                                        }
                                                    });
+    */
 }
 
 // #detailed comments: GameEndedEvent
@@ -618,12 +621,13 @@ void SuiteSpot::onLoad()
     }
     LoadTrainingGameSpeedHooks();
 
+    // TODO: auto-open for hotkey overlay — disabled pending crash investigation
     // Open suitespot_browser silently so Render() fires every frame for the hotkey overlay.
     // isOverlayAutoOpen guards OnOpen() so the training browser does NOT pop open.
-    isOverlayAutoOpen = true;
-    gameWrapper->Execute([this](GameWrapper*) {
-        cvarManager->executeCommand("openmenu suitespot_browser");
-    });
+    //isOverlayAutoOpen = true;
+    //gameWrapper->Execute([this](GameWrapper*) {
+    //    cvarManager->executeCommand("openmenu suitespot_browser");
+    //});
 
     // F6 For Dummies — parse config.cfg and enrich with descriptions
     auto configPath = mapManager->GetDataRoot().parent_path() / "cfg" / "config.cfg";
@@ -702,48 +706,11 @@ void SuiteSpot::onUnload()
 
 void SuiteSpot::Render()
 {
-    if (!imgui_ctx) return;
-    ImGui::SetCurrentContext(reinterpret_cast<ImGuiContext*>(imgui_ctx));
-
-    if (!hotkeyOverlay.visible) return;
-
-    auto elapsed = std::chrono::duration<float>(
-        std::chrono::steady_clock::now() - hotkeyOverlay.startTime).count();
-
-    if (elapsed >= hotkeyOverlay.duration) {
-        hotkeyOverlay.visible = false;
-        return;
-    }
-
-    // Hold at full opacity for 5s, then linear fade over the final 2s (total 7s)
-    float alpha = (elapsed < 5.0f) ? 1.0f : 1.0f - ((elapsed - 5.0f) / 2.0f);
-
-    ImGuiWindowFlags flags = ImGuiWindowFlags_NoDecoration
-        | ImGuiWindowFlags_AlwaysAutoResize
-        | ImGuiWindowFlags_NoInputs
-        | ImGuiWindowFlags_NoFocusOnAppearing
-        | ImGuiWindowFlags_NoMove;
-
-    // RL Blue rounded bubble (#0079CF approx), slightly transparent background
-    ImGui::PushStyleVar(ImGuiStyleVar_WindowRounding, 12.0f);
-    ImGui::PushStyleVar(ImGuiStyleVar_WindowPadding, ImVec2(16.f, 10.f));
-    ImGui::PushStyleColor(ImGuiCol_WindowBg, ImVec4(0.0f, 0.47f, 0.81f, 0.80f * alpha));
-
-    ImGui::SetNextWindowPos(ImVec2(20.f, 20.f), ImGuiCond_Always);
-    ImGui::SetNextWindowBgAlpha(0.80f * alpha);
-
-    ImGui::Begin("##ss_hotkey_overlay", nullptr, flags);
-
-    // Orange for success, Red for errors
-    ImVec4 textColor = hotkeyOverlay.isError
-        ? ImVec4(0.95f, 0.25f, 0.25f, alpha)
-        : ImVec4(1.0f, 0.55f, 0.0f, alpha);
-
-    ImGui::TextColored(textColor, "%s", hotkeyOverlay.text.c_str());
-
-    ImGui::End();
-    ImGui::PopStyleColor();
-    ImGui::PopStyleVar(2);
+    // TODO: hotkey overlay rendering — disabled pending crash investigation
+    // if (!imgui_ctx) return;
+    // ImGui::SetCurrentContext(reinterpret_cast<ImGuiContext*>(imgui_ctx));
+    // if (!hotkeyOverlay.visible) return;
+    // ... (full overlay render body removed; see git history to restore)
 }
 
 std::string SuiteSpot::GetMenuName()
@@ -827,14 +794,16 @@ void SuiteSpot::OnClose()
         // User was viewing the browser: close the UI and let window stay closed
         trainingPackUI->SetOpen(false);
         isBrowserOpen = false;
-    } else {
-        // Window was in silent mode: re-open silently to keep hotkey overlay alive
-        LOG("SuiteSpot: Re-opening silently to keep hotkey overlay alive");
-        isOverlayAutoOpen = true;
-        gameWrapper->Execute([this](GameWrapper*) {
-            cvarManager->executeCommand("openmenu suitespot_browser");
-        });
     }
+    // TODO: hotkey overlay keep-alive re-open — disabled pending crash investigation
+    // else {
+    //     // Window was in silent mode: re-open silently to keep hotkey overlay alive
+    //     LOG("SuiteSpot: Re-opening silently to keep hotkey overlay alive");
+    //     isOverlayAutoOpen = true;
+    //     gameWrapper->Execute([this](GameWrapper*) {
+    //         cvarManager->executeCommand("openmenu suitespot_browser");
+    //     });
+    // }
 }
 
 std::filesystem::path SuiteSpot::GetTrainingPacksPath() const
@@ -849,16 +818,17 @@ void SuiteSpot::LoadTrainingPacksFromFile(const std::filesystem::path& filePath)
     }
 }
 
-void SuiteSpot::ShowToastForAction(const std::string& message, bool isError)
-{
-    hotkeyOverlay.text = message;
-    hotkeyOverlay.startTime = std::chrono::steady_clock::now();
-    hotkeyOverlay.duration = 7.0f;
-    hotkeyOverlay.isError = isError;
-    hotkeyOverlay.visible = true;
-}
-
-void SuiteSpot::ShowToastError(const std::string& reason)
-{
-    ShowToastForAction("Load Now: Failed - " + reason, true);
-}
+// TODO: hotkey toast helpers — disabled pending crash investigation
+// void SuiteSpot::ShowToastForAction(const std::string& message, bool isError)
+// {
+//     hotkeyOverlay.text = message;
+//     hotkeyOverlay.startTime = std::chrono::steady_clock::now();
+//     hotkeyOverlay.duration = 7.0f;
+//     hotkeyOverlay.isError = isError;
+//     hotkeyOverlay.visible = true;
+// }
+//
+// void SuiteSpot::ShowToastError(const std::string& reason)
+// {
+//     ShowToastForAction("Load Now: Failed - " + reason, true);
+// }

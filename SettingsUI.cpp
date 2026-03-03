@@ -324,6 +324,8 @@ void SettingsUI::RenderMainSettingsWindow()
         }
 
         // ===== HOTKEYS TAB =====
+        // TODO: hotkeys tab — disabled pending crash investigation; re-enable with hotkeys feature
+        /*
         if (ImGui::BeginTabItem("Hotkeys")) {
             ImGui::Spacing();
             ImGui::TextDisabled("Click Bind to capture a key press, or type the UE3 name manually.");
@@ -472,6 +474,7 @@ void SettingsUI::RenderMainSettingsWindow()
             if (ImGui::IsItemHovered()) ImGui::SetTooltip("Persist hotkey settings to config file");
             ImGui::EndTabItem();
         }
+        */
 
         // ===== F6 FOR DUMMIES TAB =====
         if (ImGui::BeginTabItem("F6 For Dummies")) {
